@@ -46,11 +46,11 @@
     display:flex;align-items:center;padding-right:26px;margin-right:26px;border-right:1px solid var(--line);flex:0 0 auto}
   .t2 .cats{display:flex;align-items:stretch;gap:2px;flex:1 1 auto;min-width:0}
   .cat{position:relative}
-  .cat>button{font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--ink-soft);
+  .cat>a{font:inherit;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--ink-soft);
     background:transparent;border:none;cursor:pointer;height:48px;padding:0 16px;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
-  .cat>button .chev{width:9px;height:9px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s;opacity:.6}
-  .cat:hover>button,.cat:focus-within>button,.cat.open>button{color:var(--ink)}
-  .cat:hover>button .chev,.cat:focus-within>button .chev,.cat.open>button .chev{transform:rotate(180deg)}
+  .cat>a .chev{width:9px;height:9px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s;opacity:.6}
+  .cat:hover>a,.cat:focus-within>a,.cat.open>a{color:var(--ink)}
+  .cat:hover>a .chev,.cat:focus-within>a .chev,.cat.open>a .chev{transform:rotate(180deg)}
   .cat::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s;transform-origin:left}
   .cat:hover::after,.cat:focus-within::after,.cat.open::after{transform:scaleX(1)}
 
@@ -126,22 +126,21 @@
 <script>
 (function(){
   var CATS=[
-    {name:"Modern & Contemporary Art",items:["Exhibitions","Artist Profiles & Essays","Artist Conversations","Groups & Collectives","Curators","Curating South Asia"]},
-    {name:"Art History & Museums",items:["Art History","Aesthetic Theory","Museums","CC Icons"]},
-    {name:"Cinema & Photography",items:["Cinema & OTT","Lens-Based Practices"]},
-    {name:"Art, Design & Architecture",items:["Craft & Textile","Design","Architecture"]},
-    {name:"Culture",items:["Gender","Food Cultures","Art, Media & Law"]}
+    {name:"Modern & Contemporary Art",slug:"modern-contemporary-art",items:["Exhibitions","Artist Profiles & Essays","Artist Conversations","Groups & Collectives","Curators","Curating South Asia"]},
+    {name:"Art History & Museums",slug:"art-history-museums",items:["Art History","Aesthetic Theory","Museums","CC Icons"]},
+    {name:"Cinema & Photography",slug:"cinema-photography",items:["Cinema & OTT","Lens-Based Practices"]},
+    {name:"Art, Design & Architecture",slug:"art-design-architecture",items:["Craft & Textile","Design","Architecture"]},
+    {name:"Culture",slug:"culture",items:["Gender","Food Cultures","Art, Media & Law"]}
   ];
+  function slugify(s){return s.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
   var wrap=document.getElementById('cats');
   var chev='<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>';
-  CATS.forEach(function(c,i){
-    var links=c.items.map(function(it){return '<a href="#">'+esc(it)+'</a>';}).join('');
+  CATS.forEach(function(c){
+    var links=c.items.map(function(it){return '<a href="category.html?cat='+c.slug+'#'+slugify(it)+'">'+esc(it)+'</a>';}).join('');
     var el=document.createElement('div');
     el.className='cat';
-    el.innerHTML='<button type="button" aria-haspopup="true" aria-expanded="false">'+esc(c.name)+chev+'</button>'+
+    el.innerHTML='<a href="category.html?cat='+c.slug+'" aria-haspopup="true">'+esc(c.name)+chev+'</a>'+
       '<div class="menu" role="menu"><span class="head">'+esc(c.name)+'</span>'+links+'</div>';
-    var btn=el.querySelector('button');
-    btn.addEventListener('click',function(){var open=el.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));});
     wrap.appendChild(el);
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){[].forEach.call(document.querySelectorAll('.cat.open'),function(c){c.classList.remove('open');c.querySelector('button').setAttribute('aria-expanded','false');});}});
