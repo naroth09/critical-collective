@@ -28,7 +28,7 @@
   .t1 .bar{display:flex;align-items:center;gap:20px;height:74px}
   .t1 .logo{width:196px;height:36px;flex:0 0 auto}
   .t1 nav{display:flex;align-items:center;gap:34px;margin-left:16px}
-  .t1 nav a{font-size:13px;letter-spacing:.06em;color:var(--ink-soft);text-decoration:none;font-weight:600;position:relative;padding:6px 0;white-space:nowrap}
+  .t1 nav a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:600;position:relative;padding:6px 0;white-space:nowrap}
   .t1 nav a:hover{color:var(--ink)}
   .t1 nav a.active{color:var(--ink)}
   .t1 nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent)}
@@ -90,17 +90,15 @@
   <!-- TIER 1 -->
   <header class="t1">
     <div class="bar">
-      <span class="logo" role="img" aria-label="Critical Collective"></span>
+      <a href="index.html" class="logo" role="img" aria-label="Critical Collective"></a>
       <nav aria-label="Primary">
-        <a href="#" class="active" aria-current="page">Categories</a>
+        <a href="menu.html" class="active" aria-current="page">Categories</a>
+        <a href="cc-index.html">CC Index</a>
+        <a href="index.html">Newsletters</a>
         <a href="#">CC Platform</a>
         <a href="#">Reference &amp; Archives</a>
-        <a href="index.html">Newsletters</a>
       </nav>
       <div class="actions">
-        <svg class="ico" viewBox="0 0 24 24" aria-label="Search" role="img"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-        <span class="en" title="Language">EN</span>
-        <a href="#" class="login">Log in</a>
         <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false">Dark</button>
       </div>
     </div>
