@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;            /* warm beige ground, between MIST and EARTH */
+    --color-surface: #e5dbcc;       /* deeper beige — section alternates, hovers */
+    --color-text: #000000;          /* BLACK  — body, headings, rules */
+    --color-divider: #cdc3b3;       /* STONE, warmed — borders and hairlines */
+    --color-accent: #b8962e;        /* EDITORIAL GOLD — labels, active states */
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  .card-kicker { color: var(--color-accent-800); }
+  .btn-primary:hover, .btn-secondary:hover, .btn-ghost:hover { color: var(--color-accent-800); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+</style>
+</helmet>
+
+<div style="font-family: var(--font-body); color: var(--color-text);">
+  <header style="background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 12px 32px; min-height: 78px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; row-gap: 10px;">
+      <a href="index.html" style="display: block; flex: 0 0 auto;"><img src="assets/cc-logo.png" alt="Critical Collective" style="height: 40px; width: auto; display: block;"></a>
+      <nav style="display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-left: 4px; min-width: 0; flex: 0 1 auto;">
+        <sc-for list="{{ links }}" as="link" hint-placeholder-count="4">
+          <sc-if value="{{ link.isActive }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ link.href }}" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-family: var(--font-body); color: var(--color-text); padding: 6px 0; border-bottom: 2px solid var(--color-accent); white-space: nowrap;">{{ link.label }}</a>
+          </sc-if>
+          <sc-if value="{{ link.isOther }}" hint-placeholder-val="{{ true }}">
+            <a href="{{ link.href }}" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-family: var(--font-body); color: color-mix(in srgb, var(--color-text) 62%, transparent); padding: 6px 0; white-space: nowrap;" style-hover="color: var(--color-text);">{{ link.label }}</a>
+          </sc-if>
+        </sc-for>
+      </nav>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 14px; flex: 0 0 auto;">
+        <a href="search.html" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">Search</a>
+        <a href="signin.html" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">Sign in</a>
+        <a href="signin.html#plans" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700); border: 1px solid var(--color-accent); border-radius: var(--radius-md); padding: 9px 16px; white-space: nowrap;" style-hover="background: var(--color-accent-100); color: var(--color-accent-800);">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <div style="border-bottom: 1px solid var(--color-divider); background: var(--color-surface); position: relative; z-index: 30;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch; overflow-x: auto;">
+      <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); display: flex; align-items: center; padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--color-divider); flex: 0 0 auto;">Categories</span>
+      <div style="display: flex; align-items: stretch;">
+        <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
+          <div style="position: relative;" onMouseEnter="{{ cat.open }}" onMouseLeave="{{ closeMenu }}">
+            <a href="{{ cat.href }}" style="height: 52px; display: inline-flex; align-items: center; gap: 7px; padding: 0 16px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent; white-space: nowrap;" style-hover="border-bottom-color: var(--color-accent);">{{ cat.name }}<span style="font-size: 9px; opacity: 0.5;">▾</span></a>
+            <sc-if value="{{ cat.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; top: 100%; left: 0; min-width: 252px; background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px; z-index: 50;">
+                <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
+                  <a href="{{ cat.href }}" style="display: block; font-size: 13.5px; color: var(--color-text); padding: 9px 13px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">{{ item }}</a>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;artists&quot;,&quot;categories&quot;,&quot;newsletters&quot;,&quot;reference&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { open: null };
+  renderVals() {
+    const active = this.props.active ?? "";
+    const links = [
+      { label: "Artists", href: "artists.html", key: "artists" },
+      { label: "Newsletters", href: "newsletters.html", key: "newsletters" },
+      { label: "Reference & Archives", href: "reference.html", key: "reference" }
+    ];
+    const HREF = {"Modern & Contemporary Art":"modern-contemporary-art.html","Art History & Museums":"art-history-museums.html","Cinema & Photography":"cinema-photography.html","Art, Design & Architecture":"art-design-architecture.html","Culture":"culture.html"};
+    const data = [
+      { name: "Modern & Contemporary Art", items: ["Exhibitions", "Artist Profiles & Essays", "Artist Conversations", "Groups & Collectives", "Curators", "Curating South Asia"] },
+      { name: "Art History & Museums", items: ["Art History", "Aesthetic Theory", "Museums", "CC Icons"] },
+      { name: "Cinema & Photography", items: ["Cinema & OTT", "Lens-Based Practices"] },
+      { name: "Art, Design & Architecture", items: ["Craft & Textile", "Design", "Architecture"] },
+      { name: "Culture", items: ["Gender", "Food Cultures", "Art, Media & Law"] }
+    ];
+    return {
+      links: links.map(l => ({ ...l, isActive: l.key === active, isOther: l.key !== active })),
+      closeMenu: () => this.setState({ open: null }),
+      cats: data.map((c, i) => ({
+        name: c.name,
+        items: c.items,
+        href: HREF[c.name],
+        isOpen: this.state.open === i,
+        open: () => this.setState({ open: i })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

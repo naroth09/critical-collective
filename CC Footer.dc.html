@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;            /* warm beige ground, between MIST and EARTH */
+    --color-surface: #e5dbcc;       /* deeper beige — section alternates, hovers */
+    --color-text: #000000;          /* BLACK  — body, headings, rules */
+    --color-divider: #cdc3b3;       /* STONE, warmed — borders and hairlines */
+    --color-accent: #b8962e;        /* EDITORIAL GOLD — labels, active states */
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  .card-kicker { color: var(--color-accent-800); }
+  .btn-primary:hover, .btn-secondary:hover, .btn-ghost:hover { color: var(--color-accent-800); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+</style>
+</helmet>
+
+<footer style="margin-top: 96px; border-top: 1px solid var(--color-text); font-family: var(--font-body); color: var(--color-text);">
+  <div style="max-width: 1180px; margin: 0 auto; padding: 44px 32px 60px; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 26em;">
+      <img src="assets/cc-logo.png" alt="Critical Collective" style="height: 34px; width: auto; display: block; align-self: flex-start; flex: 0 0 auto;">
+      <p style="margin: 0; font-size: 13px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Contemporary art, criticism, architecture and culture from India and beyond.</p>
+    </div>
+    <div style="display: flex; gap: 26px; flex-wrap: wrap;">
+      <a href="about.html" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">About</a>
+      <a href="contents.html" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Contents</a>
+      <a href="contact.html" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Contact</a>
+      <a href="privacy.html" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Privacy</a>
+      <a href="https://www.instagram.com/criticalcollective.in/" target="_blank" rel="noopener" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Instagram</a>
+    </div>
+    <p style="margin: 0; font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">© 2026 Critical Collective</p>
+  </div>
+</footer>
+</x-dc>
+</body>
+</html>
