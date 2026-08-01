@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  ::selection { background: var(--color-accent-100); }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#f3f2f2">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f3f2f2"></rect>
+    <text x="200" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#201f1d">CC</text>
+    <rect x="120" y="182" width="160" height="2" fill="#b68235"></rect>
+  </svg>
+</template>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh;">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 12px 32px; min-height: 78px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; row-gap: 10px;">
+      <a href="#" style="display: block; flex: 0 0 auto;"><img src="https://criticalcollective.in/img/logo_cc-black.png" alt="Critical Collective" style="height: 32px; width: auto; display: block;"></a>
+      <nav style="display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-left: 4px; min-width: 0; flex: 0 1 auto;">
+        <a href="#" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-family: var(--font-body); color: color-mix(in srgb, var(--color-text) 62%, transparent); padding: 6px 0; white-space: nowrap;" style-hover="color: var(--color-text);">Artists</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-family: var(--font-body); color: var(--color-text); padding: 6px 0; border-bottom: 2px solid var(--color-accent); white-space: nowrap;">Categories</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-family: var(--font-body); color: color-mix(in srgb, var(--color-text) 62%, transparent); padding: 6px 0; white-space: nowrap;" style-hover="color: var(--color-text);">Newsletters</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-family: var(--font-body); color: color-mix(in srgb, var(--color-text) 62%, transparent); padding: 6px 0; white-space: nowrap;" style-hover="color: var(--color-text);">Reference &amp; Archives</a>
+      </nav>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 14px; flex: 0 0 auto;">
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">Search</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">Sign in</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700); border: 1px solid var(--color-accent); border-radius: var(--radius-md); padding: 9px 16px; white-space: nowrap;" style-hover="background: var(--color-accent-100); color: var(--color-accent-800);">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ showCategoryBar }}" hint-placeholder-val="{{ true }}">
+  <div style="border-bottom: 1px solid var(--color-divider); background: var(--color-surface); position: relative; z-index: 30;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch; overflow-x: auto;">
+      <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); display: flex; align-items: center; padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--color-divider); flex: 0 0 auto;">Categories</span>
+      <div style="display: flex; align-items: stretch;">
+        <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
+          <div style="position: relative;" onMouseEnter="{{ cat.open }}" onMouseLeave="{{ closeMenu }}">
+            <a href="#" style="height: 52px; display: inline-flex; align-items: center; gap: 7px; padding: 0 16px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent;" style-hover="border-bottom-color: var(--color-accent);">{{ cat.name }}<span style="font-size: 9px; opacity: 0.5;">▾</span></a>
+            <sc-if value="{{ cat.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; top: 100%; left: 0; min-width: 252px; background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px; z-index: 50;">
+                <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
+                  <a href="#" style="display: block; font-size: 13.5px; color: var(--color-text); padding: 9px 13px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">{{ item }}</a>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 40px;">
+
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 46px 0 22px;">
+      <p style="margin: 0; font-family: var(--font-heading); font-size: 30px; letter-spacing: -0.015em; line-height: 1.1; max-width: 22em;">Writing on art, image and idea from India and its neighbours.</p>
+      <p style="margin: 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 55%, transparent); white-space: nowrap;">Issue of 24 June 2026</p>
+    </div>
+
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; display: flex; align-items: baseline; justify-content: space-between;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">This week</h2>
+      <a href="#" style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-700);">All recent writing →</a>
+    </div>
+
+    <section style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin: 34px 0 0;">
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/NoticeBoard/1_1239904683_725.jpg" alt="Installation view, Tyeb Mehta retrospective" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Noticeboard</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Tyeb Mehta, A.A. Raiba, and the Weight of a Good Display</a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Shankar Tripathi</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">Two shows on key modernists where curation and design do not merely present the work but conspire with it, holding open a slower, deeper reading.</p>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/Art_Media_Law/6_702351688_5.jpg" alt="The Dancing Girl of Mohenjo-Daro" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Art, Media &amp; Law</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Covering the ‘Dancing Girl’: History-Making and the Archive that Isn’t</a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Sneha Ganguly</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">An amendment to the Mohenjo-Daro bronze joins a longer pattern of misleading history offered under the language of heritage reclamation.</p>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_763825284_911.jpg" alt="Bengal patachitra scroll detail" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Art History</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">The Pictorial Life of the <em>Manasamangal</em> in Bengal <em>Patachitra</em></a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Rahul Majumder</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">Scroll painters old and new use the snake goddess Manasa’s story to argue about tension between the human and the natural world.</p>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/NoticeBoard/5_658907110_721.jpg" alt="Mumbai's eastern seaboard, photographed by Sunhil Sippy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">In Conversation</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Exploring the Natural and Industrial in Mumbai’s Eastern Seaboard</a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Sunhil Sippy with Sachin Sharma</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">On the interests, technical processes and politics behind a long project photographing a lesser-seen stretch of the city’s coastline.</p>
+      </article>
+
+    </section>
+
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 76px; display: flex; align-items: baseline; justify-content: space-between;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Also published</h2>
+      <span style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent); font-feature-settings: 'tnum';">Twelve pieces · June 2026</span>
+    </div>
+
+    <section style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 42px; row-gap: 0; margin-top: 10px;">
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/2_232102057_724.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Noticeboard</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Indian Art at the Met, MoMA and Carnegie International</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Namrata Ghosh</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/CC%20Compressed%20Images%20(6)_353220767_723.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Exhibitions</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Into the Grotto</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Shivangi Jalan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/4_1646318488_722.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Artist Essays</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Bodies that Break, Lines that Bleed</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Mrinalini Vasudevan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_1147044990_2414.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Cinema &amp; OTT</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">From Mumbai to Dubai: Indian Cinema’s Transmedia Flows</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Sreya Mitra</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/8_1443216386_2416.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Lens-Based Practices</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Satish Sharma: Thinking through a Politics of Representation</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Upasana Das</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Design_Art/4_156089285_5.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Craft &amp; Textile</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;"><em>Khadi, a Canvas</em>: Afterlives of Ravi Varma and Gandhi</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Archi Banerjee</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/7_11592044_2260.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Museums</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Delhi’s Sunken Museum</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Arundhati Bhan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(4)_1225568059_2406.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Gender</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Neither and Both: Transness as In-betweenness</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">George K. with Shivangi Jalan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(5)_1717599561_2410.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">CC Books</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Inside Kolkata’s Maximalist Interiors</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Ornella D’Souza</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_683500490_695.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Curators</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">The Sixth Kochi-Muziris Biennale: A Rising Tide</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Gayatri Sinha</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_926463408_682.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Conversations</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Ebrahim Alkazi’s Vision for the Arts</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Gayatri Sinha, with Chowdhry and Dave Mukherji</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/2_1277545009_910.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Art and Agency in the Women’s Tradition of <em>Chamba Rumal</em></span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Sarang Sharma</span>
+        </div>
+      </a>
+
+    </section>
+
+    <sc-if value="{{ showSectionIndex }}" hint-placeholder-val="{{ true }}">
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 76px;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">The index</h2>
+    </div>
+    <section style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: auto auto; column-gap: 36px; row-gap: 12px; margin: 30px 0 0;">
+      <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
+        <div style="grid-row: span 2; display: grid; grid-template-rows: subgrid; align-content: start;">
+          <h3 style="margin: 0; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; padding-bottom: 10px; border-bottom: 1px solid var(--color-divider); display: flex; align-items: flex-end;">{{ cat.name }}</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
+              <a href="#" style="font-size: 13.5px; color: color-mix(in srgb, var(--color-text) 72%, transparent);" style-hover="color: var(--color-accent-800);">{{ item }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ showSubscribe }}" hint-placeholder-val="{{ true }}">
+    <section style="margin-top: 84px; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 40px 44px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <div style="max-width: 30em;">
+        <p style="margin: 0 0 8px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">The newsletter</p>
+        <h3 style="margin: 0 0 8px; font-size: 26px; letter-spacing: -0.015em;">A monthly reading from the archive</h3>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 74%, transparent);">New essays, conversations and exhibition notices, sent once a month. Subscribers read the full archive.</p>
+      </div>
+      <form style="display: flex; gap: 10px; align-items: center;" onSubmit="{{ noop }}">
+        <input class="input" type="email" placeholder="you@example.com" style="min-width: 250px;">
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </section>
+    </sc-if>
+
+  </main>
+
+  <footer style="margin-top: 96px; border-top: 1px solid var(--color-text);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 44px 40px 60px; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 26em;">
+        <img src="https://criticalcollective.in/img/logo_cc-black.png" alt="Critical Collective" style="height: 26px; width: auto; display: block;">
+        <p style="margin: 0; font-size: 13px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Contemporary art, criticism, architecture and culture from India and beyond.</p>
+      </div>
+      <div style="display: flex; gap: 26px; flex-wrap: wrap;">
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">About</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Contents</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Contact</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Privacy</a>
+        <a href="#" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);" style-hover="color: var(--color-text);">Instagram</a>
+      </div>
+      <p style="margin: 0; font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">© 2026 Critical Collective</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCategoryBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showSectionIndex&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showSubscribe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { open: null };
+  renderVals() {
+    const data = [
+      { name: "Modern & Contemporary Art", items: ["Exhibitions", "Artist Profiles & Essays", "Artist Conversations", "Groups & Collectives", "Curators", "Curating South Asia"] },
+      { name: "Art History & Museums", items: ["Art History", "Aesthetic Theory", "Museums", "CC Icons"] },
+      { name: "Cinema & Photography", items: ["Cinema & OTT", "Lens-Based Practices"] },
+      { name: "Art, Design & Architecture", items: ["Craft & Textile", "Design", "Architecture"] },
+      { name: "Culture", items: ["Gender", "Food Cultures", "Art, Media & Law"] }
+    ];
+    return {
+      showCategoryBar: this.props.showCategoryBar ?? true,
+      showSectionIndex: this.props.showSectionIndex ?? true,
+      showSubscribe: this.props.showSubscribe ?? true,
+      closeMenu: () => this.setState({ open: null }),
+      noop: (e) => e.preventDefault(),
+      cats: data.map((c, i) => ({
+        name: c.name,
+        items: c.items,
+        isOpen: this.state.open === i,
+        open: () => this.setState({ open: i })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
