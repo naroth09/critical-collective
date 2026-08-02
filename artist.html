@@ -58,7 +58,7 @@
 
     <header style="padding: 58px 0 42px;">
       <div style="margin-bottom: 46px;">
-        <h1 style="margin: 0 0 22px; font-size: clamp(46px, 7.4vw, 96px); line-height: 1; white-space: nowrap; letter-spacing: -0.028em; font-weight: 400;">A Ramachandran</h1>
+        <h1 id="cc-artist-name" style="margin: 0 0 22px; font-size: 96px; line-height: 1; white-space: nowrap; letter-spacing: -0.028em; font-weight: 400; display: block; max-width: 100%;">A Ramachandran</h1>
         <p style="margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 66%, transparent);">1935–2024 <span style="color: var(--color-accent); padding: 0 6px;">·</span> Painter <span style="color: var(--color-accent); padding: 0 6px;">·</span> Kerala-born, Delhi-based</p>
       </div>
       <div style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start;">
@@ -225,7 +225,25 @@ class Component extends DCLogic {
       }
     };
   }
-  componentWillUnmount() { if (window.speechSynthesis) window.speechSynthesis.cancel(); }
+  componentDidMount() {
+    this._fit = () => {
+      const el = document.getElementById("cc-artist-name");
+      if (!el || !el.parentElement) return;
+      const avail = el.parentElement.clientWidth;
+      if (!avail) return;
+      el.style.fontSize = "96px";
+      const natural = el.scrollWidth;
+      if (natural > avail) el.style.fontSize = Math.max(30, Math.floor(96 * (avail / natural)) - 1) + "px";
+    };
+    this._fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._fit);
+    setTimeout(this._fit, 400);
+    window.addEventListener("resize", this._fit);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._fit);
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+  }
 }
 </script>
 </body>
