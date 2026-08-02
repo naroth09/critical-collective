@@ -56,9 +56,9 @@
   </header>
 
   <div style="border-bottom: 1px solid var(--color-divider); background: var(--color-surface); position: relative; z-index: 30;">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch; flex-wrap: wrap;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch;">
       <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); display: flex; align-items: center; padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--color-divider); flex: 0 0 auto;">Categories</span>
-      <div style="display: flex; align-items: stretch; flex-wrap: wrap;">
+      <div style="display: flex; align-items: stretch; flex-wrap: wrap; min-width: 0; flex: 1 1 auto;">
         <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
           <div style="position: relative;" onMouseEnter="{{ cat.open }}" onMouseLeave="{{ closeMenu }}">
             <a href="{{ cat.href }}" style="min-height: 52px; display: inline-flex; align-items: center; gap: 7px; padding: 0 13px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent; white-space: nowrap;" style-hover="border-bottom-color: var(--color-accent);">{{ cat.name }}<span style="font-size: 9px; opacity: 0.5;">▾</span></a>

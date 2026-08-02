@@ -210,7 +210,7 @@
         </div>
       </a>
 
-      <a href="#" style="display: block; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+      <a href="article.html" style="display: block; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Lens-Based Practices</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Satish Sharma: Thinking through a Politics of Representation</span>
@@ -299,37 +299,21 @@
     </sc-if>
 
     <sc-if value="{{ showSubscribe }}" hint-placeholder-val="{{ true }}">
-    <section style="margin-top: 84px; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 40px 44px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+    <section style="margin-top: 84px; background: #3a2e22; border: 1px solid #2a2019; border-radius: var(--radius-md); padding: 40px 44px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; color: #f4ece1;">
       <div style="max-width: 30em;">
-        <p style="margin: 0 0 8px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">The newsletter</p>
-        <h3 style="margin: 0 0 8px; font-size: 26px; letter-spacing: -0.015em;">A monthly reading from the archive</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 74%, transparent);">New essays, conversations and exhibition notices, sent once a month. Subscribers read the full archive.</p>
+        <p style="margin: 0 0 8px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #e5c48a;">The newsletter</p>
+        <h3 style="margin: 0 0 8px; font-size: 26px; letter-spacing: -0.015em; color: #f4ece1;">A monthly reading from the archive</h3>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: rgba(244, 236, 225, 0.8);">New essays, conversations and exhibition notices, sent once a month. Subscribers read the full archive.</p>
       </div>
       <form style="display: flex; gap: 10px; align-items: center;" onSubmit="{{ noop }}">
-        <input class="input" type="email" placeholder="you@example.com" style="min-width: 250px;">
-        <button class="btn btn-primary" type="submit">Subscribe</button>
+        <input class="input" type="email" placeholder="you@example.com" style="min-width: 250px; background: transparent; border-color: rgba(244, 236, 225, 0.45); color: #f4ece1;">
+        <button class="btn" type="submit" style="border: 1px solid #f4ece1; color: #f4ece1; background: transparent;" style-hover="background: rgba(244, 236, 225, 0.14);">Subscribe</button>
       </form>
     </section>
     </sc-if>
 
   </main>
 
-  <section style="max-width: 1180px; margin: 0 auto; padding: 0 32px;">
-    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 84px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Advertisement</h2>
-      <a href="#" style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-700);">Advertise with us →</a>
-    </div>
-    <a href="#" style="margin-top: 26px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; background: var(--color-accent); color: #000000; border-radius: var(--radius-md); padding: 46px 52px;" style-hover="background: var(--color-accent-600);">
-      <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0;">
-        <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(0, 0, 0, 0.6);">Sponsorship</span>
-        <span style="font-family: var(--font-heading); font-size: 54px; line-height: 1.02; letter-spacing: -0.02em;">Advertise here</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap;">
-        <span style="font-size: 14px; line-height: 1.55; max-width: 22em; color: rgba(0, 0, 0, 0.78);">Reach curators, collectors, galleries and scholars across South Asia — one banner, one page, no clutter.</span>
-        <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; border: 1px solid #000000; border-radius: var(--radius-md); padding: 11px 20px; white-space: nowrap;">Rate card →</span>
-      </div>
-    </a>
-  </section>
 
   <section style="margin-top: 60px; border-top: 1px solid var(--color-text); border-bottom: 1px solid var(--color-divider); background: var(--color-surface); display: flex; align-items: stretch; overflow: hidden;">
     <span style="flex: 0 0 auto; display: flex; align-items: center; padding: 0 22px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); border-right: 1px solid var(--color-divider); background: var(--color-bg); white-space: nowrap;">Upcoming</span>
