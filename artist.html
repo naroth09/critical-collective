@@ -44,7 +44,7 @@
   </svg>
 </template>
 
-<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh;">
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; overflow-x: clip;">
 
   <div style="position: sticky; top: 0; z-index: 40;"><dc-import name="CC Header" active="artists" hint-size="100%,132px"></dc-import></div>
 
@@ -56,14 +56,16 @@
       <span style="color: var(--color-text);">A Ramachandran</span>
     </nav>
 
-    <header style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start; padding: 58px 0 42px;">
-      <div>
-        <h1 style="margin: 0 0 22px; font-size: clamp(44px, 5.6vw, 82px); line-height: 0.98; overflow-wrap: break-word; letter-spacing: -0.028em; font-weight: 400;">A Ramachandran</h1>
+    <header style="padding: 58px 0 42px;">
+      <div style="margin-bottom: 46px;">
+        <h1 style="margin: 0 0 22px; font-size: clamp(46px, 7.4vw, 96px); line-height: 1; white-space: nowrap; letter-spacing: -0.028em; font-weight: 400;">A Ramachandran</h1>
         <p style="margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 66%, transparent);">1935–2024 <span style="color: var(--color-accent); padding: 0 6px;">·</span> Painter <span style="color: var(--color-accent); padding: 0 6px;">·</span> Kerala-born, Delhi-based</p>
       </div>
-      <div style="margin-bottom: 6px;">
+      <div style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start;">
+        <div style="border-top: 1px solid var(--color-divider); padding-top: 14px;"><span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Biography</span></div>
+        <div>
         <div id="cc-article-body">
-          <p style="margin: 0; font-size: 19px; line-height: 1.62; max-width: 30em; text-wrap: pretty; color: color-mix(in srgb, var(--color-text) 88%, transparent);">A Delhi-based painter who held numerous solo and group exhibitions across India and internationally. He was awarded the Padma Bhushan by the Government of India in 2005. Alongside his painting, he wrote and illustrated children’s books published in India, Japan, England and the USA, which won international recognition.</p>
+          <p style="margin: 0; font-size: 19px; line-height: 1.66; max-width: 34em; text-wrap: pretty; color: color-mix(in srgb, var(--color-text) 88%, transparent);">A Delhi-based painter who held numerous solo and group exhibitions across India and internationally. He was awarded the Padma Bhushan by the Government of India in 2005. Alongside his painting, he wrote and illustrated children’s books published in India, Japan, England and the USA, which won international recognition.</p>
         </div>
         <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" style="margin-top: 22px; display: inline-flex; align-items: center; gap: 11px; padding: 9px 18px 9px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
           <sc-if value="{{ isIdle }}" hint-placeholder-val="{{ true }}">
@@ -79,6 +81,7 @@
           </sc-if>
           {{ speechLabel }}
         </button>
+        </div>
       </div>
     </header>
 
