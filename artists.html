@@ -57,31 +57,23 @@
       <p style="margin: 0; font-size: 15px; line-height: 1.66; color: color-mix(in srgb, var(--color-text) 76%, transparent); text-wrap: pretty;">Every artist written about on Critical Collective — painters, sculptors, photographers, printmakers and collectives, drawn from our essays, interviews and criticism. Select a name to read their profile and the writing that features them.</p>
     </div>
 
-    <div style="border-top: 1px solid var(--color-text); margin-top: 30px; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; background: var(--color-bg); padding-bottom: 12px;">
-      <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-        <sc-for list="{{ alphabet }}" as="letter" hint-placeholder-count="26">
-          <sc-if value="{{ letter.has }}" hint-placeholder-val="{{ true }}">
-            <a href="{{ letter.href }}" style="font-size: 12px; letter-spacing: 0.06em; font-feature-settings: 'tnum'; color: var(--color-text); padding: 4px 8px; border-radius: var(--radius-sm);" style-hover="background: var(--color-accent-100); color: var(--color-accent-800);">{{ letter.ch }}</a>
-          </sc-if>
-          <sc-if value="{{ letter.empty }}" hint-placeholder-val="{{ false }}">
-            <span style="font-size: 12px; letter-spacing: 0.06em; color: color-mix(in srgb, var(--color-text) 26%, transparent); padding: 4px 8px;">{{ letter.ch }}</span>
-          </sc-if>
-        </sc-for>
-      </div>
-      <input class="input" type="search" placeholder="Find an artist" value="{{ query }}" onInput="{{ onQuery }}" style="min-width: 220px;">
+    <div style="border-top: 1px solid var(--color-text); margin-top: 30px; padding: 22px 0 20px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap;">
+      <label for="artist-filter" style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700); flex: 0 0 auto;">Filter by name</label>
+      <input id="artist-filter" class="input" type="search" placeholder="Begin typing a name" value="{{ query }}" onInput="{{ onQuery }}" style="flex: 1 1 320px; min-width: 260px; font-size: 17px; padding: 12px 0; border: 0; border-bottom: 1px solid var(--color-divider); border-radius: 0; background: transparent;" style-focus="border-bottom-color: var(--color-accent); outline: none;">
+      <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 48%, transparent); flex: 0 0 auto;">{{ countLabel }}</span>
     </div>
 
     <section style="margin-top: 30px;">
-      <sc-for list="{{ groups }}" as="group" hint-placeholder-count="8">
-        <div id="{{ group.id }}" style="display: grid; grid-template-columns: 82px 1fr; gap: 28px; padding: 26px 0; border-top: 1px solid var(--color-divider); align-items: start;">
-          <h2 style="margin: 0; font-size: 34px; line-height: 1; letter-spacing: -0.02em; color: var(--color-accent-700);">{{ group.letter }}</h2>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 28px; row-gap: 11px;">
-            <sc-for list="{{ group.names }}" as="name" hint-placeholder-count="12">
-              <a href="#" style="font-size: 14.5px; line-height: 1.35; color: var(--color-text);" style-hover="color: var(--color-accent-800);">{{ name }}</a>
-            </sc-for>
-          </div>
-        </div>
-      </sc-for>
+      <div style="border-top: 1px solid var(--color-divider); padding-top: 26px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 34px; row-gap: 13px;">
+        <sc-for list="{{ names }}" as="name" hint-placeholder-count="40">
+          <sc-if value="{{ name.isLive }}" hint-placeholder-val="{{ false }}">
+            <a href="artist.html" style="display: inline-flex; align-items: baseline; gap: 9px; font-size: 15.5px; line-height: 1.35; color: var(--color-text); font-weight: 500;" style-hover="color: var(--color-accent-800);"><span style="border-bottom: 1px solid var(--color-accent);">{{ name.label }}</span><span style="flex: 0 0 auto; width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent); transform: translateY(-3px);"></span></a>
+          </sc-if>
+          <sc-if value="{{ name.isPlain }}" hint-placeholder-val="{{ true }}">
+            <a href="artist.html" style="font-size: 14.5px; line-height: 1.35; color: color-mix(in srgb, var(--color-text) 72%, transparent);" style-hover="color: var(--color-accent-800);">{{ name.label }}</a>
+          </sc-if>
+        </sc-for>
+      </div>
       <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
         <div style="padding: 60px 0; border-top: 1px solid var(--color-divider); text-align: center;">
           <p style="margin: 0 0 6px; font-family: var(--font-heading); font-size: 24px;">No artists found</p>
@@ -89,8 +81,6 @@
         </div>
       </sc-if>
     </section>
-
-    <p style="margin: 40px 0 0; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">{{ countLabel }}</p>
 
   </main>
 
@@ -106,25 +96,13 @@ class Component extends DCLogic {
   renderVals() {
     const q = this.state.query.trim().toLowerCase();
     const filtered = q ? NAMES.filter(n => n.toLowerCase().includes(q)) : NAMES;
-    const byLetter = {};
-    filtered.forEach(n => {
-      const ch = n[0].toUpperCase();
-      (byLetter[ch] = byLetter[ch] || []).push(n);
-    });
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     return {
       query: this.state.query,
       onQuery: (e) => this.setState({ query: e.target.value }),
-      alphabet: letters.map(ch => ({
-        ch,
-        has: !!byLetter[ch],
-        empty: !byLetter[ch],
-        href: "#g-" + ch
-      })),
-      groups: letters.filter(ch => byLetter[ch]).map(ch => ({
-        id: "g-" + ch,
-        letter: ch,
-        names: byLetter[ch]
+      names: filtered.map(n => ({
+        label: n,
+        isLive: n === "A Ramachandran",
+        isPlain: n !== "A Ramachandran"
       })),
       noResults: filtered.length === 0,
       countLabel: filtered.length + " artists in the archive"
