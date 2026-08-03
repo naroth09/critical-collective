@@ -60,7 +60,7 @@
     <section style="width: 100vw; margin-left: calc(50% - 50vw); position: relative; overflow: hidden; background: var(--color-neutral-900); height: clamp(440px, 54vw, 660px);">
       <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ true }}">
         <a href="#" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
-          <img src="uploads/Ibrahim%20Mahama_s%20conversation%20at%20his%20installation%20venue,%20Parliament%20of%20Ghosts,%20exhibited%20at%20Anand%20Warehouse,%20Mattancherry.jpeg.webp" alt="Ibrahim Mahama in conversation inside Parliament of Ghosts, Anand Warehouse, Mattancherry" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <img src="assets/hero-parliament-of-ghosts.webp" alt="Ibrahim Mahama in conversation inside Parliament of Ghosts, Anand Warehouse, Mattancherry" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
           <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
             <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Curators</span>
@@ -71,7 +71,7 @@
       </sc-if>
       <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ false }}">
         <a href="#" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
-          <img src="uploads/ebrahim_elkazi.jpg.webp" alt="Ebrahim Alkazi addressing a gathering" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <img src="assets/hero-ebrahim-alkazi.webp" alt="Ebrahim Alkazi addressing a gathering" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
           <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
             <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Conversations</span>
@@ -93,7 +93,7 @@
       </sc-if>
       <sc-if value="{{ isS4 }}" hint-placeholder-val="{{ false }}">
         <a href="#" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
-          <img src="uploads/Humayun%20in%20seven%20days%20attire.JPG.webp" alt="Humayun in the attire of the seven days, Humayun's Tomb Museum, New Delhi" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <img src="assets/hero-humayun-museum.webp" alt="Humayun in the attire of the seven days, Humayun's Tomb Museum, New Delhi" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
           <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
             <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Museums</span>
@@ -135,7 +135,7 @@
       <article style="display: flex; flex-direction: column; gap: 16px;">
         <a href="#" style="display: block;">
           <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
-            <img src="https://criticalcollective.in/Images/NoticeBoard/1_1239904683_725.jpg" alt="Installation view, Tyeb Mehta retrospective" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <img src="https://criticalcollective.in/Images/NoticeBoard/1_1239904683_725.jpg" onError="{{ imgFallback }}" alt="Installation view, Tyeb Mehta retrospective" style="width: 100%; height: 100%; object-fit: cover; display: block;">
           </div>
         </a>
         <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Noticeboard</p>
@@ -147,7 +147,7 @@
       <article style="display: flex; flex-direction: column; gap: 16px;">
         <a href="#" style="display: block;">
           <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
-            <img src="https://criticalcollective.in/Images/Art_Media_Law/6_702351688_5.jpg" alt="The Dancing Girl of Mohenjo-Daro" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <img src="https://criticalcollective.in/Images/Art_Media_Law/6_702351688_5.jpg" onError="{{ imgFallback }}" alt="The Dancing Girl of Mohenjo-Daro" style="width: 100%; height: 100%; object-fit: cover; display: block;">
           </div>
         </a>
         <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Art, Media &amp; Law</p>
@@ -159,7 +159,7 @@
       <article style="display: flex; flex-direction: column; gap: 16px;">
         <a href="#" style="display: block;">
           <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
-            <img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_763825284_911.jpg" alt="Bengal patachitra scroll detail" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_763825284_911.jpg" onError="{{ imgFallback }}" alt="Bengal patachitra scroll detail" style="width: 100%; height: 100%; object-fit: cover; display: block;">
           </div>
         </a>
         <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Art History</p>
@@ -171,7 +171,7 @@
       <article style="display: flex; flex-direction: column; gap: 16px;">
         <a href="#" style="display: block;">
           <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
-            <img src="https://criticalcollective.in/Images/NoticeBoard/5_658907110_721.jpg" alt="Mumbai's eastern seaboard, photographed by Sunhil Sippy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <img src="https://criticalcollective.in/Images/NoticeBoard/5_658907110_721.jpg" onError="{{ imgFallback }}" alt="Mumbai's eastern seaboard, photographed by Sunhil Sippy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
           </div>
         </a>
         <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">In Conversation</p>
@@ -190,7 +190,7 @@
     <section style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 42px; row-gap: 0; margin-top: 10px;">
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/2_232102057_724.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/2_232102057_724.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Noticeboard</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Indian Art at the Met, MoMA and Carnegie International</span>
@@ -199,7 +199,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/CC%20Compressed%20Images%20(6)_353220767_723.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/CC%20Compressed%20Images%20(6)_353220767_723.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Exhibitions</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Into the Grotto</span>
@@ -208,7 +208,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/4_1646318488_722.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/4_1646318488_722.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Artist Essays</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Bodies that Break, Lines that Bleed</span>
@@ -217,7 +217,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_1147044990_2414.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_1147044990_2414.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Cinema &amp; OTT</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">From Mumbai to Dubai: Indian Cinema’s Transmedia Flows</span>
@@ -235,7 +235,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Design_Art/4_156089285_5.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Design_Art/4_156089285_5.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Craft &amp; Textile</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;"><em>Khadi, a Canvas</em>: Afterlives of Ravi Varma and Gandhi</span>
@@ -244,7 +244,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/7_11592044_2260.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/7_11592044_2260.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Museums</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Delhi’s Sunken Museum</span>
@@ -253,7 +253,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(4)_1225568059_2406.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(4)_1225568059_2406.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Gender</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Neither and Both: Transness as In-betweenness</span>
@@ -262,7 +262,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(5)_1717599561_2410.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(5)_1717599561_2410.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">CC Books</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Inside Kolkata’s Maximalist Interiors</span>
@@ -271,7 +271,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_683500490_695.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_683500490_695.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Curators</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">The Sixth Kochi-Muziris Biennale: A Rising Tide</span>
@@ -280,7 +280,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_926463408_682.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_926463408_682.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Conversations</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Ebrahim Alkazi’s Vision for the Arts</span>
@@ -289,7 +289,7 @@
       </a>
 
       <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
-        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/2_1277545009_910.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/2_1277545009_910.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</span>
           <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Art and Agency in the Women’s Tradition of <em>Chamba Rumal</em></span>
@@ -391,6 +391,12 @@ class Component extends DCLogic {
       showCategoryBar: this.props.showCategoryBar ?? true,
       showSectionIndex: this.props.showSectionIndex ?? true,
       showSubscribe: this.props.showSubscribe ?? true,
+      imgFallback: (e) => {
+        const el = e.target;
+        if (el.dataset.fallback) return;
+        el.dataset.fallback = "1";
+        el.src = "assets/plate-blank.png";
+      },
       closeMenu: () => this.setState({ open: null }),
       noop: (e) => e.preventDefault(),
       cats: data.map((c, i) => ({
