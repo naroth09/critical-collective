@@ -34,6 +34,9 @@
   ::selection { background: var(--color-accent-100); }
   @keyframes cc-fade { from { opacity: 0; transform: scale(1.015); } to { opacity: 1; transform: none; } }
   @keyframes cc-progress { from { right: 100%; } to { right: 0; } }
+  @keyframes cc-rise { from { opacity: 0; transform: translateY(0.42em); } to { opacity: 1; transform: none; } }
+  @keyframes cc-rule { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) { .cc-standfirst span { animation: none !important; } }
   @keyframes cc-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .cc-ticker:hover > div { animation-play-state: paused; }
   @media (prefers-reduced-motion: reduce) { .cc-ticker > div { animation: none; } }
@@ -55,7 +58,7 @@
   <main style="max-width: 1180px; margin: 0 auto; padding: 0 32px;">
 
     <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 34px 0 22px; flex-wrap: wrap; row-gap: 10px;">
-      <p style="margin: 0; font-family: var(--font-heading); font-size: 24px; letter-spacing: -0.015em; line-height: 1.2;">Writing on art, image and idea from India and its neighbours.</p>
+      <p class="cc-standfirst" style="margin: 0; font-family: var(--font-heading); font-size: 26px; letter-spacing: -0.015em; line-height: 1.2; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.32em; min-width: 0;">Writing on<span style="display: inline-flex; flex-direction: column; align-items: flex-start; min-width: 0;">{{ standfirst }}<span style="display: block; width: 100%; height: 1px; background: var(--color-accent); transform-origin: left; animation: cc-rule 5200ms linear both;"></span></span><span style="color: color-mix(in srgb, var(--color-text) 58%, transparent);">from India and its neighbours.</span></p>
       <a href="newsletters.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); white-space: nowrap; display: inline-flex; align-items: center; gap: 9px;" style-hover="color: var(--color-accent);"><span style="width: 6px; height: 6px; border-radius: 999px; background: var(--color-accent); display: inline-block;"></span>Newsletter #3 — out now</a>
     </div>
 
@@ -128,13 +131,23 @@
     </section>
 
 
-    <form action="search.html" method="get" style="margin: 56px 0 0; display: flex; align-items: stretch; border: 1px solid var(--color-divider); border-radius: var(--radius-md); background: var(--color-surface);">
-      <span style="display: flex; align-items: center; padding: 0 14px 0 18px; color: color-mix(in srgb, var(--color-text) 50%, transparent);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-      </span>
-      <input type="search" name="q" aria-label="Search Critical Collective" placeholder="Search essays, artists, exhibitions, archives" style="flex: 1 1 auto; min-width: 0; border: 0; background: transparent; color: var(--color-text); font-family: var(--font-body); font-size: 15px; padding: 17px 0;">
-      <button type="submit" style="flex: 0 0 auto; border: 0; border-left: 1px solid var(--color-divider); background: transparent; color: var(--color-accent-700); font-family: var(--font-body); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0 26px; cursor: pointer; transition: background 160ms ease, color 160ms ease;" style-hover="background: var(--color-accent-100); color: var(--color-accent-800);">Search</button>
-    </form>
+    <section style="margin: 56px 0 0; width: 100vw; margin-left: calc(50% - 50vw); background: var(--color-neutral-900);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 34px 32px 30px;">
+        <form action="search.html" method="get" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 26px; align-items: end;">
+          <div style="min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+            <label for="cc-home-q" style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-300);">Search the archive</label>
+            <input id="cc-home-q" type="search" name="q" aria-label="Search Critical Collective" placeholder="{{ hint }}" style="width: 100%; min-width: 0; border: 0; border-bottom: 1px solid rgba(240, 235, 224, 0.34); border-radius: 0; background: transparent; color: #f0ebe0; font-family: var(--font-heading); font-size: 30px; letter-spacing: -0.015em; padding: 6px 0 12px; outline: none; transition: border-color 200ms ease;" style-focus="border-bottom-color: var(--color-accent);">
+          </div>
+          <button type="submit" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: transparent; color: var(--color-accent-300); font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 22px; cursor: pointer; transition: background 180ms ease, color 180ms ease;" style-hover="background: var(--color-accent); color: var(--color-neutral-900);">Search<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+        </form>
+        <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-top: 22px;">
+          <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240, 235, 224, 0.5); margin-right: 4px;">Or begin with</span>
+          <sc-for list="{{ suggestions }}" as="sug" hint-placeholder-count="5">
+            <a href="{{ sug.href }}" style="font-size: 12.5px; color: rgba(240, 235, 224, 0.82); border: 1px solid rgba(240, 235, 224, 0.26); border-radius: 999px; padding: 7px 15px; white-space: nowrap; transition: border-color 160ms ease, color 160ms ease, background 160ms ease;" style-hover="border-color: var(--color-accent); color: #f0ebe0; background: rgba(184, 150, 46, 0.16);">{{ sug.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
 
     <sc-if value="{{ showDiscover }}" hint-placeholder-val="{{ true }}">
     <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 62px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
@@ -203,8 +216,12 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showDiscover&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showSubscribe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+const HINTS = ["Try “Nasreen Mohamedi”", "Try “Bengal patachitra”", "Try “biennale”", "Try “women photographers”", "Try “museum architecture”"];
+const SUGGESTIONS = ["Modernism", "Photography", "Textile & craft", "Museums", "Gender"];
+const PHRASES = ["art, image and idea", "exhibitions and archives", "cinema, craft and the museum", "the modern and what came after"];
+
 class Component extends DCLogic {
-  state = { slide: 0 };
+  state = { slide: 0, phrase: 0, hint: 0 };
   componentDidMount() {
     this.restart();
     this.onImgError = (e) => {
@@ -225,14 +242,24 @@ class Component extends DCLogic {
   }
   componentWillUnmount() {
     clearInterval(this.timer);
+    clearInterval(this.pTimer);
+    clearInterval(this.hTimer);
     document.removeEventListener('error', this.onImgError, true);
   }
   restart() {
     clearInterval(this.timer);
     this.timer = setInterval(() => this.setState(s => ({ slide: (s.slide + 1) % 4 })), 6500);
+    clearInterval(this.pTimer);
+    this.pTimer = setInterval(() => this.setState(s => ({ phrase: (s.phrase + 1) % PHRASES.length })), 5200);
+    clearInterval(this.hTimer);
+    this.hTimer = setInterval(() => this.setState(s => ({ hint: (s.hint + 1) % HINTS.length })), 3600);
   }
   renderVals() {
     const n = this.state.slide;
+    const standfirst = React.createElement('span', {
+      key: this.state.phrase,
+      style: { display: 'block', animation: 'cc-rise 620ms cubic-bezier(0.2, 0.7, 0.2, 1) both', whiteSpace: 'nowrap' }
+    }, PHRASES[this.state.phrase]);
     const sections = [
       { name: "Modern & Contemporary Art", href: "modern-contemporary-art.html", depts: "Exhibitions · Artist Profiles & Essays · Artist Conversations · Groups & Collectives · Curators", items: [
         { kicker: "Exhibitions", title: "Into the Grotto", by: "Shivangi Jalan · 8 June", href: "#", img: "https://criticalcollective.in/Images/NoticeBoard/CC%20Compressed%20Images%20(6)_353220767_723.jpg" },
@@ -266,6 +293,9 @@ class Component extends DCLogic {
       ] }
     ];
     return {
+      standfirst,
+      hint: HINTS[this.state.hint],
+      suggestions: SUGGESTIONS.map(t => ({ label: t, href: "search.html#tag=" + encodeURIComponent(t) })),
       sections,
       isS1: n === 0, isS2: n === 1, isS3: n === 2, isS4: n === 3,
       counter: String(n + 1).padStart(2, '0') + ' — 04',

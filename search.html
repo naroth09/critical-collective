@@ -253,7 +253,20 @@ const ERAS = ["2020s", "2010s", "Pre-1970"];
 const SORTS = [{ k: "relevance", n: "Relevance" }, { k: "newest", n: "Newest" }, { k: "oldest", n: "Oldest" }];
 
 class Component extends DCLogic {
-  state = { q: "", fields: [], types: [], eras: [], tags: [], sort: "relevance" };
+  state = (() => {
+    const hash = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+    const field = hash.startsWith("field=") ? hash.slice(6) : "";
+    const tag = hash.startsWith("tag=") ? hash.slice(4) : "";
+    let q = "";
+    try { q = new URLSearchParams(location.search).get("q") || ""; } catch (e) {}
+    return {
+      q,
+      fields: FIELDS.includes(field) ? [field] : [],
+      types: [], eras: [],
+      tags: TAGS.includes(tag) ? [tag] : [],
+      sort: "relevance"
+    };
+  })();
 
   toggle(key, value) {
     this.setState(s => {

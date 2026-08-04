@@ -1,46 +1,36 @@
-# Critical Collective — site redesign
+# Critical Collective — static site
 
-Static pages. Drop this folder into a repo, enable GitHub Pages, done — `index.html` is the front page and every path is relative.
+A plain static build: no bundler, no build step. Open `index.html` or serve the folder.
 
-`.nojekyll` is included on purpose: without it GitHub Pages ignores the `_ds/` folder (Jekyll skips directories starting with an underscore) and the site would load unstyled.
+## Layout
+- `index.html` and the other page files — one per screen
+- `CC Header.dc.html`, `CC Footer.dc.html` — shared header/footer, loaded at runtime
+- `support.js` — runtime that renders the pages (must sit beside the pages)
+- `image-slot.js` — image placeholder component
+- `_ds/classical-.../` — design-system stylesheet + bundle (tokens, components)
+- `assets/` — logos and photographs
+- `newsletter-august-2026.html` — standalone HTML email
 
 ## Pages
-
-| File | Page |
+| File | Screen |
 | --- | --- |
-| `index.html` | Front page — hero carousel, four features, recent writing, index, ad banner, events ticker |
-| `modern-contemporary-art.html` | Field 01 · Modern & Contemporary Art |
-| `art-history-museums.html` | Field 02 · Art History & Museums |
-| `cinema-photography.html` | Field 03 · Cinema & Photography |
-| `art-design-architecture.html` | Field 04 · Art, Design & Architecture |
-| `culture.html` | Field 05 · Culture |
-| `artists.html` | Artist index, A–Z with live search |
-| `newsletters.html` | Newsletter issues |
-| `reference.html` | Reference & Archives |
-| `search.html` | Faceted search — field, document type, era, tags |
-| `signin.html` | Sign in, and the three plans (CC 1 $50 · CC 2 $75 · CC 3 $100) |
-| `about.html` | About us |
-| `contents.html` | Contents |
-| `contact.html` | Contact |
-| `privacy.html` | Privacy policy (draft) |
+| index.html | Home |
+| contents.html | Contents / site index |
+| modern-contemporary-art.html | Modern & Contemporary Art |
+| art-history-museums.html | Art History & Museums |
+| cinema-photography.html | Cinema & Photography |
+| cinema-ott.html | Cinema & OTT department |
+| lens-based-practices.html | Lens-Based Practices department |
+| art-design-architecture.html | Art, Design & Architecture |
+| culture.html | Culture |
+| article.html | Article |
+| artists.html / artist.html | Artists index / artist page |
+| authors.html / author.html | Authors index / author page |
+| newsletters.html | Newsletters |
+| reference.html | Reference & Archives |
+| search.html | Search (accepts `?q=`, `#field=`, `#tag=`) |
+| signin.html | Sign in / subscribe |
+| about.html, contact.html, privacy.html, donate.html | Institutional pages |
 
-`CC Header.dc.html` and `CC Footer.dc.html` are the shared header and footer, imported by every page — change the nav or footer once, there. Keep those two filenames as they are; the import resolves by name.
-
-## Supporting files
-
-- `support.js` — component runtime, required by every page
-- `assets/cc-logo.png` — logo, trimmed and knocked out to transparency (`cc-logo-source.png` is the original)
-- `assets/hero-*.webp` — the three high-resolution hero photographs
-- `_ds/classical-…/` — stylesheet and design tokens
-
-## Brand values in use
-
-Ground `#EFE8DD` · alternate band `#E5DBCC` · hairlines `#CDC3B3` · text `#000000` · editorial gold `#B8962E` for labels, rules and active states, with deep steps `#715A14` / `#56440F` on small text so it clears WCAG AA.
-
-## Known gaps
-
-- Article and artist links are placeholders — no article template yet.
-- Listing images are hotlinked from criticalcollective.in and are only ~360px; they look soft at large sizes. Replace with high-resolution files when available.
-- Carousel slide 3 (Satish Sharma) still uses one of those thumbnails.
-- Forms (sign in, contact, subscribe) are not wired to a service.
-- Privacy clauses pending.
+## Deploying
+Any static host. For GitHub Pages, push the folder contents to the branch Pages serves; `.nojekyll` is already present so `_ds/` is published.
