@@ -103,7 +103,7 @@
     </div>
   </header>
 
-  <div style="border-bottom: 1px solid var(--color-divider); background: var(--color-surface); position: relative; z-index: 30;">
+  <div style="border-bottom: 1px solid var(--color-divider); background: color-mix(in srgb, var(--color-surface) 42%, transparent); backdrop-filter: blur(8px); position: relative; z-index: 30;">
     <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch;">
       <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); display: flex; align-items: center; padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--color-divider); flex: 0 0 auto;">Categories</span>
       <div style="display: flex; align-items: stretch; flex-wrap: wrap; min-width: 0; flex: 1 1 auto;">
@@ -113,7 +113,7 @@
             <sc-if value="{{ cat.isOpen }}" hint-placeholder-val="{{ false }}">
               <div style="position: absolute; top: 100%; left: 0; min-width: 252px; background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px; z-index: 50;">
                 <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
-                  <a href="{{ cat.href }}" style="display: block; font-size: 13.5px; color: var(--color-text); padding: 9px 13px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">{{ item }}</a>
+                  <a href="{{ item.href }}" style="display: block; font-size: 13.5px; color: var(--color-text); padding: 9px 13px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">{{ item.label }}</a>
                 </sc-for>
               </div>
             </sc-if>
@@ -160,6 +160,7 @@ class Component extends DCLogic {
       { label: "Reference & Archives", href: "reference.html", key: "reference" }
     ];
     const HREF = {"Modern & Contemporary Art":"modern-contemporary-art.html","Art History & Museums":"art-history-museums.html","Cinema & Photography":"cinema-photography.html","Art, Design & Architecture":"art-design-architecture.html","Culture":"culture.html"};
+    const ITEM_HREF = {"Art History":"art-history.html"};
     const data = [
       { name: "Modern & Contemporary Art", items: ["Exhibitions", "Artist Profiles & Essays", "Artist Conversations", "Groups & Collectives", "Curators", "Curating South Asia"] },
       { name: "Art History & Museums", items: ["Art History", "Aesthetic Theory", "Museums", "CC Icons"] },
@@ -179,7 +180,7 @@ class Component extends DCLogic {
       toggleAccount: (e) => { e.preventDefault(); e.stopPropagation(); this.setState(st => ({ account: !st.account })); },
       cats: data.map((c, i) => ({
         name: c.name,
-        items: c.items,
+        items: c.items.map(it => ({ label: it, href: ITEM_HREF[it] || HREF[c.name] })),
         href: HREF[c.name],
         isOpen: this.state.open === i,
         open: () => this.setState({ open: i })

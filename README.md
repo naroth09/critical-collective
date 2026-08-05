@@ -24,6 +24,7 @@ A plain static build: no bundler, no build step. Open `index.html` or serve the 
 | art-design-architecture.html | Art, Design & Architecture |
 | culture.html | Culture |
 | article.html | Article |
+| art-history.html | Art History — four standing dossiers |
 | artists.html / artist.html | Artists index / artist page |
 | authors.html / author.html | Authors index / author page |
 | newsletters.html | Newsletters |
