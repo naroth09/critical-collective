@@ -51,6 +51,7 @@
   :root[data-theme="dark"] .plate { background: #241f19; }
   :root[data-theme="dark"] img { --cc-img-dim: 1; }
   html { transition: background-color 240ms ease; }
+  @keyframes ccMenuIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </helmet>
 
@@ -63,7 +64,7 @@
             <a href="{{ link.href }}" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-body); color: var(--color-text); padding: 6px 0; border-bottom: 2px solid var(--color-accent); white-space: nowrap;">{{ link.label }}</a>
           </sc-if>
           <sc-if value="{{ link.isOther }}" hint-placeholder-val="{{ true }}">
-            <a href="{{ link.href }}" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-body); color: color-mix(in srgb, var(--color-text) 62%, transparent); padding: 6px 0; white-space: nowrap;" style-hover="color: var(--color-text);">{{ link.label }}</a>
+            <a href="{{ link.href }}" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-body); color: color-mix(in srgb, var(--color-text) 62%, transparent); padding: 6px 0; white-space: nowrap; transition: color 180ms ease;" style-hover="color: var(--color-text);">{{ link.label }}</a>
           </sc-if>
         </sc-for>
       </nav>
@@ -91,8 +92,8 @@
         <div data-cc-account="1" style="position: relative;">
           <button type="button" onClick="{{ toggleAccount }}" aria-haspopup="true" aria-expanded="{{ accountExpanded }}" style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700); border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: transparent; padding: 8px 14px; white-space: nowrap; cursor: pointer; transition: background 160ms ease, color 160ms ease;" style-hover="background: var(--color-accent-100); color: var(--color-accent-800);">Sign in<span style="font-size: 9px; opacity: 0.6;">▾</span></button>
           <sc-if value="{{ accountOpen }}" hint-placeholder-val="{{ false }}">
-            <div style="position: absolute; top: 100%; right: 0; padding-top: 8px; min-width: 226px; z-index: 60;">
-              <div style="background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px;">
+            <div style="position: absolute; top: 100%; right: 0; padding-top: 8px; min-width: 226px; z-index: 60; animation: ccMenuIn 0.2s ease both; transform-origin: top right;">
+              <div style="background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px;">
                 <a href="signin.html" style="display: block; font-size: 13px; color: var(--color-text); padding: 9px 12px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">Sign in to your account</a>
                 <a href="signin.html#plans" style="display: block; font-size: 13px; color: var(--color-text); padding: 9px 12px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">Subscribe</a>
               </div>
@@ -109,9 +110,9 @@
       <div style="display: flex; align-items: stretch; flex-wrap: wrap; min-width: 0; flex: 1 1 auto;">
         <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
           <div style="position: relative;" onMouseEnter="{{ cat.open }}" onMouseLeave="{{ closeMenu }}">
-            <a href="{{ cat.href }}" style="min-height: 52px; display: inline-flex; align-items: center; gap: 7px; padding: 0 13px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent; white-space: nowrap;" style-hover="border-bottom-color: var(--color-accent);">{{ cat.name }}<span style="font-size: 9px; opacity: 0.5;">▾</span></a>
+            <a href="{{ cat.href }}" style="min-height: 52px; display: inline-flex; align-items: center; gap: 7px; padding: 0 13px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent; white-space: nowrap; transition: border-color 200ms ease;" style-hover="border-bottom-color: var(--color-accent);">{{ cat.name }}<span style="font-size: 9px; opacity: 0.5; display: inline-block; transition: transform 220ms ease; transform: {{ cat.arrow }};">▾</span></a>
             <sc-if value="{{ cat.isOpen }}" hint-placeholder-val="{{ false }}">
-              <div style="position: absolute; top: 100%; left: 0; min-width: 252px; background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px; z-index: 50;">
+              <div style="position: absolute; top: 100%; left: 0; min-width: 252px; background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px; z-index: 50; animation: ccMenuIn 0.2s ease both; transform-origin: top left;">
                 <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
                   <a href="{{ item.href }}" style="display: block; font-size: 13.5px; color: var(--color-text); padding: 9px 13px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">{{ item.label }}</a>
                 </sc-for>
@@ -183,6 +184,7 @@ class Component extends DCLogic {
         items: c.items.map(it => ({ label: it, href: ITEM_HREF[it] || HREF[c.name] })),
         href: HREF[c.name],
         isOpen: this.state.open === i,
+        arrow: this.state.open === i ? "rotate(180deg)" : "rotate(0deg)",
         open: () => this.setState({ open: i })
       }))
     };

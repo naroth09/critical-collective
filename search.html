@@ -10,6 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
 <script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
 <style>
   :root {
     --color-bg: #efe8dd;
@@ -31,6 +32,12 @@
   a { color: var(--color-accent-700); text-decoration: none; }
   a:hover { color: var(--color-accent-800); }
   ::selection { background: var(--color-accent-100); }
+  @keyframes ccResultIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ccChipPop { 0% { transform: scale(0.7); } 55% { transform: scale(1.14); } 100% { transform: scale(1); } }
+  .cc-thumb-wrap image-slot { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease; transform: scale(1); filter: grayscale(0.85) contrast(1.04); }
+  .cc-thumb-wrap:hover image-slot { transform: scale(1.1); filter: grayscale(0) contrast(1); }
+  .cc-search-input { transition: box-shadow 260ms ease, border-color 260ms ease; }
+  .cc-search-input:focus { border-color: var(--color-accent); box-shadow: 0 0 0 4px var(--color-accent-100); outline: none; }
 </style>
 </helmet>
 
@@ -50,8 +57,8 @@
     <div style="max-width: 1180px; margin: 0 auto; padding: 44px 32px 40px;">
       <p style="margin: 0 0 16px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Search the archive</p>
       <form style="display: flex; gap: 12px; align-items: stretch; flex-wrap: wrap;" onSubmit="{{ noop }}">
-        <input class="input" type="search" value="{{ query }}" onInput="{{ onQuery }}" placeholder="Title, author, keyword — try “textile”, “Kochi”, “rasa”" style="flex: 1 1 420px; min-width: 0; padding: 16px 18px; font-size: 17px; background: var(--color-bg);">
-        <button class="btn btn-primary" type="submit" style="padding: 0 28px; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;">Search</button>
+        <input class="input cc-search-input" type="search" value="{{ query }}" onInput="{{ onQuery }}" placeholder="Title, author, keyword — try “textile”, “Kochi”, “rasa”" style="flex: 1 1 420px; min-width: 0; padding: 16px 18px; font-size: 17px; background: var(--color-bg); border: 1px solid var(--color-divider);">
+        <button class="btn btn-primary" type="submit" style="padding: 0 28px; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), background 200ms ease;" style-hover="transform: scale(1.045); background: var(--color-accent-100);" style-active="transform: scale(0.95);">Search</button>
       </form>
       <div style="margin-top: 14px; display: flex; gap: 22px; flex-wrap: wrap; font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">
         <span>Boolean operators supported: <em>AND</em>, <em>OR</em>, <em>NOT</em>, "exact phrase"</span>
@@ -73,8 +80,10 @@
       <p style="margin: 22px 0 10px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Field</p>
       <div style="display: flex; flex-direction: column; gap: 9px;">
         <sc-for list="{{ fields }}" as="f" hint-placeholder-count="5">
-          <label style="display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 9px; align-items: baseline; font-size: 13.5px; line-height: 1.35; cursor: pointer; color: var(--color-text);">
-            <input type="checkbox" checked="{{ f.on }}" onChange="{{ f.toggle }}" style="accent-color: var(--color-accent); width: 14px; height: 14px; margin: 0;">
+          <label style="display: grid; grid-template-columns: 17px minmax(0, 1fr) auto; gap: 9px; align-items: center; font-size: 13.5px; line-height: 1.35; cursor: pointer; color: var(--color-text);" onClick="{{ f.toggle }}">
+            <span style="width: 15px; height: 15px; border-radius: 4px; border: 1.5px solid {{ f.checkBorder }}; display: inline-flex; align-items: center; justify-content: center; background: {{ f.checkBg }}; transition: background 200ms ease, border-color 200ms ease;">
+              <svg width="8" height="6" viewBox="0 0 9 7" fill="none" style="opacity: {{ f.checkOpacity }}; transform: {{ f.checkScale }}; transition: opacity 180ms ease, transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);"><path d="M1 3.2L3.3 5.5L8 1" stroke="var(--color-bg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
             <span>{{ f.name }}</span>
             <span style="font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 70%, transparent); font-feature-settings: 'tnum';">{{ f.count }}</span>
           </label>
@@ -84,8 +93,10 @@
       <p style="margin: 26px 0 10px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Document type</p>
       <div style="display: flex; flex-direction: column; gap: 9px;">
         <sc-for list="{{ types }}" as="t" hint-placeholder-count="5">
-          <label style="display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 9px; align-items: baseline; font-size: 13.5px; line-height: 1.35; cursor: pointer; color: var(--color-text);">
-            <input type="checkbox" checked="{{ t.on }}" onChange="{{ t.toggle }}" style="accent-color: var(--color-accent); width: 14px; height: 14px; margin: 0;">
+          <label style="display: grid; grid-template-columns: 17px minmax(0, 1fr) auto; gap: 9px; align-items: center; font-size: 13.5px; line-height: 1.35; cursor: pointer; color: var(--color-text);" onClick="{{ t.toggle }}">
+            <span style="width: 15px; height: 15px; border-radius: 4px; border: 1.5px solid {{ t.checkBorder }}; display: inline-flex; align-items: center; justify-content: center; background: {{ t.checkBg }}; transition: background 200ms ease, border-color 200ms ease;">
+              <svg width="8" height="6" viewBox="0 0 9 7" fill="none" style="opacity: {{ t.checkOpacity }}; transform: {{ t.checkScale }}; transition: opacity 180ms ease, transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);"><path d="M1 3.2L3.3 5.5L8 1" stroke="var(--color-bg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
             <span>{{ t.name }}</span>
             <span style="font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 70%, transparent); font-feature-settings: 'tnum';">{{ t.count }}</span>
           </label>
@@ -95,8 +106,10 @@
       <p style="margin: 26px 0 10px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Published</p>
       <div style="display: flex; flex-direction: column; gap: 9px;">
         <sc-for list="{{ eras }}" as="e" hint-placeholder-count="4">
-          <label style="display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 9px; align-items: baseline; font-size: 13.5px; line-height: 1.35; cursor: pointer; color: var(--color-text); font-feature-settings: 'tnum';">
-            <input type="checkbox" checked="{{ e.on }}" onChange="{{ e.toggle }}" style="accent-color: var(--color-accent); width: 14px; height: 14px; margin: 0;">
+          <label style="display: grid; grid-template-columns: 17px minmax(0, 1fr) auto; gap: 9px; align-items: center; font-size: 13.5px; line-height: 1.35; cursor: pointer; color: var(--color-text); font-feature-settings: 'tnum';" onClick="{{ e.toggle }}">
+            <span style="width: 15px; height: 15px; border-radius: 4px; border: 1.5px solid {{ e.checkBorder }}; display: inline-flex; align-items: center; justify-content: center; background: {{ e.checkBg }}; transition: background 200ms ease, border-color 200ms ease;">
+              <svg width="8" height="6" viewBox="0 0 9 7" fill="none" style="opacity: {{ e.checkOpacity }}; transform: {{ e.checkScale }}; transition: opacity 180ms ease, transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);"><path d="M1 3.2L3.3 5.5L8 1" stroke="var(--color-bg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
             <span>{{ e.name }}</span>
             <span style="font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">{{ e.count }}</span>
           </label>
@@ -107,10 +120,10 @@
       <div style="display: flex; flex-wrap: wrap; gap: 7px;">
         <sc-for list="{{ tags }}" as="tg" hint-placeholder-count="12">
           <sc-if value="{{ tg.on }}" hint-placeholder-val="{{ false }}">
-            <button type="button" onClick="{{ tg.toggle }}" style="font-family: var(--font-body); font-size: 11.5px; letter-spacing: 0.02em; padding: 5px 11px; cursor: pointer; border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-accent-100); color: var(--color-accent-800);">{{ tg.label }}</button>
+            <button type="button" onClick="{{ tg.toggle }}" style="font-family: var(--font-body); font-size: 11.5px; letter-spacing: 0.02em; padding: 5px 11px; cursor: pointer; border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-accent-100); color: var(--color-accent-800); animation: ccChipPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both; transition: transform 150ms ease;" style-active="transform: scale(0.92);">{{ tg.label }}</button>
           </sc-if>
           <sc-if value="{{ tg.off }}" hint-placeholder-val="{{ true }}">
-            <button type="button" onClick="{{ tg.toggle }}" style="font-family: var(--font-body); font-size: 11.5px; letter-spacing: 0.02em; padding: 5px 11px; cursor: pointer; border: 1px solid var(--color-divider); border-radius: var(--radius-md); background: transparent; color: color-mix(in srgb, var(--color-text) 78%, transparent);" style-hover="border-color: var(--color-accent); color: var(--color-accent-800);">{{ tg.label }}</button>
+            <button type="button" onClick="{{ tg.toggle }}" style="font-family: var(--font-body); font-size: 11.5px; letter-spacing: 0.02em; padding: 5px 11px; cursor: pointer; border: 1px solid var(--color-divider); border-radius: var(--radius-md); background: transparent; color: color-mix(in srgb, var(--color-text) 78%, transparent); transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 200ms ease, color 200ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); transform: scale(1.06);" style-active="transform: scale(0.92);">{{ tg.label }}</button>
           </sc-if>
         </sc-for>
       </div>
@@ -124,7 +137,7 @@
           <div class="seg">
             <sc-for list="{{ sorts }}" as="s" hint-placeholder-count="3">
               <sc-if value="{{ s.on }}" hint-placeholder-val="{{ false }}">
-                <button type="button" class="seg-opt" onClick="{{ s.pick }}" style="font-size: 12px; padding: 7px 13px; background: var(--color-accent-100); color: var(--color-accent-800); border: 0; cursor: pointer;">{{ s.name }}</button>
+                <button type="button" class="seg-opt" onClick="{{ s.pick }}" style="font-size: 12px; padding: 7px 13px; background: var(--color-accent); color: var(--color-bg); font-weight: 600; border: 0; cursor: pointer; box-shadow: var(--shadow-sm);">{{ s.name }}</button>
               </sc-if>
               <sc-if value="{{ s.off }}" hint-placeholder-val="{{ true }}">
                 <button type="button" class="seg-opt" onClick="{{ s.pick }}" style="font-size: 12px; padding: 7px 13px; background: transparent; color: var(--color-text); border: 0; cursor: pointer;" style-hover="background: color-mix(in srgb, var(--color-accent) 10%, transparent);">{{ s.name }}</button>
@@ -136,8 +149,8 @@
 
       <div style="display: flex; flex-direction: column;">
         <sc-for list="{{ results }}" as="r" hint-placeholder-count="6">
-          <article style="padding: 26px 0; border-bottom: 1px solid var(--color-divider); display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 22px; align-items: start;">
-            <span style="font-family: var(--font-heading); font-size: 20px; line-height: 1.1; color: color-mix(in srgb, var(--color-text) 70%, transparent); font-feature-settings: 'tnum'; padding-top: 3px;">{{ r.year }}</span>
+          <article style="padding: 30px 0; border-bottom: 1px solid var(--color-divider); display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 26px; align-items: start;">
+            <div class="plate cc-thumb-wrap" style="aspect-ratio: 1; overflow: hidden;"><image-slot id="{{ r.thumbId }}" shape="rect" placeholder="Article image" style="width: 100%; height: 100%; display: block;"></image-slot></div>
             <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0;">
               <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                 <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">{{ r.type }}</span>
@@ -147,7 +160,7 @@
                   <span class="tag tag-outline" style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;">Open</span>
                 </sc-if>
               </div>
-              <h3 style="margin: 0; font-size: 23px; line-height: 1.2; letter-spacing: -0.015em;"><a href="{{ r.href }}" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">{{ r.title }}</a></h3>
+              <h3 style="margin: 0; font-size: 23px; line-height: 1.2; letter-spacing: -0.015em;"><a href="{{ r.href }}" style="color: var(--color-text); background-image: linear-gradient(var(--color-accent-700), var(--color-accent-700)); background-repeat: no-repeat; background-position: left 100%; background-size: 0% 2px; padding-bottom: 1px; transition: background-size 340ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms ease;" style-hover="color: var(--color-accent-800); background-size: 100% 2px;">{{ r.title }}</a></h3>
               <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">{{ r.author }}</p>
               <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 76%, transparent); text-wrap: pretty;">{{ r.snippet }}</p>
               <div style="display: flex; gap: 7px; margin-top: 6px; flex-wrap: wrap;">
@@ -251,6 +264,7 @@ const FIELDS = ["Modern & Contemporary Art", "Art History & Museums", "Cinema & 
 const TYPES = ["Essay", "Interview", "Review", "Book review", "Archive paper"];
 const ERAS = ["2020s", "2010s", "Pre-1970"];
 const SORTS = [{ k: "relevance", n: "Relevance" }, { k: "newest", n: "Newest" }, { k: "oldest", n: "Oldest" }];
+const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "").slice(0, 40);
 
 class Component extends DCLogic {
   state = (() => {
@@ -292,12 +306,19 @@ class Component extends DCLogic {
     if (s.sort === "newest") results = results.slice().sort((a, b) => b.year - a.year);
     if (s.sort === "oldest") results = results.slice().sort((a, b) => a.year - b.year);
 
-    const facet = (key, names, prop) => names.map(name => ({
-      name,
-      on: s[key].includes(name),
-      count: DOCS.filter(d => d[prop] === name && this.matches(d, key)).length,
-      toggle: () => this.toggle(key, name)
-    }));
+    const facet = (key, names, prop) => names.map(name => {
+      const on = s[key].includes(name);
+      return {
+        name,
+        on,
+        checkBg: on ? "var(--color-accent)" : "transparent",
+        checkBorder: on ? "var(--color-accent)" : "var(--color-divider)",
+        checkOpacity: on ? 1 : 0,
+        checkScale: on ? "scale(1)" : "scale(0.4)",
+        count: DOCS.filter(d => d[prop] === name && this.matches(d, key)).length,
+        toggle: () => this.toggle(key, name)
+      };
+    });
 
     const total = DOCS.length;
     return {
@@ -315,7 +336,7 @@ class Component extends DCLogic {
         toggle: () => this.toggle("tags", name)
       })),
       sorts: SORTS.map(o => ({ name: o.n, on: s.sort === o.k, off: s.sort !== o.k, pick: () => this.setState({ sort: o.k }) })),
-      results: results.map(d => ({ ...d, isOpen: d.open, href: d.title === "Satish Sharma: Thinking through a Politics of Representation" ? "article.html" : "#" })),
+      results: results.map((d, i) => ({ ...d, isOpen: d.open, thumbId: "search-" + slugify(d.title), href: d.title === "Satish Sharma: Thinking through a Politics of Representation" ? "article.html" : "#", delay: (Math.min(i, 8) * 0.06) + "s" })),
       resultLabel: results.length === total
         ? total + " documents in the archive"
         : results.length + " of " + total + " documents",
