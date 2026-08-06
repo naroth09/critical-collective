@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;
+    --color-surface: #e5dbcc;
+    --color-text: #000000;
+    --color-divider: #cdc3b3;
+    --color-accent: #b8962e;
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  .card-kicker { color: var(--color-accent-800); }
+  .btn-primary:hover, .btn-secondary:hover, .btn-ghost:hover { color: var(--color-accent-800); }
+  body { margin: 0; background: var(--color-bg); }
+  @keyframes cc-wave { 0%, 100% { transform: scaleY(0.32); } 50% { transform: scaleY(1); } }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  ::selection { background: var(--color-accent-100); }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#f3f2f2">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f3f2f2"></rect>
+    <text x="200" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#201f1d">CC</text>
+    <rect x="120" y="182" width="160" height="2" fill="#b68235"></rect>
+  </svg>
+</template>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; overflow-x: clip;">
+
+  <div style="position: sticky; top: 0; z-index: 40;"><dc-import name="CC Header" active="artists" hint-size="100%,132px"></dc-import></div>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 32px;">
+
+    <nav style="display: flex; align-items: center; gap: 10px; padding: 40px 0 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;">
+      <a href="artists.html" style="color: color-mix(in srgb, var(--color-text) 58%, transparent);" style-hover="color: var(--color-accent-800);">Artists</a>
+      <span style="color: color-mix(in srgb, var(--color-text) 32%, transparent);">/</span>
+      <span style="color: var(--color-text);">A Ramachandran</span>
+    </nav>
+
+    <header style="padding: 58px 0 42px;">
+      <div style="margin-bottom: 46px;">
+        <h1 id="cc-artist-name" style="margin: 0 0 22px; font-size: 96px; line-height: 1; white-space: nowrap; letter-spacing: -0.028em; font-weight: 400; display: block; max-width: 100%;">A Ramachandran</h1>
+        <p style="margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 66%, transparent);">1935–2024 <span style="color: var(--color-accent); padding: 0 6px;">·</span> Painter <span style="color: var(--color-accent); padding: 0 6px;">·</span> Kerala-born, Delhi-based</p>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start;">
+        <div style="border-top: 1px solid var(--color-divider); padding-top: 14px;"><span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Biography</span></div>
+        <div>
+        <div id="cc-article-body">
+          <p style="margin: 0; font-size: 19px; line-height: 1.66; max-width: 34em; text-wrap: pretty; color: color-mix(in srgb, var(--color-text) 88%, transparent);">A Delhi-based painter who held numerous solo and group exhibitions across India and internationally. He was awarded the Padma Bhushan by the Government of India in 2005. Alongside his painting, he wrote and illustrated children’s books published in India, Japan, England and the USA, which won international recognition.</p>
+        </div>
+        <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" style="margin-top: 22px; display: inline-flex; align-items: center; gap: 11px; padding: 9px 18px 9px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
+          <sc-if value="{{ isIdle }}" hint-placeholder-val="{{ true }}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 10v4"></path><path d="M9 6.5v11"></path><path d="M13 4v16"></path><path d="M17 8v8"></path><path d="M21 10.5v3"></path></svg>
+          </sc-if>
+          <sc-if value="{{ isSpeaking }}" hint-placeholder-val="{{ false }}">
+            <span style="display: inline-flex; align-items: center; gap: 2.5px; height: 15px; color: var(--color-accent-800);">
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out infinite; transform-origin: center;"></span>
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out 150ms infinite; transform-origin: center;"></span>
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out 300ms infinite; transform-origin: center;"></span>
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out 450ms infinite; transform-origin: center;"></span>
+            </span>
+          </sc-if>
+          {{ speechLabel }}
+        </button>
+        </div>
+      </div>
+    </header>
+
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;">Works</h2>
+      <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 48%, transparent);">Three plates · click to enlarge · captions to be supplied</span>
+    </div>
+
+    <section style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; padding: 48px 0 24px; align-items: start;">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 20px; min-width: 0;">
+        <button type="button" onClick="{{ openPlate1 }}" aria-label="Enlarge Plate I" style="display: block; width: 100%; padding: 0; border: 0; background: transparent; font: inherit; color: inherit; cursor: zoom-in;">
+          <span class="plate" style="display: block; overflow: hidden; aspect-ratio: 4 / 5;"><img src="assets/plate-1-seated-figure.jpg" alt="Seated figure among lilies" style="width: 100%; height: 100%; object-fit: cover; display: block;"></span>
+        </button>
+        <figcaption style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Plate I</span>
+          <dl style="margin: 0; display: grid; grid-template-columns: 74px minmax(0, 1fr); column-gap: 16px; row-gap: 11px; font-size: 12.5px; line-height: 1.5;">
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Subject</dt>
+            <dd style="margin: 0; font-family: var(--font-heading); font-size: 16px; line-height: 1.28; letter-spacing: -0.01em;">Seated figure among lilies</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Title</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Year</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent); font-feature-settings: 'tnum';">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Medium</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Collection</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+          </dl>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 20px; min-width: 0;">
+        <button type="button" onClick="{{ openPlate2 }}" aria-label="Enlarge Plate II" style="display: block; width: 100%; padding: 0; border: 0; background: transparent; font: inherit; color: inherit; cursor: zoom-in;">
+          <span class="plate" style="display: block; overflow: hidden; aspect-ratio: 4 / 5;"><img src="assets/plate-2-lilies.jpg" alt="Figure seated among day lilies" style="width: 100%; height: 100%; object-fit: cover; display: block;"></span>
+        </button>
+        <figcaption style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Plate II</span>
+          <dl style="margin: 0; display: grid; grid-template-columns: 74px minmax(0, 1fr); column-gap: 16px; row-gap: 11px; font-size: 12.5px; line-height: 1.5;">
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Subject</dt>
+            <dd style="margin: 0; font-family: var(--font-heading); font-size: 16px; line-height: 1.28; letter-spacing: -0.01em;">Figure seated among day lilies</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Title</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Year</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent); font-feature-settings: 'tnum';">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Medium</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Collection</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+          </dl>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 20px; min-width: 0;">
+        <button type="button" onClick="{{ openPlate3 }}" aria-label="Enlarge Plate III" style="display: block; width: 100%; padding: 0; border: 0; background: transparent; font: inherit; color: inherit; cursor: zoom-in;">
+          <span class="plate" style="display: block; overflow: hidden; aspect-ratio: 4 / 5;"><img src="assets/plate-3-peacocks.jpg" alt="Two figures with peacocks in a hill landscape" style="width: 100%; height: 100%; object-fit: cover; display: block;"></span>
+        </button>
+        <figcaption style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Plate III</span>
+          <dl style="margin: 0; display: grid; grid-template-columns: 74px minmax(0, 1fr); column-gap: 16px; row-gap: 11px; font-size: 12.5px; line-height: 1.5;">
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Subject</dt>
+            <dd style="margin: 0; font-family: var(--font-heading); font-size: 16px; line-height: 1.28; letter-spacing: -0.01em;">Two figures with peacocks in a hill landscape</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Title</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Year</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent); font-feature-settings: 'tnum';">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Medium</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+            <dt style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent);">Collection</dt>
+            <dd style="margin: 0; color: color-mix(in srgb, var(--color-text) 42%, transparent);">Not recorded</dd>
+          </dl>
+        </figcaption>
+      </figure>
+    </section>
+
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 70px;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;">Essays on this artist</h2>
+    </div>
+
+    <section style="padding-bottom: 8px;">
+      <a href="#" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) 170px; gap: 40px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 6%, transparent);">
+        <span style="font-family: var(--font-heading); font-size: 27px; line-height: 1.16; letter-spacing: -0.015em;">A. Ramachandran (1935–2024): The End of an Era</span>
+        <span style="font-size: 14px; font-style: italic; color: color-mix(in srgb, var(--color-text) 64%, transparent);">Gayatri Sinha and Umara Zainab</span>
+        <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); text-align: right;">Obituary</span>
+      </a>
+      <a href="#" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) 170px; gap: 40px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 6%, transparent);">
+        <span style="font-family: var(--font-heading); font-size: 27px; line-height: 1.16; letter-spacing: -0.015em;">Interview With A Ramachandran</span>
+        <span style="font-size: 14px; font-style: italic; color: color-mix(in srgb, var(--color-text) 64%, transparent);">Manisha Gera Baswani</span>
+        <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); text-align: right;">Interview</span>
+      </a>
+      <a href="#" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) 170px; gap: 40px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 6%, transparent);">
+        <span style="font-family: var(--font-heading); font-size: 27px; line-height: 1.16; letter-spacing: -0.015em;">A. Ramachandran</span>
+        <span style="font-size: 14px; font-style: italic; color: color-mix(in srgb, var(--color-text) 64%, transparent);">Ella Datta</span>
+        <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); text-align: right;">Essay</span>
+      </a>
+      <a href="#" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) 170px; gap: 40px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 6%, transparent);">
+        <span style="font-family: var(--font-heading); font-size: 27px; line-height: 1.16; letter-spacing: -0.015em;">A. Ramachandran: A Retrospective</span>
+        <span style="font-size: 14px; font-style: italic; color: color-mix(in srgb, var(--color-text) 64%, transparent);">R Siva Kumar</span>
+        <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); text-align: right;">Exhibition review</span>
+      </a>
+    </section>
+
+    <section style="margin-top: 76px;">
+
+      <div>
+        <p style="margin: 0 0 20px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Also written about by</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px 26px;">
+          <a href="author.html" style="font-family: var(--font-heading); font-size: 20px; letter-spacing: -0.01em; color: var(--color-text); border-bottom: 1px solid var(--color-divider); padding-bottom: 2px;" style-hover="color: var(--color-accent-800); border-bottom-color: var(--color-accent);">Gayatri Sinha</a>
+          <a href="#" style="font-family: var(--font-heading); font-size: 20px; letter-spacing: -0.01em; color: var(--color-text); border-bottom: 1px solid var(--color-divider); padding-bottom: 2px;" style-hover="color: var(--color-accent-800); border-bottom-color: var(--color-accent);">Manisha Gera Baswani</a>
+          <a href="#" style="font-family: var(--font-heading); font-size: 20px; letter-spacing: -0.01em; color: var(--color-text); border-bottom: 1px solid var(--color-divider); padding-bottom: 2px;" style-hover="color: var(--color-accent-800); border-bottom-color: var(--color-accent);">Ella Datta</a>
+          <a href="#" style="font-family: var(--font-heading); font-size: 20px; letter-spacing: -0.01em; color: var(--color-text); border-bottom: 1px solid var(--color-divider); padding-bottom: 2px;" style-hover="color: var(--color-accent-800); border-bottom-color: var(--color-accent);">R Siva Kumar</a>
+        </div>
+      </div>
+
+    </section>
+
+    <div style="height: 96px;"></div>
+
+  </main>
+
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position: fixed; inset: 0; z-index: 90; background: color-mix(in srgb, var(--color-neutral-900) 95%, transparent); display: grid; grid-template-rows: auto minmax(0, 1fr) auto;">
+
+      <div onClick="{{ stop }}" style="display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 22px 30px;">
+        <span style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">{{ activePlate }}</span>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button type="button" onClick="{{ zoomOut }}" aria-label="Zoom out" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: #efe8dd; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M8 11h6"></path><path d="m20 20-3.6-3.6"></path></svg>
+          </button>
+          <span style="min-width: 62px; text-align: center; font-size: 10px; letter-spacing: 0.2em; color: rgba(239, 232, 221, 0.72); font-feature-settings: 'tnum';">{{ zoomPercent }}</span>
+          <button type="button" onClick="{{ zoomIn }}" aria-label="Zoom in" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: #efe8dd; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M11 8v6"></path><path d="M8 11h6"></path><path d="m20 20-3.6-3.6"></path></svg>
+          </button>
+          <button type="button" onClick="{{ resetZoom }}" style="margin-left: 6px; padding: 8px 14px; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: rgba(239, 232, 221, 0.82); font-family: var(--font-body); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">Fit</button>
+          <button type="button" onClick="{{ closeLightbox }}" aria-label="Close" style="margin-left: 12px; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: #efe8dd; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <div onClick="{{ stop }}" onWheel="{{ onStageWheel }}" onMouseDown="{{ onDragStart }}" onDoubleClick="{{ toggleZoom }}" style="display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0 30px;">
+        <img ref="{{ zoomImgRef }}" alt="{{ activeAlt }}" draggable="{{ false }}" style="{{ zoomedImgStyle }}">
+      </div>
+
+      <div onClick="{{ stop }}" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; gap: 24px; align-items: center; padding: 18px 30px 28px;">
+        <button type="button" onClick="{{ prevWork }}" style="justify-self: start; padding: 0; border: 0; background: transparent; color: rgba(239, 232, 221, 0.7); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="color: var(--color-accent-300);">← Previous</button>
+        <span style="text-align: center; font-family: var(--font-heading); font-size: 17px; font-style: italic; color: rgba(239, 232, 221, 0.86);">{{ activeCaption }}</span>
+        <button type="button" onClick="{{ nextWork }}" style="justify-self: end; padding: 0; border: 0; background: transparent; color: rgba(239, 232, 221, 0.7); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="color: var(--color-accent-300);">Next →</button>
+      </div>
+
+    </div>
+  </sc-if>
+
+  <dc-import name="CC Footer" hint-size="100%,220px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { speaking: false, open: false, i: 0, scale: 1, tx: 0, ty: 0 };
+  works = [
+    { plate: "Plate I", src: "assets/plate-1-seated-figure.jpg", alt: "Seated figure among lilies" },
+    { plate: "Plate II", src: "assets/plate-2-lilies.jpg", alt: "Figure seated among day lilies" },
+    { plate: "Plate III", src: "assets/plate-3-peacocks.jpg", alt: "Two figures with peacocks in a hill landscape" }
+  ];
+  openAt = (i) => { document.body.style.overflow = "hidden"; this.setState({ open: true, i, scale: 1, tx: 0, ty: 0 }); };
+  close = () => { document.body.style.overflow = ""; this.setState({ open: false, scale: 1, tx: 0, ty: 0 }); };
+  step = (d) => this.setState(st => ({ i: (st.i + d + this.works.length) % this.works.length, scale: 1, tx: 0, ty: 0 }));
+  setScale = (next) => this.setState(st => {
+    const s2 = Math.min(6, Math.max(1, next));
+    return s2 === 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: s2 };
+  });
+  renderVals() {
+    const { scale, tx, ty, i } = this.state;
+    const w = this.works[i] || this.works[0];
+    return {
+      openPlate1: () => this.openAt(0),
+      openPlate2: () => this.openAt(1),
+      openPlate3: () => this.openAt(2),
+      zoomImgRef: (node) => { if (node && node.getAttribute("src") !== w.src) node.setAttribute("src", w.src); },
+      lightboxOpen: !!this.state.open,
+      activePlate: w.plate,
+      activeAlt: w.alt,
+      activeCaption: w.alt,
+      zoomPercent: Math.round(scale * 100) + "%",
+      zoomedImgStyle: {
+        maxWidth: "88vw",
+        maxHeight: "72vh",
+        display: "block",
+        userSelect: "none",
+        transform: "translate(" + tx + "px, " + ty + "px) scale(" + scale + ")",
+        transformOrigin: "center center",
+        transition: this._dragging ? "none" : "transform 170ms ease",
+        cursor: scale > 1 ? "grab" : "zoom-in"
+      },
+      stop: (e) => e.stopPropagation(),
+      closeLightbox: this.close,
+      zoomIn: (e) => { e.stopPropagation(); this.setScale(this.state.scale * 1.4); },
+      zoomOut: (e) => { e.stopPropagation(); this.setScale(this.state.scale / 1.4); },
+      resetZoom: (e) => { e.stopPropagation(); this.setScale(1); },
+      toggleZoom: (e) => { e.stopPropagation(); this.setScale(scale > 1 ? 1 : 2.4); },
+      prevWork: (e) => { e.stopPropagation(); this.step(-1); },
+      nextWork: (e) => { e.stopPropagation(); this.step(1); },
+      onStageWheel: (e) => { e.preventDefault(); this.setScale(this.state.scale * (e.deltaY < 0 ? 1.12 : 1 / 1.12)); },
+      onDragStart: (e) => {
+        if (this.state.scale <= 1) return;
+        e.preventDefault();
+        const sx = e.clientX, sy = e.clientY, ox = this.state.tx, oy = this.state.ty;
+        this._dragging = true;
+        const move = (ev) => this.setState({ tx: ox + (ev.clientX - sx), ty: oy + (ev.clientY - sy) });
+        const up = () => { this._dragging = false; window.removeEventListener("mousemove", move); window.removeEventListener("mouseup", up); };
+        window.addEventListener("mousemove", move);
+        window.addEventListener("mouseup", up);
+      },
+      isIdle: !this.state.speaking,
+      isSpeaking: !!this.state.speaking,
+      speechLabel: this.state.speaking ? "Stop" : "Listen to this article",
+      toggleSpeech: () => {
+        const synth = window.speechSynthesis;
+        if (!synth) return;
+        if (this.state.speaking) { synth.cancel(); this.setState({ speaking: false }); return; }
+        const root = document.getElementById("cc-article-body");
+        const text = ((root && root.innerText) || "").replace(/\s+/g, " ").trim();
+        if (!text) return;
+        const u = new SpeechSynthesisUtterance(text.slice(0, 30000));
+        u.rate = 0.96;
+        u.onend = () => this.setState({ speaking: false });
+        u.onerror = () => this.setState({ speaking: false });
+        synth.cancel();
+        synth.speak(u);
+        this.setState({ speaking: true });
+      }
+    };
+  }
+  componentDidMount() {
+    this._fit = () => {
+      const el = document.getElementById("cc-artist-name");
+      if (!el || !el.parentElement) return;
+      const avail = el.parentElement.clientWidth;
+      if (!avail) return;
+      el.style.fontSize = "96px";
+      const natural = el.scrollWidth;
+      if (natural > avail) el.style.fontSize = Math.max(30, Math.floor(96 * (avail / natural)) - 1) + "px";
+    };
+    this._fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._fit);
+    setTimeout(this._fit, 400);
+    window.addEventListener("resize", this._fit);
+    this._keys = (e) => {
+      if (!this.state.open) return;
+      if (e.key === "Escape") this.close();
+      else if (e.key === "ArrowRight") this.step(1);
+      else if (e.key === "ArrowLeft") this.step(-1);
+      else if (e.key === "+" || e.key === "=") this.setScale(this.state.scale * 1.4);
+      else if (e.key === "-") this.setScale(this.state.scale / 1.4);
+    };
+    window.addEventListener("keydown", this._keys);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._fit);
+    window.removeEventListener("keydown", this._keys);
+    document.body.style.overflow = "";
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+  }
+}
+</script>
+</body>
+</html>
