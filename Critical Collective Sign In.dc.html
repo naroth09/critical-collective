@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;            /* warm beige ground, between MIST and EARTH */
+    --color-surface: #e5dbcc;       /* deeper beige — section alternates, hovers */
+    --color-text: #000000;          /* BLACK  — body, headings, rules */
+    --color-divider: #cdc3b3;       /* STONE, warmed — borders and hairlines */
+    --color-accent: #b8962e;        /* EDITORIAL GOLD — labels, active states */
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  .card-kicker { color: var(--color-accent-800); }
+  .btn-primary:hover, .btn-secondary:hover, .btn-ghost:hover { color: var(--color-accent-800); }
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-800); }
+  ::selection { background: var(--color-accent-100); }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#efe8dd">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#efe8dd"></rect>
+    <text x="200" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#000000">CC</text>
+    <rect x="120" y="182" width="160" height="2" fill="#b8962e"></rect>
+  </svg>
+</template>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header style="border-bottom: 1px solid var(--color-divider);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="Critical%20Collective%20Home.dc.html" style="display: block;"><img src="assets/cc-logo.png" alt="Critical Collective" style="height: 34px; width: auto; display: block;"></a>
+      <a href="Critical%20Collective%20Home.dc.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 58%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">← Back to the front page</a>
+    </div>
+  </header>
+
+  <main style="flex: 1 1 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: stretch;">
+
+    <section style="display: flex; align-items: flex-start; justify-content: center; padding: 76px 40px 96px;">
+      <div style="width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 26px;">
+        <div>
+          <p style="margin: 0 0 16px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Members</p>
+          <h1 style="margin: 0 0 10px; font-size: 46px; line-height: 1.04; letter-spacing: -0.02em;">Sign in</h1>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Read the full archive — essays, conversations and the reference collections.</p>
+        </div>
+
+        <form style="display: flex; flex-direction: column; gap: 18px;" onSubmit="{{ submit }}">
+          <label class="field" style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Username</span>
+            <input class="input" type="text" name="username" autoComplete="username" placeholder="your.name" style="width: 100%; padding: 13px 14px; font-size: 15px;">
+          </label>
+          <label class="field" style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Password</span>
+            <input class="input" type="password" name="password" autoComplete="current-password" placeholder="••••••••" style="width: 100%; padding: 13px 14px; font-size: 15px;">
+          </label>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 70%, transparent); cursor: pointer;">
+              <input type="checkbox" style="accent-color: var(--color-accent); width: 15px; height: 15px;">Keep me signed in
+            </label>
+            <a href="#" style="font-size: 13px;">Forgotten password?</a>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width: 100%; padding: 14px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;">Sign in</button>
+        </form>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 13px; line-height: 1.5; color: var(--color-accent-800); border-left: 2px solid var(--color-accent); padding-left: 12px;">This is a design prototype — no account is checked. Wire this form to the live sign-in service.</p>
+        </sc-if>
+
+        <p style="margin: 0; padding-top: 20px; border-top: 1px solid var(--color-divider); font-size: 13.5px; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Not a member yet? <a href="#plans" style="border-bottom: 1px solid var(--color-accent);">Choose a plan</a> — new subscriptions take a minute.</p>
+      </div>
+    </section>
+
+    <section id="plans" style="background: var(--color-surface); border-left: 1px solid var(--color-divider); display: flex; align-items: flex-start; padding: 76px 56px 96px;">
+      <div style="width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 22px;">
+        <div>
+          <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Subscribe</p>
+          <h2 style="margin: 0 0 8px; font-size: 34px; line-height: 1.08; letter-spacing: -0.02em;">Three tiers, one archive</h2>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Annual membership. Every tier keeps the whole archive open; the difference is how much of the collections and print you take with you.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <a href="#" style="display: grid; grid-template-columns: 78px minmax(0, 1fr) auto; gap: 18px; align-items: baseline; padding: 22px 4px; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 9%, transparent);">
+            <span style="font-family: var(--font-heading); font-size: 22px; letter-spacing: 0.02em;">CC 1</span>
+            <span style="font-size: 13.5px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Full archive and the monthly newsletter.</span>
+            <span style="font-family: var(--font-heading); font-size: 28px; font-feature-settings: 'tnum'; white-space: nowrap;">$50</span>
+          </a>
+          <a href="#" style="display: grid; grid-template-columns: 78px minmax(0, 1fr) auto; gap: 18px; align-items: baseline; padding: 22px 4px; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 9%, transparent);">
+            <span style="font-family: var(--font-heading); font-size: 22px; letter-spacing: 0.02em;">CC 2</span>
+            <span style="font-size: 13.5px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Adds CC Books, CC Reference and the full-text aesthetics theory papers.</span>
+            <span style="font-family: var(--font-heading); font-size: 28px; font-feature-settings: 'tnum'; white-space: nowrap;">$75</span>
+          </a>
+          <a href="#" style="display: grid; grid-template-columns: 78px minmax(0, 1fr) auto; gap: 18px; align-items: baseline; padding: 22px 4px; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 9%, transparent);">
+            <span style="font-family: var(--font-heading); font-size: 22px; letter-spacing: 0.02em;">CC 3</span>
+            <span style="font-size: 13.5px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Everything, plus the print annual and invitations to CC events.</span>
+            <span style="font-family: var(--font-heading); font-size: 28px; font-feature-settings: 'tnum'; white-space: nowrap;">$100</span>
+          </a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <a href="#" class="btn btn-primary" style="padding: 13px 22px; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;">Sign up</a>
+          <span style="font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Cancel any time · prices in USD</span>
+        </div>
+
+        <p style="margin: 0; padding: 18px 20px; border: 1px solid var(--color-divider); border-left: 2px solid var(--color-accent); border-radius: var(--radius-md); font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Libraries, universities and museums — for institutional plans email <a href="mailto:institutions@criticalcollective.in" style="border-bottom: 1px solid var(--color-accent);">institutions@criticalcollective.in</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="CC Footer" hint-size="100%,220px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      submit: (e) => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

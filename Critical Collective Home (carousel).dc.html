@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;            /* warm beige ground, between MIST and EARTH */
+    --color-surface: #e5dbcc;       /* deeper beige — section alternates, hovers */
+    --color-text: #000000;          /* BLACK  — body, headings, rules */
+    --color-divider: #cdc3b3;       /* STONE, warmed — borders and hairlines */
+    --color-accent: #b8962e;        /* EDITORIAL GOLD — labels, active states */
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  .card-kicker { color: var(--color-accent-800); }
+  .btn-primary:hover, .btn-secondary:hover, .btn-ghost:hover { color: var(--color-accent-800); }
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  ::selection { background: var(--color-accent-100); }
+  @keyframes cc-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .cc-ticker:hover > div { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) { .cc-ticker > div { animation: none; } }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#f3f2f2">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f3f2f2"></rect>
+    <text x="200" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#201f1d">CC</text>
+    <rect x="120" y="182" width="160" height="2" fill="#b68235"></rect>
+  </svg>
+</template>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; overflow-x: clip;">
+
+  <div style="position: sticky; top: 0; z-index: 40;"><dc-import name="CC Header" hint-size="100%,132px"></dc-import></div>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 32px;">
+
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 46px 0 22px; flex-wrap: wrap;">
+      <p style="margin: 0; font-family: var(--font-heading); font-size: 25px; letter-spacing: -0.015em; line-height: 1.2; white-space: nowrap;">Writing on art, image and idea from India and its neighbours.</p>
+      <a href="Critical%20Collective%20Newsletters.dc.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); white-space: nowrap;" style-hover="color: var(--color-accent-700);">Read the newsletter →</a>
+    </div>
+
+    <section style="width: 100vw; margin-left: calc(50% - 50vw); position: relative; overflow: hidden; background: var(--color-neutral-900); height: clamp(440px, 54vw, 660px);">
+      <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ true }}">
+        <a href="#" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
+          <img src="assets/hero-parliament-of-ghosts.webp" alt="Ibrahim Mahama in conversation inside Parliament of Ghosts, Anand Warehouse, Mattancherry" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Curators</span>
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.02em; max-width: 16em;">The Sixth Kochi-Muziris Biennale: A Rising Tide</span>
+            <span style="font-size: 14px; font-style: italic; color: rgba(244,242,236,0.78);">Gayatri Sinha · Ibrahim Mahama at <em>Parliament of Ghosts</em>, Anand Warehouse, Mattancherry</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ false }}">
+        <a href="#" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
+          <img src="assets/hero-ebrahim-alkazi.webp" alt="Ebrahim Alkazi addressing a gathering" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Conversations</span>
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.02em; max-width: 16em;">Ebrahim Alkazi’s Vision for the Arts</span>
+            <span style="font-size: 14px; font-style: italic; color: rgba(244,242,236,0.78);">Gayatri Sinha, with Neelam Mansingh Chowdhry and Parul Dave Mukerji</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}">
+        <a href="Critical%20Collective%20Article.dc.html" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
+          <img src="assets/satish/fig-01.jpg" alt="Photograph by Satish Sharma" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Lens-Based Practices</span>
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.02em; max-width: 16em;">Satish Sharma: Thinking through a Politics of Representation</span>
+            <span style="font-size: 14px; font-style: italic; color: rgba(244,242,236,0.78);">Upasana Das</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ isS4 }}" hint-placeholder-val="{{ false }}">
+        <a href="#" style="position: absolute; inset: 0; display: block; color: #f4f2ec;">
+          <img src="assets/hero-humayun-museum.webp" alt="Humayun in the attire of the seven days, Humayun's Tomb Museum, New Delhi" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(1.04);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,0.42) 0%, rgba(20,19,17,0.05) 34%, rgba(20,19,17,0.28) 62%, rgba(20,19,17,0.82) 100%);"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 32px 64px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300);">Museums</span>
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.02em; max-width: 16em;">Delhi’s Sunken Museum</span>
+            <span style="font-size: 14px; font-style: italic; color: rgba(244,242,236,0.78);">Arundhati Bhan</span>
+          </div>
+        </a>
+      </sc-if>
+
+      <div style="position: absolute; left: 0; right: 0; bottom: 26px; max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; pointer-events: none;">
+        <div style="display: flex; gap: 10px; pointer-events: auto;">
+          <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="4">
+            <sc-if value="{{ dot.isActive }}" hint-placeholder-val="{{ false }}">
+              <button type="button" onClick="{{ dot.go }}" aria-label="{{ dot.label }}" style="width: 34px; height: 3px; border: 0; padding: 0; cursor: pointer; background: var(--color-accent);"></button>
+            </sc-if>
+            <sc-if value="{{ dot.isOther }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ dot.go }}" aria-label="{{ dot.label }}" style="width: 34px; height: 3px; border: 0; padding: 0; cursor: pointer; background: rgba(244,242,236,0.42);" style-hover="background: rgba(244,242,236,0.8);"></button>
+            </sc-if>
+          </sc-for>
+        </div>
+        <div style="display: flex; align-items: center; gap: 18px; pointer-events: auto;">
+          <span style="font-size: 11px; letter-spacing: 0.2em; color: rgba(244,242,236,0.72); font-feature-settings: 'tnum'; white-space: nowrap;">{{ counter }}</span>
+          <div style="display: flex; align-items: stretch; border: 1px solid rgba(244,242,236,0.38); border-radius: 999px; overflow: hidden; backdrop-filter: blur(6px); background: rgba(20,19,17,0.22);">
+            <button type="button" onClick="{{ prev }}" aria-label="Previous slide" style="width: 48px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #f4f2ec; cursor: pointer; transition: background 160ms ease, color 160ms ease;" style-hover="background: rgba(244,242,236,0.14);" style-active="background: rgba(244,242,236,0.22);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+            <span style="width: 1px; background: rgba(244,242,236,0.28);"></span>
+            <button type="button" onClick="{{ next }}" aria-label="Next slide" style="width: 48px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #f4f2ec; cursor: pointer; transition: background 160ms ease, color 160ms ease;" style-hover="background: rgba(244,242,236,0.14);" style-active="background: rgba(244,242,236,0.22);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 40px; display: flex; align-items: baseline; justify-content: space-between;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">This week</h2>
+      <a href="Critical%20Collective%20Search.dc.html" style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-700);">All recent writing →</a>
+    </div>
+
+    <section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin: 34px 0 0;">
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/NoticeBoard/1_1239904683_725.jpg" onError="{{ imgFallback }}" alt="Installation view, Tyeb Mehta retrospective" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Noticeboard</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Tyeb Mehta, A.A. Raiba, and the Weight of a Good Display</a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Shankar Tripathi</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">Two shows on key modernists where curation and design do not merely present the work but conspire with it, holding open a slower, deeper reading.</p>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/Art_Media_Law/6_702351688_5.jpg" onError="{{ imgFallback }}" alt="The Dancing Girl of Mohenjo-Daro" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Art, Media &amp; Law</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Covering the ‘Dancing Girl’: History-Making and the Archive that Isn’t</a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Sneha Ganguly</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">An amendment to the Mohenjo-Daro bronze joins a longer pattern of misleading history offered under the language of heritage reclamation.</p>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_763825284_911.jpg" onError="{{ imgFallback }}" alt="Bengal patachitra scroll detail" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Art History</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">The Pictorial Life of the <em>Manasamangal</em> in Bengal <em>Patachitra</em></a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Rahul Majumder</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">Scroll painters old and new use the snake goddess Manasa’s story to argue about tension between the human and the natural world.</p>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 16px;">
+        <a href="#" style="display: block;">
+          <div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;">
+            <img src="https://criticalcollective.in/Images/NoticeBoard/5_658907110_721.jpg" onError="{{ imgFallback }}" alt="Mumbai's eastern seaboard, photographed by Sunhil Sippy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </a>
+        <p style="margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">In Conversation</p>
+        <h3 style="margin: 0; font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Exploring the Natural and Industrial in Mumbai’s Eastern Seaboard</a></h3>
+        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Sunhil Sippy with Sachin Sharma</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">On the interests, technical processes and politics behind a long project photographing a lesser-seen stretch of the city’s coastline.</p>
+      </article>
+
+    </section>
+
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 76px; display: flex; align-items: baseline; justify-content: space-between;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Also published</h2>
+      <span style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent); font-feature-settings: 'tnum';">Twelve pieces · June 2026</span>
+    </div>
+
+    <section style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 42px; row-gap: 0; margin-top: 10px;">
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/2_232102057_724.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Noticeboard</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Indian Art at the Met, MoMA and Carnegie International</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Namrata Ghosh</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/CC%20Compressed%20Images%20(6)_353220767_723.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Exhibitions</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Into the Grotto</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Shivangi Jalan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/NoticeBoard/4_1646318488_722.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Artist Essays</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Bodies that Break, Lines that Bleed</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Mrinalini Vasudevan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_1147044990_2414.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Cinema &amp; OTT</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">From Mumbai to Dubai: Indian Cinema’s Transmedia Flows</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Sreya Mitra</span>
+        </div>
+      </a>
+
+      <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="assets/satish/fig-01.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Lens-Based Practices</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Satish Sharma: Thinking through a Politics of Representation</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Upasana Das</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Design_Art/4_156089285_5.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Craft &amp; Textile</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;"><em>Khadi, a Canvas</em>: Afterlives of Ravi Varma and Gandhi</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Archi Banerjee</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/7_11592044_2260.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Museums</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Delhi’s Sunken Museum</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Arundhati Bhan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(4)_1225568059_2406.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Gender</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Neither and Both: Transness as In-betweenness</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">George K. with Shivangi Jalan</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/CC%20Compressed%20Images%20(5)_1717599561_2410.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">CC Books</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Inside Kolkata’s Maximalist Interiors</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Ornella D’Souza</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_683500490_695.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Curators</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">The Sixth Kochi-Muziris Biennale: A Rising Tide</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Gayatri Sinha</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/1_926463408_682.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Conversations</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Ebrahim Alkazi’s Vision for the Arts</span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Gayatri Sinha, with Chowdhry and Dave Mukherji</span>
+        </div>
+      </a>
+
+      <a href="#" style="display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--color-divider); color: var(--color-text);" style-hover="background: color-mix(in srgb, var(--color-accent) 5%, transparent);">
+        <div class="plate" style="aspect-ratio: 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/2_1277545009_910.jpg" onError="{{ imgFallback }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</span>
+          <span style="font-family: var(--font-heading); font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;">Art and Agency in the Women’s Tradition of <em>Chamba Rumal</em></span>
+          <span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Sarang Sharma</span>
+        </div>
+      </a>
+
+    </section>
+
+    <sc-if value="{{ showSectionIndex }}" hint-placeholder-val="{{ true }}">
+    <div style="width: 100vw; margin-left: calc(50% - 50vw); margin-top: 76px; background: var(--color-surface); border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 46px 32px 56px;">
+    <div style="border-top: 1px solid var(--color-text); padding-top: 14px;">
+      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">The index</h2>
+    </div>
+    <section style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: auto auto; column-gap: 36px; row-gap: 12px; margin: 30px 0 0;">
+      <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
+        <div style="grid-row: span 2; display: grid; grid-template-rows: subgrid; align-content: start;">
+          <h3 style="margin: 0; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; padding-bottom: 10px; border-bottom: 1px solid var(--color-divider); display: flex; align-items: flex-end;">{{ cat.name }}</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
+              <a href="{{ cat.href }}" style="font-size: 13.5px; color: color-mix(in srgb, var(--color-text) 72%, transparent);" style-hover="color: var(--color-accent-800);">{{ item }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+    </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ showSubscribe }}" hint-placeholder-val="{{ true }}">
+    <section style="margin-top: 84px; background: #3a2e22; border: 1px solid #2a2019; border-radius: var(--radius-md); padding: 40px 44px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; color: #f4ece1;">
+      <div style="max-width: 30em;">
+        <p style="margin: 0 0 8px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #e5c48a;">The newsletter</p>
+        <h3 style="margin: 0 0 8px; font-size: 26px; letter-spacing: -0.015em; color: #f4ece1;">A monthly reading from the archive</h3>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: rgba(244, 236, 225, 0.8);">New essays, conversations and exhibition notices, sent once a month. Subscribers read the full archive.</p>
+      </div>
+      <form style="display: flex; gap: 10px; align-items: center;" onSubmit="{{ noop }}">
+        <input class="input" type="email" placeholder="you@example.com" style="min-width: 250px; background: transparent; border-color: rgba(244, 236, 225, 0.45); color: #f4ece1;">
+        <button class="btn" type="submit" style="border: 1px solid #f4ece1; color: #f4ece1; background: transparent;" style-hover="background: rgba(244, 236, 225, 0.14);">Subscribe</button>
+      </form>
+    </section>
+    </sc-if>
+
+  </main>
+
+
+  <section style="margin-top: 60px; border-top: 1px solid var(--color-text); border-bottom: 1px solid var(--color-divider); background: var(--color-surface); display: flex; align-items: stretch; overflow: hidden;">
+    <span style="flex: 0 0 auto; display: flex; align-items: center; padding: 0 22px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); border-right: 1px solid var(--color-divider); background: var(--color-bg); white-space: nowrap;">Upcoming</span>
+    <div class="cc-ticker" style="flex: 1 1 auto; overflow: hidden; display: flex; align-items: center; height: 52px; position: relative;">
+      <div style="display: flex; align-items: center; gap: 0; white-space: nowrap; animation: cc-ticker 46s linear infinite; will-change: transform;">
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">4 Aug</span>Serendipity Arts Festival announces its 2026 curators<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">12 Aug</span>Reba Hore centenary exhibition opens at Debovasha, Kolkata<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">19 Aug</span>Symposium: Museum Making in India, IIC New Delhi<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">2 Sep</span>Kashish Pride Film Festival: entries close<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">28 Sep</span>Bengal Biennale, Santiniketan — second edition opens<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">4 Aug</span>Serendipity Arts Festival announces its 2026 curators<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">12 Aug</span>Reba Hore centenary exhibition opens at Debovasha, Kolkata<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">19 Aug</span>Symposium: Museum Making in India, IIC New Delhi<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">2 Sep</span>Kashish Pride Film Festival: entries close<span style="color: var(--color-accent);">◆</span></a>
+        <a href="#" style="display: inline-flex; align-items: baseline; gap: 10px; padding: 0 26px; font-size: 13.5px; color: var(--color-text);" style-hover="color: var(--color-accent-800);"><span style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">28 Sep</span>Bengal Biennale, Santiniketan — second edition opens<span style="color: var(--color-accent);">◆</span></a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="CC Footer" hint-size="100%,220px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSectionIndex&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showSubscribe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { open: null, slide: 0 };
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState(s => ({ slide: (s.slide + 1) % 4 })), 6500);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const HREF = {"Modern & Contemporary Art":"Critical%20Collective%20Category.dc.html","Art History & Museums":"Critical%20Collective%20Category%20Art%20History.dc.html","Cinema & Photography":"Critical%20Collective%20Category%20Cinema.dc.html","Art, Design & Architecture":"Critical%20Collective%20Category%20Design.dc.html","Culture":"Critical%20Collective%20Category%20Culture.dc.html"};
+    const data = [
+      { name: "Modern & Contemporary Art", items: ["Exhibitions", "Artist Profiles & Essays", "Artist Conversations", "Groups & Collectives", "Curators", "Curating South Asia"] },
+      { name: "Art History & Museums", items: ["Art History", "Aesthetic Theory", "Museums", "CC Icons"] },
+      { name: "Cinema & Photography", items: ["Cinema & OTT", "Lens-Based Practices"] },
+      { name: "Art, Design & Architecture", items: ["Craft & Textile", "Design", "Architecture"] },
+      { name: "Culture", items: ["Gender", "Food Cultures", "Art, Media & Law"] }
+    ];
+    const n = this.state.slide;
+    return {
+      isS1: n === 0, isS2: n === 1, isS3: n === 2,
+      counter: String(n + 1).padStart(2, '0') + ' — 04', isS4: n === 3,
+      prev: () => this.setState(s => ({ slide: (s.slide + 3) % 4 })),
+      next: () => this.setState(s => ({ slide: (s.slide + 1) % 4 })),
+      dots: [0, 1, 2, 3].map(i => ({
+        isActive: i === n,
+        isOther: i !== n,
+        label: "Show feature " + (i + 1),
+        go: () => this.setState({ slide: i })
+      })),
+      showCategoryBar: this.props.showCategoryBar ?? true,
+      showSectionIndex: this.props.showSectionIndex ?? true,
+      showSubscribe: this.props.showSubscribe ?? true,
+      imgFallback: (e) => {
+        const el = e.target;
+        if (el.dataset.fallback) return;
+        el.dataset.fallback = "1";
+        el.src = "assets/plate-blank.png";
+      },
+      closeMenu: () => this.setState({ open: null }),
+      noop: (e) => e.preventDefault(),
+      cats: data.map((c, i) => ({
+        name: c.name,
+        items: c.items,
+        href: HREF[c.name],
+        isOpen: this.state.open === i,
+        open: () => this.setState({ open: i })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

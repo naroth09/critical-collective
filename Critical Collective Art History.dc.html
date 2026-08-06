@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;
+    --color-surface: #e5dbcc;
+    --color-text: #000000;
+    --color-divider: #cdc3b3;
+    --color-accent: #b8962e;
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  ::selection { background: var(--color-accent-100); }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#f3f2f2">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f3f2f2"></rect>
+    <text x="200" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#201f1d">CC</text>
+    <rect x="120" y="182" width="160" height="2" fill="#b68235"></rect>
+  </svg>
+</template>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; overflow-x: clip;">
+
+  <div id="cc-head" style="position: sticky; top: 0; z-index: 40;"><dc-import name="CC Header" active="categories" hint-size="100%,132px"></dc-import></div>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 32px;">
+
+    <div style="padding: 54px 0 34px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: end;">
+      <div>
+        <p style="margin: 0 0 18px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">A standing section</p>
+        <h1 style="margin: 0; font-size: 58px; line-height: 1.0; letter-spacing: -0.022em; font-weight: 400;">Art History</h1>
+      </div>
+      <div>
+        <p style="margin: 0; font-size: 15.5px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 80%, transparent); text-wrap: pretty;">Art History does not run as a feed. It is built as four standing dossiers, each opened around a question and added to over years — new scholarship set beside the journal essays, monographs and field reports it argues with, many of them republished here in full.</p>
+        <p style="margin: 14px 0 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); font-feature-settings: 'tnum';">4 dossiers · 216 pieces · 1931–2026</p>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="cc-dossier-nav" style="position: sticky; top: var(--cc-head-h, 192px); z-index: 30; background: color-mix(in srgb, var(--color-surface) 42%, transparent); backdrop-filter: blur(8px); border-top: 1px solid var(--color-text); border-bottom: 1px solid var(--color-divider);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch; flex-wrap: wrap;">
+      <span style="display: flex; align-items: center; flex: 0 0 auto; padding-right: 22px; margin-right: 22px; border-right: 1px solid var(--color-divider); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Dossiers</span>
+      <a href="#d1" style="min-height: 50px; display: inline-flex; align-items: center; gap: 9px; padding: 0 15px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent;" style-hover="border-bottom-color: var(--color-accent);">Race &amp; Power<span style="font-size: 10.5px; color: color-mix(in srgb, var(--color-text) 45%, transparent); font-feature-settings: 'tnum';">14</span></a>
+      <a href="#d2" style="min-height: 50px; display: inline-flex; align-items: center; gap: 9px; padding: 0 15px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent;" style-hover="border-bottom-color: var(--color-accent);">Maritime Trade<span style="font-size: 10.5px; color: color-mix(in srgb, var(--color-text) 45%, transparent); font-feature-settings: 'tnum';">33</span></a>
+      <a href="#d3" style="min-height: 50px; display: inline-flex; align-items: center; gap: 9px; padding: 0 15px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent;" style-hover="border-bottom-color: var(--color-accent);">Buddhism in Asia<span style="font-size: 10.5px; color: color-mix(in srgb, var(--color-text) 45%, transparent); font-feature-settings: 'tnum';">79</span></a>
+      <a href="#d4" style="min-height: 50px; display: inline-flex; align-items: center; gap: 9px; padding: 0 15px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent;" style-hover="border-bottom-color: var(--color-accent);">Early Indian Art<span style="font-size: 10.5px; color: color-mix(in srgb, var(--color-text) 45%, transparent); font-feature-settings: 'tnum';">90</span></a>
+      <a href="Critical%20Collective%20Search.dc.html" style="min-height: 50px; margin-left: auto; display: inline-flex; align-items: center; padding: 0 4px 0 15px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-800);">Search the archive →</a>
+    </div>
+  </div>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 32px 20px;">
+
+    <section id="d1" data-screen-label="Dossier 01" style="margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--color-text); display: grid; grid-template-columns: 296px minmax(0, 1fr); gap: 64px; align-items: start; scroll-margin-top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+      <div style="position: sticky; top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+        <p style="margin: 0 0 20px; display: flex; align-items: baseline; gap: 12px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Dossier 01<span style="color: color-mix(in srgb, var(--color-text) 40%, transparent);">14 pieces</span></p>
+        <h2 style="margin: 0 0 18px; font-size: 34px; line-height: 1.08; letter-spacing: -0.018em; font-weight: 400;">Race and Power in Indian Art</h2>
+        <p style="margin: 0 0 22px; font-size: 14px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 72%, transparent); text-wrap: pretty;">Who was seen, who was served, and who wrote it down. Court chronicles, caste and bondage, African presence in the Deccan, and the long colonial habit of reading Indian bodies as types.</p>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);" style-hover="color: var(--color-accent);">Enter dossier →</a>
+      </div>
+      <div>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; color: inherit;" style-hover="color: var(--color-accent-800);">
+          <div class="plate" style="aspect-ratio: 16 / 9; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Untitled%20design_1266076779_829.jpg" alt="Buranji manuscript folio" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <p style="margin: 18px 0 0; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Newest in this dossier</p>
+          <h3 style="margin: 10px 0 0; font-size: 28px; line-height: 1.14; letter-spacing: -0.015em; font-weight: 400; max-width: 26em;">Buranji: A Vernacularized Literary Tradition of the Ahom Court</h3>
+          <p style="margin: 10px 0 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Nandita Goswami</p>
+        </a>
+        <div style="margin-top: 38px; display: flex; flex-direction: column;">
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1a%20Folio%20Rajatarangini_230688653_828.jpg" alt="Folio from the Rajatarangini" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">History, Memory, Time: Writing the Past in 12th-Century Kashmir</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Shonaleeka Kaul</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/5%20Swathi%20Tirunal%20of%20Travancore_1538265990_.jpg" alt="Swathi Tirunal of Travancore" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Carnatic Music and Colonialism</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Lakshmi Subramanian</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_634875612_774.jpg" alt="Indian magic performance" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">From Turbans to Top Hats: The Transformation of Magic in India</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">John Zubrzycki</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Image%203_1009664785_772.jpg" alt="Eighteenth-century Jodhpur painting" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Deathly Eyes, Wily Cats: Witchcraft in Eighteenth-century Jodhpur</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Akhila Mathew</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Babur_supervising_the_laying_out_of_the_Garden_of_Fidelity-right-large_1607407096_522.jpg" alt="Babur supervising the laying out of a garden" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Domestic Service in Precolonial India: Bondage, Caste and Market</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Shireen Moosvi</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Muhammad_Adil_Shah_of_Bijapur_and_his_African_Prime_Minister_Ikhlas_Khan_LACMA_M.76.2.35_(1_of_3)_854461568_527.jpg" alt="Muhammad Adil Shah of Bijapur with Ikhlas Khan" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">From Africans in India to African Indians</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Renata Czekalska and Agnieszka Kuczkiewicz-Fras</p>
+            </div>
+          </a>
+        </div>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-800);">All 14 in this dossier →</a>
+      </div>
+    </section>
+
+    <section id="d2" data-screen-label="Dossier 02" style="margin-top: 96px; padding-top: 20px; border-top: 1px solid var(--color-text); display: grid; grid-template-columns: 296px minmax(0, 1fr); gap: 64px; align-items: start; scroll-margin-top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+      <div style="position: sticky; top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+        <p style="margin: 0 0 20px; display: flex; align-items: baseline; gap: 12px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Dossier 02<span style="color: color-mix(in srgb, var(--color-text) 40%, transparent);">33 pieces</span></p>
+        <h2 style="margin: 0 0 18px; font-size: 34px; line-height: 1.08; letter-spacing: -0.018em; font-weight: 400;">Maritime Trade in the Indian Ocean</h2>
+        <p style="margin: 0 0 22px; font-size: 14px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 72%, transparent); text-wrap: pretty;">Spice, textile and stone moving east and west, and the forms that travelled with them — temple types in Cambodia, pietra dura in Agra, perfume in a Mughal box. Much of it recovered from mid-century journals now out of print.</p>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);" style-hover="color: var(--color-accent);">Enter dossier →</a>
+      </div>
+      <div>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; color: inherit;" style-hover="color: var(--color-accent-800);">
+          <div class="plate" style="aspect-ratio: 16 / 9; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_1911355946_869.jpg" alt="Oriental spices" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <p style="margin: 18px 0 0; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Newest in this dossier</p>
+          <h3 style="margin: 10px 0 0; font-size: 28px; line-height: 1.14; letter-spacing: -0.015em; font-weight: 400; max-width: 26em;">Botanical Source Areas for Some Oriental Spices</h3>
+          <p style="margin: 10px 0 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Robert M. Newcomb</p>
+        </a>
+        <div style="margin-top: 38px; display: flex; flex-direction: column;">
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/2_843679074_868.jpg" alt="Gujarat trade with Southeast Asia" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Gujarat’s Trade with Southeast Asia, 16th and 17th Centuries</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Ruby Maloni</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1%20Rock%20Crystal%20Box_2128783733_835.jpg" alt="Rock crystal box" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Scentscape in Early Modern India: Materiality and Mobility of Mughal Perfumes</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Amrita Chattopadhyay</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/4%20Textile%20Trade_1093005386_834.jpg" alt="Indian textile trade" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Navigating through the History of Indian Textile Trade</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Sanghamitra R. Verman</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/4_464031802_866.jpg" alt="Kashmiri saffron" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Saffron Trails and Beyond: Kashmir’s Place within Historical Spice Routes</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Arundhati Bhan</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/alexander_lamont_Agra5-750x750_1658188926_312.jpg" alt="Pietra dura inlay, Agra" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">European Influence on Indian Pietra Dura</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Nandalal Chatterjee</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Ptolemy_616913882_332.jpg" alt="Ptolemy’s map" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Ptolemy and Western India</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">B. A. Saletore</p>
+            </div>
+          </a>
+        </div>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-800);">All 33 in this dossier →</a>
+      </div>
+    </section>
+
+    <section id="d3" data-screen-label="Dossier 03" style="margin-top: 96px; padding-top: 20px; border-top: 1px solid var(--color-text); display: grid; grid-template-columns: 296px minmax(0, 1fr); gap: 64px; align-items: start; scroll-margin-top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+      <div style="position: sticky; top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+        <p style="margin: 0 0 20px; display: flex; align-items: baseline; gap: 12px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Dossier 03<span style="color: color-mix(in srgb, var(--color-text) 40%, transparent);">79 pieces</span></p>
+        <h2 style="margin: 0 0 18px; font-size: 34px; line-height: 1.08; letter-spacing: -0.018em; font-weight: 400;">Buddhism in Asia</h2>
+        <p style="margin: 0 0 22px; font-size: 14px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 72%, transparent); text-wrap: pretty;">The largest of the four: image and text from Nalanda to Dunhuang, Bamiyan to Basgo — iconography, manuscript painting, pilgrimage, and the twentieth-century Ambedkarite turn.</p>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);" style-hover="color: var(--color-accent);">Enter dossier →</a>
+      </div>
+      <div>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; color: inherit;" style-hover="color: var(--color-accent-800);">
+          <div class="plate" style="aspect-ratio: 16 / 9; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Visualizing%20the%20Sacred%20Pilgrimage%20in%20Indic%20Literature%20and%20Traditions_1113253871_892.jpg" alt="Pilgrimage in Indic literature" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <p style="margin: 18px 0 0; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Newest in this dossier</p>
+          <h3 style="margin: 10px 0 0; font-size: 28px; line-height: 1.14; letter-spacing: -0.015em; font-weight: 400; max-width: 26em;">Visualizing the Sacred: Pilgrimage in Indic Literature and Traditions</h3>
+          <p style="margin: 10px 0 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Pranshu Samdarshi</p>
+        </a>
+        <div style="margin-top: 38px; display: flex; flex-direction: column;">
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Fig.2_1858736482_830.jpg" alt="Prajnaparamita manuscript" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Visual Language of the <em>Prajnaparamita</em> Manuscript Tradition</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Abira Bhattacharya</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/ambedkar_951387082_746.jpg" alt="Ambedkar" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Ambedkar’s Buddhist Conversion and Neo-Buddhist Visual Culture</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Y. S. Alone</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/God_of_Fire,_Agni,_of_the_Medicine_Buddha_Mandala_-_Google_Art_Project_(cropped)_1903526693_750.jpg" alt="Agni from the Medicine Buddha mandala" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Tibetan Paintings</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Ajit Ghose</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/4.%20Buddha_of_Bamiyan_602363895_384.jpg" alt="Colossal Buddha at Bamiyan" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">The Colossal Buddhas at Bamiyan</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Benjamin Rowland Jr</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Buddhas_at_ili_190036517_628.jpg" alt="Buddhist site on the Silk Road" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Buddhist Traces on Kazakhstan’s Silk Road</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Lyudmila Klasanova</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Plate%201%20(1)_2068643118_325.jpg" alt="Basgo Gompa, Ladakh" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">The Monastery-Fortress of Ladakh: Basgo Gompa, 15th–17th Century</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Sama Haq</p>
+            </div>
+          </a>
+        </div>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-800);">All 79 in this dossier →</a>
+      </div>
+    </section>
+
+    <section id="d4" data-screen-label="Dossier 04" style="margin-top: 96px; padding-top: 20px; border-top: 1px solid var(--color-text); display: grid; grid-template-columns: 296px minmax(0, 1fr); gap: 64px; align-items: start; scroll-margin-top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+      <div style="position: sticky; top: calc(var(--cc-head-h, 192px) + var(--cc-nav-h, 52px) + 28px);">
+        <p style="margin: 0 0 20px; display: flex; align-items: baseline; gap: 12px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">Dossier 04<span style="color: color-mix(in srgb, var(--color-text) 40%, transparent);">90 pieces</span></p>
+        <h2 style="margin: 0 0 18px; font-size: 34px; line-height: 1.08; letter-spacing: -0.018em; font-weight: 400;">Early Indian Art</h2>
+        <p style="margin: 0 0 22px; font-size: 14px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 72%, transparent); text-wrap: pretty;">Harappan cities, Gandharan hybrids, goddess cults, bronzes, jewellery, animals, games and food — the deep field, read through single objects rather than periods.</p>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);" style-hover="color: var(--color-accent);">Enter dossier →</a>
+      </div>
+      <div>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; color: inherit;" style-hover="color: var(--color-accent-800);">
+          <div class="plate" style="aspect-ratio: 16 / 9; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/3_1127484713_897.jpg" alt="Gandharan sculpture" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <p style="margin: 18px 0 0; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Newest in this dossier</p>
+          <h3 style="margin: 10px 0 0; font-size: 28px; line-height: 1.14; letter-spacing: -0.015em; font-weight: 400; max-width: 26em;">Dissolute ‘Nature’: Defining Sin and Lust in Gandharan Sculptures</h3>
+          <p style="margin: 10px 0 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Sujata Rakshit</p>
+        </a>
+        <div style="margin-top: 38px; display: flex; flex-direction: column;">
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/4_3142961_896.jpg" alt="Gandharan hybrid creature" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Sylvan Spirits and Sea Monsters: The Hybrid Cosmologies of Ancient Gandhara</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Sama Haq</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/4_1471256159_852.jpg" alt="Dholavira" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Dholavira: A Harappan City</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">V. N. Prabhakar</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Arundhati_475717074_876.jpg" alt="Bhagavata Purana scroll" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Revelations from an 18th-Century <em>Bhagavata Purana</em> Scroll</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Arundhati Bhan</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Pawan%20jain-2_page-0001%20(1)_1274395201_707.jpg" alt="Lion in Indian art" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;"><em>Simha</em>: The Lion in Indian Art</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Pawan Jain</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Indian_-_Kali_as_the_Supreme_Deity_-_Walters_W897%20(1)_1944479162_653.jpg" alt="Kali as the supreme deity" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">The Unfolding of Kali</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Arghya Dipta Kar</p>
+            </div>
+          </a>
+          <a href="Critical%20Collective%20Article.dc.html" style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 15px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); color: inherit;" style-hover="color: var(--color-accent-800);">
+            <div class="plate" style="aspect-ratio: 1 / 1; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/gold%20beads_Cleveland%20Museum_1561793344_730.jpg" alt="Ancient gold beads" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div style="min-width: 0;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 18.5px; line-height: 1.26; letter-spacing: -0.008em;">Jewellery Moulds in Ancient India</h4>
+              <p style="margin: 6px 0 0; font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--color-text) 56%, transparent);">Moti Chandra and Parmeshwari Lal Gupta</p>
+            </div>
+          </a>
+        </div>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" style="display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-800);">All 90 in this dossier →</a>
+      </div>
+    </section>
+
+    <section style="margin-top: 104px; padding-top: 18px; border-top: 1px solid var(--color-text);">
+      <p style="margin: 0 0 26px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">Also in this section</p>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px;">
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
+          <span class="card-kicker" style="font-feature-settings: 'tnum';">45 pieces</span>
+          <span class="card-title" style="font-size: 21px;">Aesthetic Theory</span>
+          <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Mid-century scholarship on rasa, dhvani and Indian poetics, republished in full.</span>
+        </a>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
+          <span class="card-kicker" style="font-feature-settings: 'tnum';">52 pieces</span>
+          <span class="card-title" style="font-size: 21px;">Museums</span>
+          <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">A critical framework on museology in the subcontinent, the smaller institutions as well as the large.</span>
+        </a>
+        <a href="Critical%20Collective%20Category%20Art%20History.dc.html" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
+          <span class="card-kicker" style="font-feature-settings: 'tnum';">18 pieces</span>
+          <span class="card-title" style="font-size: 21px;">CC Icons</span>
+          <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Single figures who changed the field, read closely and at length.</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div style="margin-top: 96px;"><dc-import name="CC Footer" hint-size="100%,420px"></dc-import></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">class Component extends DCLogic {
+  componentDidMount() {
+    const measure = () => {
+      const head = document.getElementById("cc-head");
+      const nav = document.getElementById("cc-dossier-nav");
+      const root = document.documentElement;
+      if (head) root.style.setProperty("--cc-head-h", Math.round(head.getBoundingClientRect().height) + "px");
+      if (nav) root.style.setProperty("--cc-nav-h", Math.round(nav.getBoundingClientRect().height) + "px");
+    };
+    measure();
+    this._t = setTimeout(measure, 400);
+    if (window.ResizeObserver) {
+      this._ro = new ResizeObserver(measure);
+      const head = document.getElementById("cc-head");
+      const nav = document.getElementById("cc-dossier-nav");
+      if (head) this._ro.observe(head);
+      if (nav) this._ro.observe(nav);
+    }
+    window.addEventListener("resize", measure);
+    this._onResize = measure;
+  }
+  componentWillUnmount() {
+    clearTimeout(this._t);
+    if (this._ro) this._ro.disconnect();
+    if (this._onResize) window.removeEventListener("resize", this._onResize);
+  }
+}</script>
+</body>
+</html>

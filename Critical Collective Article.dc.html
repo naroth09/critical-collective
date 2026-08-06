@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
+<script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #efe8dd;
+    --color-surface: #e5dbcc;
+    --color-text: #000000;
+    --color-divider: #cdc3b3;
+    --color-accent: #b8962e;
+    --color-accent-100: #f4eeda;
+    --color-accent-300: #ddc584;
+    --color-accent-600: #a38321;
+    --color-accent-700: #715a14;
+    --color-accent-800: #56440f;
+    --color-neutral-900: #14120f;
+  }
+  .btn-primary, .btn-secondary, .btn-ghost { color: var(--color-accent-800); }
+  .tag-outline, .tag-accent, .tag-accent-2 { color: var(--color-accent-800); }
+  body { margin: 0; background: var(--color-bg); }
+  @keyframes cc-wave { 0%, 100% { transform: scaleY(0.32); } 50% { transform: scaleY(1); } }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  ::selection { background: var(--color-accent-100); }
+  .cc-note { font-size: 10.5px; vertical-align: super; line-height: 0; color: var(--color-accent-700); font-feature-settings: 'tnum'; }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#f3f2f2">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f3f2f2"></rect>
+    <text x="200" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#201f1d">CC</text>
+    <rect x="120" y="182" width="160" height="2" fill="#b68235"></rect>
+  </svg>
+</template>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; overflow-x: clip;">
+
+  <div style="position: sticky; top: 0; z-index: 40;"><dc-import name="CC Header" active="cinema" hint-size="100%,132px"></dc-import></div>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(8px, 44px) minmax(400px, 1fr) minmax(196px, 272px); gap: 0 clamp(28px, 4vw, 64px);">
+
+    <div lang="en" style="grid-column: 2; grid-row: 1; align-self: start; min-width: 0;">
+
+    <nav style="display: flex; align-items: center; gap: 10px; padding: 40px 0 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;">
+      <a href="Critical%20Collective%20Category%20Cinema.dc.html" style="color: color-mix(in srgb, var(--color-text) 58%, transparent);" style-hover="color: var(--color-accent-800);">Cinema &amp; Photography</a>
+      <span style="color: color-mix(in srgb, var(--color-text) 32%, transparent);">/</span>
+      <span style="color: var(--color-text);">Essay</span>
+    </nav>
+
+    <header style="padding: 50px 0 40px; border-bottom: 1px solid var(--color-text);">
+      <p style="margin: 0 0 20px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Lens-Based Practices</p>
+      <h1 style="margin: 0 0 26px; font-size: clamp(38px, 5vw, 68px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 400; max-width: 15em;">Satish Sharma: Thinking through a Politics of Representation</h1>
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 60%, transparent);">
+        <span style="font-style: italic; text-transform: none; letter-spacing: 0; font-size: 16px; color: var(--color-text);">Upasana Das</span>
+        <span style="color: var(--color-accent);">·</span><span>2026</span>
+        <span style="color: var(--color-accent);">·</span><span>Essay</span>
+        <span style="color: var(--color-accent);">·</span><span>Approx. 18 min</span>
+        <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" aria-label="Listen to this article" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 11px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
+          <sc-if value="{{ isIdle }}" hint-placeholder-val="{{ true }}">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 10v4"></path><path d="M9 6.5v11"></path><path d="M13 4v16"></path><path d="M17 8v8"></path><path d="M21 10.5v3"></path></svg>
+          </sc-if>
+          <sc-if value="{{ isSpeaking }}" hint-placeholder-val="{{ false }}">
+            <span style="display: inline-flex; align-items: center; gap: 2.5px; height: 14px; color: var(--color-accent-800);">
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out infinite; transform-origin: center;"></span>
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out 150ms infinite; transform-origin: center;"></span>
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out 300ms infinite; transform-origin: center;"></span>
+              <span style="width: 2px; height: 100%; background: currentColor; animation: cc-wave 900ms ease-in-out 450ms infinite; transform-origin: center;"></span>
+            </span>
+          </sc-if>
+          {{ speechLabel }}
+        </button>
+        <button type="button" onClick="{{ toggleCite }}" aria-expanded="{{ citeOpen }}" style="display: inline-flex; align-items: center; gap: 9px; padding: 8px 16px 8px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 6h10"></path><path d="M7 11h10"></path><path d="M7 16h5"></path><path d="M4 3.5h16v17H4z"></path></svg>
+          Cite
+        </button>
+      </div>
+      <sc-if value="{{ citeOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 28px; max-width: 100%; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
+          <span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Cite this article</span>
+          <button type="button" onClick="{{ toggleCite }}" aria-label="Close" style="border: none; background: transparent; cursor: pointer; padding: 0; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;" style-hover="color: var(--color-accent-800);">Close</button>
+        </div>
+        <sc-for list="{{ citations }}" as="c" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 74px minmax(0, 1fr) 74px; gap: 18px; align-items: start; border-top: 1px solid var(--color-divider); padding-top: 16px;">
+            <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); padding-top: 3px;">{{ c.style }}</span>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.62; text-transform: none; letter-spacing: 0; overflow-wrap: anywhere; color: color-mix(in srgb, var(--color-text) 82%, transparent);">{{ c.text }}</p>
+            <button type="button" onClick="{{ c.copy }}" style="justify-self: end; border: 1px solid var(--color-divider); background: transparent; border-radius: 999px; padding: 6px 12px; cursor: pointer; font-family: var(--font-body); font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">{{ c.label }}</button>
+          </div>
+        </sc-for>
+      </div>
+      </sc-if>
+    </header>
+
+    <div style="max-width: 100%; margin: 0 auto; padding: 52px 0 0;">
+
+      <div style="max-width: 100%;">
+      <article id="cc-article-body" lang="en">
+
+        <p style="margin: 0 0 40px; font-family: var(--font-heading); font-size: 25px; line-height: 1.46; letter-spacing: -0.005em; text-wrap: pretty; color: color-mix(in srgb, var(--color-text) 88%, transparent);">From gritty monochrome photojournalism to playful public art, this study looks at Satish Sharma’s multifaceted five-decade-long career in image-making, writing, curating and collecting.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Satish Sharma’s engagement with image culture was an act of continued simultaneity as he shifted seamlessly from photographic practice to critical writing, and later, collecting. However, to trace the nodes of this extensive rhizomatic practice is to encounter the lacuna in documentation of and critical engagement with his work (which was never completely profiled beyond national dailies reviewing his gallery shows in the early stages of his career). This gap might also have to do with his own critique of the state of photography in postcolonial India, which irked senior contemporaries like Raghu Rai and Raghubir Singh and branded him a controversial and “frustrated” photographer.<a href="#n1" class="cc-note">1</a></p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">To understand this, one must situate Sharma amidst a generation of photographers in newly independent India, who would start out as photojournalists in newspapers before moving into what he disapprovingly termed as “art photography”<a href="#n2" class="cc-note">2</a>: the kind of photography “that the west can easily recognise and accept from this part of the world—as something very ‘Indian’—as comfortable Orientalism, locally produced.”<a href="#n3" class="cc-note">3</a> In this scenario, there was not much difference between Rai referring to India as “the most exotic country in the world”<a href="#n4" class="cc-note">4</a> and the American photographer Norman Parkinson shooting a reclining Anne Gunning on the Dal Lake for a 1956 British <em>Vogue</em> issue.<a href="#n5" class="cc-note">5</a></p>
+
+        <h2 id="s1" style="margin: 68px 0 26px; font-size: 26px; line-height: 1.22; letter-spacing: -0.012em; font-weight: 400; scroll-margin-top: 208px;" style-before="content: ''; display: block; width: 42px; height: 1px; background: var(--color-accent); margin-bottom: 26px;">Towards a Documentary Practice</h2>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma would buy his first camera by selling his “drawing room” paintings, after his father refused to fund him.<a href="#n6" class="cc-note">6</a> In 1975, he enrolled in a journalism diploma course run by <em>Dateline Delhi</em>, a monthly tabloid that covered culture rather than politics. They allowed students to contribute to their columns, and gave Sharma the opportunity to interview F.N. Souza, a big inspiration for the amateur painter.<a href="#n7" class="cc-note">7</a> Sharma’s growing up in the 1950s and ’60s amidst the turn towards social realism in mainstream Hindi cinema, and his training in journalism during the Emergency era which saw unprecedented media censorship, drew him closer to the world of hard-hitting photography. This came through in his first exhibition at Art Heritage Gallery in Delhi in 1986, where the images bore strong commentary on the disintegrating socio-political conditions all around. Unlike the criticality Sharma developed later on, this was an early phase in his career when he actively worked towards presenting his photography as a serious art form in the gallery circuit.</p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-01.jpg" alt="Men lining up for the cinema" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 1</span>Satish Sharma, “Men lining up for the cinema,” printed on Agfa bromide paper, 1985.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Among the photographs displayed at Sharma’s first exhibition was this one, where men in crisp white shirts line up for the morning show of <em>Women of the Prehistoric Planet</em> (1966) (Fig. 1).<a href="#n8" class="cc-note">8</a> This image reflects Sharma’s observational skills but also the occasional unease he felt as a young man in the big city. Growing up in the isolated Wellington army cantonment at the foothills of the Nilgiris, the fast pace of Delhi was a stark contrast for the 25-year-old Sharma who attempted to understand urban life by walking and taking photographs,<a href="#n9" class="cc-note">9</a> following Henri Cartier-Bresson’s directive of the “decisive moment.”<a href="#n10" class="cc-note">10</a></p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-02.jpg" alt="Untitled, from the Stree Seen series" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 2</span>Satish Sharma, “Untitled,” from the <em>Stree Seen</em> series, printed on Agfa bromide paper, 1985.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">However, unlike Walter Benjamin’s flâneur, who remained an ambivalent witness detached from any kind of social critique,<a href="#n11" class="cc-note">11</a> Sharma’s acts of walking around and capturing the city were centered around the fissures he noticed within Nehruvian dreams of development and hopes of democracy and the public rage it was giving way to. This comes through in another of his photographs, where a woman attacks two men (Fig. 2). Even though the reasons are not evident, if we link it with Sharma’s earlier image in the series, which foregrounds the gaze and desires of men at the cinemas, a reading of harassment is not unwarranted.</p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-03.jpg" alt="Untitled, from the Street Children series" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 3</span>Satish Sharma, “Untitled,” from the <em>Street Children</em> series, printed on Agfa bromide paper, 1985.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma’s lens also turned to the plight of street children, captured on railway platforms in the summer heat, staring back at the photographer with an accusatory stare (Fig. 3).<a href="#n12" class="cc-note">12</a> Here, it seems that Sharma took a more normative gaze in his depiction of the poor and the marginalized in India—encountered in the work of Western photojournalists visiting the country, who focused on city slums, polio victims, or Mother Teresa tending to the sick and homeless. While Sharma avoided the kind of glorification that Raghu Rai used to construct the image of Mother, as a saint-like figure surrounded by children, he nonetheless subscribed to a documentary approach to urban poverty, especially in the assignments he did for UNICEF around this time.<a href="#n13" class="cc-note">13</a></p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">In this phase of his career, he felt the necessity of making the world see the reality of India, in contrast to other serene editorial photographs of the country. He therefore photographed a child with stilted mobility moving on the street on all fours, rendering him in a spectral, dark silhouette. This gaze remains limited to victimization, sadness and sympathy. It is only later that Sharma would develop a more self-critical view of these works and how he succumbed to the colonial idea of documentary photography. He would say: “I believed in its [photography’s] social purpose and ignored its highly political and problematic past.” He also said of Western photographers: “I now know…they are influenced by our ethnicity and colour…and commercial interests.”<a href="#n14" class="cc-note">14</a></p>
+
+        <h2 id="s2" style="margin: 68px 0 26px; font-size: 26px; line-height: 1.22; letter-spacing: -0.012em; font-weight: 400; scroll-margin-top: 208px;" style-before="content: ''; display: block; width: 42px; height: 1px; background: var(--color-accent); margin-bottom: 26px;">The Political Game</h2>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-04.jpg" alt="Poster of Indira Gandhi behind a Durga idol" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 4</span>Satish Sharma, “Untitled,” printed on Agfa bromide paper, 1985.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma’s early career also coincided with the Emergency years, whose phantom hangs heavy in this photograph where a hand-painted poster of Indira Gandhi smiles from behind a gleaming Durga idol (Fig. 4). Through this serendipitous juxtaposition, Sharma also subtly critiqued the modernist artist M.F. Husain, who had rendered the then Prime Minister as a triumphant Durga riding a tiger.<a href="#n15" class="cc-note">15</a></p>
+
+        <figure style="margin: 46px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 22px;">
+          <div>
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-05.jpg" alt="Trilokpuri after the anti-Sikh riots" style="width: 100%; height: auto; display: block;"></div>
+            <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 5</span>Satish Sharma, “Trilokpuri after the anti-Sikh riots,” printed on Agfa bromide paper, 1985.</figcaption>
+          </div>
+          <div>
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-06.jpg" alt="Anti-Sikh riots in Delhi" style="width: 100%; height: auto; display: block;"></div>
+            <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 6</span>Satish Sharma, “Anti-Sikh riots in Delhi,” printed on Agfa bromide paper, 1985.</figcaption>
+          </div>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma was also witness to the terrible carnage of the anti-Sikh riots, especially in Delhi’s Trilokpuri, after the assassination of Indira Gandhi in 1984. In his catalogue essay for Sharma’s first show, Ebrahim Alkazi mentioned certain images where “Crowds are on rampage, destroying cars, looting property, setting human beings ablaze,” (Figs. 5 and 6) and where the city is presented as “one vast charnel house.”<a href="#n16" class="cc-note">16</a> The Associated Press refused to publish these works, but one was finally printed in <em>The Illustrated Weekly of India</em>,<a href="#n17" class="cc-note">17</a> which reflected on how Indira’s legacy continued to haunt public memory through the images of her that proliferated after her death.</p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-07.jpg" alt="Untitled, from the Stree Seen series" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 7</span>Satish Sharma, “Untitled,” from the <em>Stree Seen</em> series, printed on Agfa bromide paper, 1985.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma was one of many photojournalists who faced press censure during the Emergency. He had to work with implied violence, much like Raghu Rai, who photographed areas like Chandni Chowk, which had heavy police patrolling. But unlike Rai, Sharma did not have special access to capture Indira from up close, presenting her both in humanizing moments at home, but also conveying the threat of her public authoritarianism. Therefore, he had to work purely with symbolism around Indira’s public image.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">In another of Sharma’s photographs, Indira smiles in a poster, seemingly looking at a film promotional cut-out of a bar dancer with her head thrown back mid-performance. One also spots a mother clutching her infant and looking at both these cut-outs (Fig. 7). Sharma’s gaze in this photograph is complex, as he juxtaposes one of the most powerful women in the country with two figures trapped in other gendered roles. The woman with child seems stuck within a domestic realm, perhaps envious of the freedom with which the other two women navigate the public sphere. Despite presenting a facade of vivaciousness, the dancer too is trapped in a sexualized performativity that appeals to a largely male clientele (this also connects with the older photograph of men lining up to watch a film on women). We are also left to read an uncomfortable ambivalence in this image, unsure if Sharma is both judging the dancer’s performance towards appeasing a male audience while also critiquing the male gaze.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma also focused on the artifice of the politician, which would lead to his most significant bodies of work. One set of these was presented at Eicher Gallery, New Delhi, in the 1997 exhibition <em>Deconstructing the Politician</em>, where the space was transformed to resemble a darkroom. Sharma printed a series of his signature black and white photographs on Agfa bromide paper (Fig. 8), making them resemble cheap flyer prints, and clipped them on a clothesline, as if they were hung out to dry after a chemical wash. Captions were scrawled with pencil on the walls—a technique now used by artists like Sohrab Hura to evoke the personal, as if it were a handwritten note. The exhibition began with an advertisement put out by <em>The Times of India</em> on a hoarding, with the words “What Makes the Leader.” Although the text appeared to innocently equate <em>TOI</em> with the best paper in the business, Sharma also cleverly wove in an insinuation, suggesting how newspapers are as manipulative as kingmakers in a political race.</p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-08.jpg" alt="Deconstructing the Politician" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 8</span>Satish Sharma, “Deconstructing the Politician,” printed on Agfa bromide paper, 1997.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma started this project after Prime Minister Rajiv Gandhi hired an advertising agency that marketed him as Mr Clean, the good boy of Indian politics. In another image, a blank cutout of a politician raises his hand in the street—to be filled in by a painter with whoever is next in line. Each leader seems to fall into a cookie-cutter pattern with similar grand gestures as the previous harbinger of momentary hope.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">This is also where an element of gamification or choice left to the viewers began to enter Sharma’s work. In a photograph of the Gyarah Murthi sculpture (where Gandhi leads a group of men and women to freedom), the figures remain only faintly visible in the background as Sharma banks on its iconicity to be immediately recognizable. Instead, he draws attention to the road leading to this commemorative sculpture, painted with prompts for cars to stop or turn in two different directions. These become symbolic directives for the viewer standing before the sculpture. There is an implicit critique of Gandhian principles and their legacy, also echoed by Sharma’s friend and sometimes collaborator Ram Rahman, who included a cutout of Gandhi being turned sideways and carried away as a remnant in the photograph “Gandhi March” (1995).</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Much like Rahman, Sharma was also intrigued by popular visual culture, an integral part of street life in India. While Rahman painted signages and posters, Sharma was attracted to the world of corporate advertising, whose multicoloured hues with sleazy taglines quickly took over shop fronts post liberalization in 1991 (Fig. 9). Sharma’s colour photographs documenting advertisements gamifies this urban material desire when he photographs a jewellery advertisement in the background of a traffic sign with two arrows—to either stop or walk away.</p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-09.jpg" alt="Untitled, digital photograph" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 9</span>Satish Sharma, “Untitled,” digital photograph, provenance unknown.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Reviewing Sharma’s <em>Deconstructing the Politician</em> exhibition, Ruchir Joshi wrote: “Sharma’s best photographs rob an ostensibly simple act, that of walking down a city road, of his innocence.”<a href="#n18" class="cc-note">18</a> Recognizing this interest in the political command held by urban street culture, SAHMAT (Safdar Hashmi Memorial Trust) co-founded by Rahman, approached Sharma to contribute to their travelling exhibition, <em>Images and Words: Artists Against Communalism</em> (1991–92), organized on the second anniversary of the fatal murder of theatre practitioner Safdar Hashmi. Sharma gave them a print of his work upon the sole condition it should be produced on newsprint and pasted all over the city.<a href="#n19" class="cc-note">19</a> It was a photograph he had clicked after the anti-Sikh riots, featuring a climbing squirrel that appeared to hold up a leaflet calling for peace by the Committee for Communal Harmony (Fig. 10).</p>
+
+        <figure style="margin: 46px 0;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-10.jpg" alt="Untitled, newsprint, 1991" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 10</span>Satish Sharma, “Untitled,” newsprint, 1991.</figcaption>
+        </figure>
+
+        <h2 id="s3" style="margin: 68px 0 26px; font-size: 26px; line-height: 1.22; letter-spacing: -0.012em; font-weight: 400; scroll-margin-top: 208px;" style-before="content: ''; display: block; width: 42px; height: 1px; background: var(--color-accent); margin-bottom: 26px;">To Be or Not To Be in a Gallery</h2>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">By the 1990s, Sharma was looking for ways of taking his work beyond the sanctity of the white cube world of galleries. He became more vocal in reconsidering photography’s ties with fine art, believing that once the medium entered the art market, it was divorced from its colonial past and rendered a mere commodity. He said: “Button-pushing photographers…continue to simply shoot…without really understanding how deeply photography is caught up in the politics of representation and the creation of identity.”<a href="#n20" class="cc-note">20</a> He later added: “Even today, photographers proudly define themselves either as ‘pictorialists’ (purveying nineteenth century perceptions of a ‘Gilpinesque Picturesque’) or as ‘photojournalists’ who sometimes venture beyond the call of professional media practice and produce coffee-table books on an exotic and colourful India. These books are aimed at the large tourism market but form the public and highly visible face of Indian photography.”<a href="#n21" class="cc-note">21</a></p>
+
+        <figure style="margin: 46px 0; max-width: 340px; margin-left: auto; margin-right: auto;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-11.jpg" alt="Early SAHMAT rally, Lalit Kala Academy, New Delhi" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 11</span>Satish Sharma, “Early SAHMAT rally, Lalit Kala Academy, New Delhi,” early 1990s.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Moving away from the colourful idea of India that had been cemented in the Western mind by Raghu Rai’s images, Sharma insisted on dull monochrome in his practice. He elaborated on this in his blog: “I was struck by how photographing ‘the dark side’ of life in stylised black and white became a problem for not just the photographer but also for the audience which actually asked for something ‘livelier’.”<a href="#n22" class="cc-note">22</a> Colour, though, would enter Sharma’s practice later in his career, albeit for very different reasons.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Even as Sharma’s work continued to carry influences of Cartier-Bresson and Eugene Smith, it equally shared synergies with the practices of Ram Rahman, and Safdar Hashmi and the SAHMAT team (Fig. 11). They imagined a public and community life around images, and worked in projects which explored more collaborative forms of image production. Sharma worked with artists like Inder Salim and Shantanu Lodh on a series of performative posters pasted around Delhi. This also opened up Sharma’s vision to another side of realism, shaped by symbolism and performative elements in Indian photo studios. This led him to create participatory installations, where viewers staged themselves before the camera to create their own images.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma gradually built a collection from the kind of minute-camera “trick” photography<a href="#n23" class="cc-note">23</a> that flourished in mobile photo studios across the country, where working-class citizens (who earlier had no access to portrait photography) reflected their aspirations by posing against theatre-like rudimentary backdrops, featuring famous monuments like the Taj, elements from royal courts or Bollywood (Figs. 12–14). Sharma called these “surrealist enactments of personal <em>leela</em>” and “an Indian response to the realist discourse of photography” in the catalogue essay he wrote for the exhibition, <em>Street Dreams: Contemporary Indian Studio Photographs from the Satish Sharma Collection</em>, held at the 1997 Shoreditch Biennale.<a href="#n24" class="cc-note">24</a></p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma had finally found a format where gamification and active participation broke down the dichotomy between the artist and the viewer. He would use this format to construct a photo studio in the <em>Boxwallahs</em> exhibition in 1999, where a white cube was installed near a petrol pump on the Delhi–Gurgaon highway, with works by artists like Bharti Kher and Ranbir Kaleka. As part of that, he set up a makeshift studio, called <em>Apna Photokhana</em> (Fig. 15), crafting the exterior as the Indian parliament and recreating inside the aesthetics of small-town photo studios. Visitors could pose and capture themselves, with a variety of accessories, like hats, neckties and guns, all popular props that now accrued political symbolism. This self-fashioning was similar to the model that artist Pushpamala N., in association with SAHMAT, would resort to in her later work.</p>
+
+        <figure style="margin: 46px 0;">
+          <div style="max-width: 100%;">
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-12.jpg" alt="Family posing before the set of an imambara" style="width: 100%; height: auto; display: block;"></div>
+            <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 12</span>“Family posing before the set of an imambara in a local photo studio,” provenance unknown.</figcaption>
+          </div>
+        </figure>
+
+        <figure style="margin: 46px 0;">
+          <div style="max-width: 100%;">
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-13.jpg" alt="Men dressed as Mughal rulers posing before the Taj" style="width: 100%; height: auto; display: block;"></div>
+            <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 13</span>“Men dressed as Mughal rulers posing before the Taj,” late 1980s–late 1990s.</figcaption>
+          </div>
+        </figure>
+
+        <figure style="margin: 46px 0;">
+          <div style="max-width: 100%;">
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-14.jpg" alt="Enactment of Bollywood scenes with studio props" style="width: 100%; height: auto; display: block;"></div>
+            <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 14</span>“Enactment of Bollywood scenes with studio props,” early to late 1990s.</figcaption>
+          </div>
+        </figure>
+
+        <figure style="margin: 46px 0; max-width: 254px; margin-left: auto; margin-right: auto;">
+          <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-15.jpg" alt="Inder Salim in Apna Photokhana" style="width: 100%; height: auto; display: block;"></div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Fig. 15</span>Artist Inder Salim posing before a hand-painted portrait of Durga with studio props in Satish Sharma’s <em>Apna Photokhana</em>, 1999.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma’s interest in photo booths also encouraged him to visit some of these places in Rajasthan, prior to the 1992 Babri Masjid demolition, where he collected studio photographs of people posing with swords before a backdrop of Ram, playing the Hindu god themselves. In contrast to Raghu Rai who documented the demolition, Sharma operated at the symbolic realm to engage with popular political sentiment.</p>
+
+        <figure style="margin: 46px 0;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 22px;">
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-16.jpg" alt="Photobooth at Boxwallahs, Fukuoka Triennale" style="width: 100%; height: auto; display: block;"></div>
+            <div class="plate" style="overflow: hidden;"><img src="assets/satish/fig-17.jpg" alt="Photobooth at Boxwallahs, Fukuoka Triennale" style="width: 100%; height: auto; display: block;"></div>
+          </div>
+          <figcaption style="margin-top: 12px; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 58%, transparent);"><span style="color: var(--color-accent-700); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px; margin-right: 8px;">Figs. 16 &amp; 17</span>Photobooth at <em>Boxwallahs</em>, Fukuoka Triennale, 2002.</figcaption>
+        </figure>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma would take forward his photo booth project to create another version of <em>Boxwallahs</em> at the Second Fukuoka Triennale in Japan in 2002. Fresh after the memories of 9/11, he included backdrops of a burning World Trade Center and a hand-painted Bin Laden (rendered as a Buddhist in Japanese style popular art, marking him with a saintly, barely recognizable presence). Viewers could leave their photographs on the walls of the studio. One of them interestingly shows a visitor holding a phone to Bin Laden’s mouth, attempting to give him a voice, while another has someone pay obeisance to him on the floor (Figs. 16–17).<a href="#n25" class="cc-note">25</a> Sharma’s unconventional anti-fascist “strategic manoeuvre” in lens-based practice and writing though did not always go down well with other curators and artists, leaving him to feel distanced and move from India to Australia.<a href="#n26" class="cc-note">26</a></p>
+
+        <h2 id="s4" style="margin: 68px 0 26px; font-size: 26px; line-height: 1.22; letter-spacing: -0.012em; font-weight: 400; scroll-margin-top: 208px;" style-before="content: ''; display: block; width: 42px; height: 1px; background: var(--color-accent); margin-bottom: 26px;">Conclusion</h2>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma’s legacy lies in his refusal to allow himself or his works to be boxed into easy categories. Even though he never produced (and often critiqued) the kind of images and coffee-table books that were part of the art photography and gallery network, he occasionally exhibited his works at Eicher Gallery or India Habitat Centre, neither of which were accessible to the general public who he wanted to show his more political works to.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Even while remaining within the ambit of the art world, he was able to expand his viewership in projects like <em>Boxwallahs</em>, located near a petrol pump, which attracted various passersby and local families to create self-portraits. This continued at Fukuoka, even though Sharma did not take the project further, independently in the public arena, beyond the biennale.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Another one of his truly democratic and disruptive models was his engagement with early digitality in the 2000s, through his photography blog, where he would share his thoughts on contemporary photography and the political events surrounding him, or scan his essays on photography published in art journals, which many would otherwise not have access to.</p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma’s investment in archiving also helped him bring to light the careers and contributions of women photographers. This included India’s first woman photojournalist, Homai Vyarawalla, whom he met at the house of the man who repaired his cameras.<a href="#n27" class="cc-note">27</a> He curated the first Vyarawalla retrospective at Max Mueller Bhavan, where he would later also host an installation by Sheba Chhachhi in 1994, whose work was still not well recognized in the country.<a href="#n28" class="cc-note">28</a></p>
+
+        <p style="margin: 0 0 26px; font-size: 16.5px; line-height: 1.84; text-align: justify; hyphens: auto; text-wrap: pretty;">Sharma’s broad oeuvre involved various facets of image-making, writing, curating and collecting, all of which became a mode to create an alternative history of Indian photography and question the ethics of postcolonial documentary and commercial practice. He also wanted to work outside of but parallel to the art world, but may not have found enough alternate spaces and collectives during his career to support these endeavours. Finally, in taking on this bigger project, Sharma might have diluted attention towards his personal creative career, which deserves further exploration and inquiry in the years ahead.</p>
+
+      </article>
+
+
+      <div style="margin-top: 56px; border-top: 1px solid var(--color-divider); padding-top: 22px;">
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.68; font-style: italic; color: color-mix(in srgb, var(--color-text) 74%, transparent);">Upasana Das is an arts and culture writer. She has previously written for <span style="font-style: normal;">ArtReview, The Guardian, British Journal of Photography, BOMB, Elephant Art, ASAP Art, The New York Times, Dazed, Vogue India,</span> Serendipity Arts Foundation and Experimenter Art Gallery, among other publications and platforms.</p>
+      </div>
+
+      <div style="margin-top: 44px; border-top: 1px solid var(--color-divider); padding-top: 14px;">
+        <span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Figure Acknowledgements</span>
+        <p style="margin: 14px 0 0; font-size: 13.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 70%, transparent);">All images are courtesy Satish Sharma.</p>
+      </div>
+
+      <div style="margin-top: 44px; border-top: 1px solid var(--color-divider); padding-top: 14px;">
+        <span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Keywords</span>
+        <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <a href="Critical%20Collective%20Search.dc.html" class="tag tag-outline">Indian photography</a>
+          <a href="Critical%20Collective%20Search.dc.html" class="tag tag-outline">Photojournalism</a>
+          <a href="Critical%20Collective%20Search.dc.html" class="tag tag-outline">Street photography</a>
+          <a href="Critical%20Collective%20Search.dc.html" class="tag tag-outline">Monochrome</a>
+          <a href="Critical%20Collective%20Search.dc.html" class="tag tag-outline">Photobooth</a>
+          <a href="Critical%20Collective%20Search.dc.html" class="tag tag-outline">SAHMAT</a>
+        </div>
+      </div>
+
+      <div id="notes" style="margin-top: 44px; border-top: 1px solid var(--color-text); padding-top: 14px; scroll-margin-top: 208px;">
+        <span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Notes</span>
+        <ol style="margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; line-height: 1.62; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-feature-settings: 'tnum';">
+          <li id="n1" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">1</span><span>Satish Sharma, “A New Lens,” <em>Himal Southasian</em>, May 18, 2012.</span></li>
+          <li id="n2" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">2</span><span>Satish Sharma, “Needed, Ho Chi Minh. ‘He Who Enlightens’,” <em>Satish Sharma’s Rotigraphy Blog</em>, September 1, 2012.</span></li>
+          <li id="n3" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">3</span><span>Ibid.</span></li>
+          <li id="n4" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">4</span><span>Satish Sharma, “Press the Button and We, the West, Do the Rest! An Exploration of Photography in India,” and “India Awakens: Under the Banyan Tree,” catalogue for Essel Museum (2010).</span></li>
+          <li id="n5" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">5</span><span>Upasana Das, “India through the Lens of Legendary Photographers Norman Parkinson and Henry Clarke,” <em>Vogue India</em>, May 10, 2023.</span></li>
+          <li id="n6" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">6</span><span>Madhulika Sharma, “A Blank Canvas, An Empty Camera, and Protesting Belly to Fill: What about Life?,” <em>Morning Echo</em>, March 3, 1987.</span></li>
+          <li id="n7" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">7</span><span>Author’s interview with Satish Sharma, March 15, 2026.</span></li>
+          <li id="n8" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">8</span><span>Rahul Verma, “WHITE SPACE | Memory and Desire: How Movie-Watching Changed over Time,” <em>Frontline</em>, June 15, 2023.</span></li>
+          <li id="n9" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">9</span><span>Author’s interview with Satish Sharma.</span></li>
+          <li id="n10" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">10</span><span>Satish Sharma, “Towards an ‘Other’ Photography,” <em>Visual Arts Journal</em> (2003): 37–39.</span></li>
+          <li id="n11" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">11</span><span>Tom Jeffreys, ed., <em>Walking</em> (The MIT Press, 2024).</span></li>
+          <li id="n12" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">12</span><span>Ebrahim Alkazi, <em>Art Heritage Catalogue 1985–86</em> (Art Heritage, New Delhi, 1986).</span></li>
+          <li id="n13" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">13</span><span>Ella Dutta, “Studio Sharma,” <em>The Telegraph</em>, December 18, 1996.</span></li>
+          <li id="n14" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">14</span><span>Satish Sharma, “Drishti: Of Perception and its Management,” <em>Visual Arts Journal</em> (2006).</span></li>
+          <li id="n15" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">15</span><span>Author’s interview with Satish Sharma.</span></li>
+          <li id="n16" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">16</span><span>Alkazi, <em>Art Heritage Catalogue</em>.</span></li>
+          <li id="n17" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">17</span><span>Author’s interview with Satish Sharma.</span></li>
+          <li id="n18" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">18</span><span>Ruchir Joshi, “Framing the Question,” <em>India Magazine</em>, 1997.</span></li>
+          <li id="n19" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">19</span><span>Author’s interview with Satish Sharma.</span></li>
+          <li id="n20" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">20</span><span>Sharma, “Press the Button” and “India Awakens: Under the Banyan Tree.”</span></li>
+          <li id="n21" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">21</span><span>Satish Sharma, “Rotigraphy: Indian Street Photography,” <em>Art Asia Pacific</em>, no. 13 (1997): 82–85.</span></li>
+          <li id="n22" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">22</span><span>Sharma, “Needed, Ho Chi Minh.”</span></li>
+          <li id="n23" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">23</span><span>Sean Fole and Lukas Birk, <em>Indian Minute Camera Photographers</em> (Fraglich Publishing and Alkazi Collection of Photography, 2021).</span></li>
+          <li id="n24" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">24</span><span>Val Williams and Anna Fox, <em>Street Dreams: Contemporary Indian Studio Photographs from the Satish Sharma Collection</em> (Booth-Clibborn Editions and the Shoreditch Biennale, 1997): 4–6.</span></li>
+          <li id="n25" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">25</span><span>Sharma, “Towards an ‘Other’ Photography,” 37–39.</span></li>
+          <li id="n26" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">26</span><span>Ibid., 101–02.</span></li>
+          <li id="n27" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">27</span><span>Author’s interview with Satish Sharma.</span></li>
+          <li id="n28" style="display: grid; grid-template-columns: 30px minmax(0, 1fr); scroll-margin-top: 208px;"><span style="color: var(--color-accent);">28</span><span>Ibid.</span></li>
+        </ol>
+      </div>
+
+      </div>
+    </div>
+
+    </div>
+
+    <aside style="grid-column: 3; grid-row: 1; align-self: stretch; min-width: 0;">
+      <div style="position: sticky; top: 168px; margin-top: 104px;">
+      <div style="border-top: 1px solid var(--color-text); padding-top: 14px;">
+        <span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Suggested Readings</span>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; padding: 22px 0 24px; border-bottom: 1px solid var(--color-divider); text-decoration: none; color: inherit; transition: color 180ms ease;" style-hover="color: var(--color-accent-800);">
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700);">Cinema &amp; Photography</span>
+          <h3 style="margin: 11px 0 0; font-family: var(--font-heading); font-weight: 400; font-size: 19.5px; line-height: 1.28; letter-spacing: -0.008em;">Homai Vyarawalla and the First Frame of the Republic</h3>
+          <p style="margin: 12px 0 0; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">Rukmini Iyer · 18 min</p>
+        </a>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; padding: 22px 0 24px; border-bottom: 1px solid var(--color-divider); text-decoration: none; color: inherit; transition: color 180ms ease;" style-hover="color: var(--color-accent-800);">
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700);">Art History &amp; Museums</span>
+          <h3 style="margin: 11px 0 0; font-family: var(--font-heading); font-weight: 400; font-size: 19.5px; line-height: 1.28; letter-spacing: -0.008em;">Ebrahim Alkazi: The Collector as Historian</h3>
+          <p style="margin: 12px 0 0; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">Nikhil Bose · 24 min</p>
+        </a>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; padding: 22px 0 24px; border-bottom: 1px solid var(--color-divider); text-decoration: none; color: inherit; transition: color 180ms ease;" style-hover="color: var(--color-accent-800);">
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700);">Cinema &amp; Photography</span>
+          <h3 style="margin: 11px 0 0; font-family: var(--font-heading); font-weight: 400; font-size: 19.5px; line-height: 1.28; letter-spacing: -0.008em;">The Studio on the Pavement: Minute Cameras and Street Portraiture</h3>
+          <p style="margin: 12px 0 0; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">Anjali Menon · 15 min</p>
+        </a>
+        <a href="Critical%20Collective%20Article.dc.html" style="display: block; padding: 22px 0 24px; border-bottom: 1px solid var(--color-divider); text-decoration: none; color: inherit; transition: color 180ms ease;" style-hover="color: var(--color-accent-800);">
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700);">Culture</span>
+          <h3 style="margin: 11px 0 0; font-family: var(--font-heading); font-weight: 400; font-size: 19.5px; line-height: 1.28; letter-spacing: -0.008em;">SAHMAT at Forty: Art as Public Argument</h3>
+          <p style="margin: 12px 0 0; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-feature-settings: 'tnum';">Devika Rao · 21 min</p>
+        </a>
+      </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <dc-import name="CC Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { speaking: false, citeOpen: false, copied: null };
+  static META = {
+    author: "Upasana Das",
+    last: "Das",
+    first: "Upasana",
+    title: "Satish Sharma: Thinking through a Politics of Representation",
+    site: "Critical Collective",
+    year: 2026
+  };
+  _cite(style) {
+    const m = Component.META;
+    const url = "https://criticalcollective.in/article/satish-sharma-politics-of-representation";
+    const d = new Date();
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const accessed = d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
+    if (style === "Chicago") return m.last + ", " + m.first + ". \u201C" + m.title + ".\u201D " + m.site + ", " + m.year + ". Accessed " + accessed + ". " + url;
+    if (style === "MLA") return m.last + ", " + m.first + ". \u201C" + m.title + ".\u201D " + m.site + ", " + m.year + ", " + url + ". Accessed " + accessed + ".";
+    return m.last + ", " + m.first.charAt(0) + ". (" + m.year + "). " + m.title + ". " + m.site + ". Retrieved " + accessed + ", from " + url;
+  }
+  _copy(style) {
+    const text = this._cite(style);
+    const done = () => {
+      this.setState({ copied: style });
+      clearTimeout(this._t);
+      this._t = setTimeout(() => this.setState({ copied: null }), 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, done);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  }
+  renderVals() {
+    const styles = ["Chicago", "MLA", "APA"];
+    return {
+      citeOpen: !!this.state.citeOpen,
+      toggleCite: () => this.setState({ citeOpen: !this.state.citeOpen }),
+      citations: styles.map((st) => ({
+        style: st,
+        text: this._cite(st),
+        label: this.state.copied === st ? "Copied" : "Copy",
+        copy: () => this._copy(st)
+      })),
+      isIdle: !this.state.speaking,
+      isSpeaking: !!this.state.speaking,
+      speechLabel: this.state.speaking ? "Stop" : "Listen to this article",
+      toggleSpeech: () => {
+        const synth = window.speechSynthesis;
+        if (!synth) return;
+        if (this.state.speaking) { synth.cancel(); this.setState({ speaking: false }); return; }
+        const root = document.getElementById("cc-article-body");
+        const text = ((root && root.innerText) || "").replace(/\s+/g, " ").trim();
+        if (!text) return;
+        const u = new SpeechSynthesisUtterance(text.slice(0, 30000));
+        u.rate = 0.96;
+        u.onend = () => this.setState({ speaking: false });
+        u.onerror = () => this.setState({ speaking: false });
+        synth.cancel();
+        synth.speak(u);
+        this.setState({ speaking: true });
+      }
+    };
+  }
+  componentWillUnmount() {
+    clearTimeout(this._t);
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+  }
+}
+</script>
+</body>
+</html>
