@@ -82,14 +82,14 @@
 
         <div>
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">
-            <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">1 — How often</h2>
+            <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">1 — How often</h2>
             <div style="display: flex; gap: 14px;">
               <sc-for list="{{ currencies }}" as="c" hint-placeholder-count="3">
                 <sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}">
-                  <button type="button" onClick="{{ c.pick }}" style="border: 0; background: transparent; cursor: pointer; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-800); border-bottom: 1px solid var(--color-accent); padding: 0 0 2px;">{{ c.label }}</button>
+                  <button type="button" onClick="{{ c.pick }}" style="border: 0; background: transparent; cursor: pointer; font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-800); border-bottom: 1px solid var(--color-accent); padding: 0 0 2px;">{{ c.label }}</button>
                 </sc-if>
                 <sc-if value="{{ c.off }}" hint-placeholder-val="{{ true }}">
-                  <button type="button" onClick="{{ c.pick }}" style="border: 0; background: transparent; cursor: pointer; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 45%, transparent); border-bottom: 1px solid transparent; padding: 0 0 2px;" style-hover="color: var(--color-text);">{{ c.label }}</button>
+                  <button type="button" onClick="{{ c.pick }}" style="border: 0; background: transparent; cursor: pointer; font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 45%, transparent); border-bottom: 1px solid transparent; padding: 0 0 2px;" style-hover="color: var(--color-text);">{{ c.label }}</button>
                 </sc-if>
               </sc-for>
             </div>
@@ -113,7 +113,7 @@
         </div>
 
         <div>
-          <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">2 — How much</h2>
+          <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">2 — How much</h2>
           <div style="margin-top: 18px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
             <sc-for list="{{ presets }}" as="p" hint-placeholder-count="4">
               <sc-if value="{{ p.on }}" hint-placeholder-val="{{ false }}">
@@ -133,7 +133,7 @@
         </div>
 
         <div>
-          <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">3 — Your details</h2>
+          <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">3 — Your details</h2>
           <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px;">
             <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">First name</span><input class="cc-in" type="text" placeholder="Meera" required></label>
             <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Last name</span><input class="cc-in" type="text" placeholder="Nair" required></label>
@@ -151,7 +151,7 @@
         </div>
 
         <div>
-          <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">4 — Payment</h2>
+          <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid var(--color-text); padding-bottom: 10px;">4 — Payment</h2>
           <div style="margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
             <sc-for list="{{ methods }}" as="m" hint-placeholder-count="3">
               <sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}">
@@ -168,7 +168,7 @@
               </sc-if>
             </sc-for>
           </div>
-          <button type="submit" style="margin-top: 26px; width: 100%; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4ece0; background: #4a4f27; border: 1px solid #4a4f27; border-radius: var(--radius-md); padding: 19px 24px;" style-hover="background: #5b6132; border-color: #5b6132;">{{ cta }}</button>
+          <button type="submit" style="margin-top: 26px; width: 100%; cursor: pointer; font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4ece0; background: #4a4f27; border: 1px solid #4a4f27; border-radius: var(--radius-md); padding: 19px 24px;" style-hover="background: #5b6132; border-color: #5b6132;">{{ cta }}</button>
           <p style="margin: 14px 0 0; font-size: 11.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Payments are processed on an encrypted connection. Critical Collective is a registered non-profit trust; donations from Indian taxpayers are exempt under Section 80G. We never sell or share supporter data.</p>
         </div>
 
@@ -200,7 +200,7 @@
     </sc-if>
 
     <section style="margin-top: 96px; border-top: 1px solid var(--color-text); padding-top: 14px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Other ways to give</h2>
+      <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Other ways to give</h2>
       <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px;">
         <div style="border-top: 1px solid var(--color-divider); padding-top: 18px;">
           <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 26px; line-height: 1.1; letter-spacing: -0.015em;">Bank transfer</h3>

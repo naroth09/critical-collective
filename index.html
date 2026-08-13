@@ -140,7 +140,7 @@
             <label for="cc-home-q" style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-300);">Search the archive</label>
             <input id="cc-home-q" type="search" name="q" aria-label="Search Critical Collective" placeholder="{{ hint }}" style="width: 100%; min-width: 0; border: 0; border-bottom: 1px solid rgba(240, 235, 224, 0.34); border-radius: 0; background: transparent; color: #f0ebe0; font-family: var(--font-heading); font-size: 30px; letter-spacing: -0.015em; padding: 6px 0 12px; outline: none; transition: border-color 200ms ease;" style-focus="border-bottom-color: var(--color-accent);">
           </div>
-          <button type="submit" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: transparent; color: var(--color-accent-300); font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 22px; cursor: pointer; transition: background 180ms ease, color 180ms ease;" style-hover="background: var(--color-accent); color: var(--color-neutral-900);">Search<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+          <button type="submit" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: transparent; color: var(--color-accent-300); font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 22px; cursor: pointer; transition: background 180ms ease, color 180ms ease;" style-hover="background: var(--color-accent); color: var(--color-neutral-900);">Search<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
         </form>
         <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-top: 22px;">
           <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240, 235, 224, 0.5); margin-right: 4px;">Or begin with</span>
@@ -153,7 +153,7 @@
 
     <sc-if value="{{ showDiscover }}" hint-placeholder-val="{{ true }}">
     <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 62px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Start anywhere</h2>
+      <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Start anywhere</h2>
       <span style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Five sections, four pieces from each</span>
     </div>
     <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="5">

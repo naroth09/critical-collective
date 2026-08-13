@@ -65,7 +65,7 @@
         <span style="color: var(--color-accent);">·</span><span>2026</span>
         <span style="color: var(--color-accent);">·</span><span>Essay</span>
         <span style="color: var(--color-accent);">·</span><span>Approx. 18 min</span>
-        <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" aria-label="Listen to this article" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 11px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
+        <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" aria-label="Listen to this article" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 11px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
           <sc-if value="{{ isIdle }}" hint-placeholder-val="{{ true }}">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 10v4"></path><path d="M9 6.5v11"></path><path d="M13 4v16"></path><path d="M17 8v8"></path><path d="M21 10.5v3"></path></svg>
           </sc-if>
@@ -79,7 +79,7 @@
           </sc-if>
           {{ speechLabel }}
         </button>
-        <button type="button" onClick="{{ toggleCite }}" aria-expanded="{{ citeOpen }}" style="display: inline-flex; align-items: center; gap: 9px; padding: 8px 16px 8px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
+        <button type="button" onClick="{{ toggleCite }}" aria-expanded="{{ citeOpen }}" style="display: inline-flex; align-items: center; gap: 9px; padding: 8px 16px 8px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 6h10"></path><path d="M7 11h10"></path><path d="M7 16h5"></path><path d="M4 3.5h16v17H4z"></path></svg>
           Cite
         </button>
@@ -88,13 +88,13 @@
       <div style="margin-top: 28px; max-width: 100%; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 20px;">
         <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
           <span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Cite this article</span>
-          <button type="button" onClick="{{ toggleCite }}" aria-label="Close" style="border: none; background: transparent; cursor: pointer; padding: 0; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;" style-hover="color: var(--color-accent-800);">Close</button>
+          <button type="button" onClick="{{ toggleCite }}" aria-label="Close" style="border: none; background: transparent; cursor: pointer; padding: 0; color: color-mix(in srgb, var(--color-text) 50%, transparent); font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;" style-hover="color: var(--color-accent-800);">Close</button>
         </div>
         <sc-for list="{{ citations }}" as="c" hint-placeholder-count="3">
           <div style="display: grid; grid-template-columns: 74px minmax(0, 1fr) 74px; gap: 18px; align-items: start; border-top: 1px solid var(--color-divider); padding-top: 16px;">
             <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); padding-top: 3px;">{{ c.style }}</span>
             <p style="margin: 0; font-size: 13.5px; line-height: 1.62; text-transform: none; letter-spacing: 0; overflow-wrap: anywhere; color: color-mix(in srgb, var(--color-text) 82%, transparent);">{{ c.text }}</p>
-            <button type="button" onClick="{{ c.copy }}" style="justify-self: end; border: 1px solid var(--color-divider); background: transparent; border-radius: 999px; padding: 6px 12px; cursor: pointer; font-family: var(--font-body); font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">{{ c.label }}</button>
+            <button type="button" onClick="{{ c.copy }}" style="justify-self: end; border: 1px solid var(--color-divider); background: transparent; border-radius: 999px; padding: 6px 12px; cursor: pointer; font-family: var(--font-ui); font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">{{ c.label }}</button>
           </div>
         </sc-for>
       </div>

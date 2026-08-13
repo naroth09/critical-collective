@@ -10,6 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/styles.css">
 <script src="_ds/classical-85097e53-3f2f-43c8-9e34-7bd733347a16/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
 <style>
   :root {
     --color-bg: #efe8dd;            /* warm beige ground, between MIST and EARTH */
@@ -32,6 +33,16 @@
   a { color: var(--color-accent-700); text-decoration: none; }
   a:hover { color: var(--color-accent); }
   ::selection { background: var(--color-accent-100); }
+  .cc-tile { transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 600ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .cc-tile:hover { transform: translateY(-6px); box-shadow: 0 18px 36px -20px rgba(20,18,15,0.4); }
+  .cc-tile:hover .cc-tile-rule { width: 100%; }
+  .cc-tile-img { transition: transform 1400ms cubic-bezier(0.16, 0.7, 0.2, 1); will-change: transform; }
+  .cc-tile:hover .cc-tile-img { transform: scale(1.07); }
+  .cc-tile-text { transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .cc-tile:hover .cc-tile-text { transform: translateY(-8px); }
+  .cc-tile-cta { transition: letter-spacing 600ms cubic-bezier(0.2, 0.7, 0.2, 1), color 400ms ease; }
+  .cc-tile:hover .cc-tile-cta { letter-spacing: 0.3em; color: var(--color-accent-300); }
+  @media (prefers-reduced-motion: reduce) { .cc-tile, .cc-tile-img, .cc-tile-text, .cc-tile-cta, .cc-tile-rule { transition: none !important; } .cc-tile:hover { transform: none; } .cc-tile:hover .cc-tile-img { transform: none; } }
 </style>
 </helmet>
 
@@ -58,103 +69,84 @@
     </div>
 
     <div style="border-top: 1px solid var(--color-text); margin-top: 30px; padding-top: 14px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Sub-categories</h2>
+      <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Sub-categories</h2>
     </div>
 
-    <section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 26px;">
-      <a href="art-history.html" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
-        <span class="card-kicker" style="font-feature-settings: 'tnum';">119 pieces</span>
-        <span class="card-title" style="font-size: 21px;">Art History</span>
-        <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Critical writing on art, architecture, religious traditions and the folk and decorative arts.</span>
-      </a>
-      <a href="#recent" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
-        <span class="card-kicker" style="font-feature-settings: 'tnum';">45 pieces</span>
-        <span class="card-title" style="font-size: 21px;">Aesthetic Theory</span>
-        <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Mid-century scholarship on rasa, dhvani and Indian poetics, republished in full.</span>
-      </a>
-      <a href="#recent" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
-        <span class="card-kicker" style="font-feature-settings: 'tnum';">52 pieces</span>
-        <span class="card-title" style="font-size: 21px;">Museums</span>
-        <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">A critical framework on museology in the subcontinent, mapping smaller museums as well as the large.</span>
-      </a>
-      <a href="#recent" class="card" style="text-decoration: none; color: var(--color-text); gap: 8px; padding: 22px;" style-hover="border-color: var(--color-accent);">
-        <span class="card-kicker" style="font-feature-settings: 'tnum';">18 pieces</span>
-        <span class="card-title" style="font-size: 21px;">CC Icons</span>
-        <span style="font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Single figures who changed the field, read closely and at length.</span>
-      </a>
-    </section>
+    <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 28px;">
 
-    <div id="recent" style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 76px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Art history</h2>
-      <a href="search.html" style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-700);">All 119 →</a>
-    </div>
+      <a class="cc-tile" href="art-history.html" style="position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-md); background: var(--color-neutral-900); color: #f4f2ec;">
+        <div class="cc-tile-img" style="position: absolute; inset: 0;">
+          <image-slot id="cc-field02-arthistory" shape="rect" fit="cover" src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/Muhammad_Adil_Shah_of_Bijapur_and_his_African_Prime_Minister_Ikhlas_Khan_LACMA_M.76.2.35_(1_of_3)_854461568_527.jpg" placeholder="Drop the Art History image"></image-slot>
+        </div>
+        <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,19,17,0.46) 0%, rgba(20,19,17,0.04) 38%, rgba(20,19,17,0.32) 64%, rgba(20,19,17,0.86) 100%);"></div>
+        <div style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 34px 36px 36px;">
+          <span style="align-self: flex-start; padding: 7px 12px 6px; border-radius: 999px; background: rgba(20,19,17,0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Sub-category 01 · 119 pieces</span>
+          <span class="cc-tile-text" style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 3.6vw, 50px); line-height: 1.0; letter-spacing: -0.022em;">Art History</span>
+            <span style="height: 1px; width: 56px; background: var(--color-accent); transition: width 420ms cubic-bezier(0.2, 0.7, 0.2, 1);" class="cc-tile-rule"></span>
+            <span style="font-size: 14.5px; line-height: 1.6; max-width: 26em; color: rgba(244,242,236,0.82); text-wrap: pretty;">Critical writing on art, architecture, religious traditions and the folk and decorative arts.</span>
+            <span class="cc-tile-cta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the section →</span>
+          </span>
+        </div>
+      </a>
 
-    <section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin-top: 30px;">
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_763825284_911.jpg" alt="The Pictorial Life of the Manasamangal in Bengal Patachitra" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">The Pictorial Life of the <em>Manasamangal</em> in Bengal <em>Patachitra</em></a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Rahul Majumder</p>
-      </article>
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/2_1277545009_910.jpg" alt="Art and Agency in the Women’s Tradition of Chamba Rumal" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Art and Agency in the Women’s Tradition of <em>Chamba Rumal</em></a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Sarang Sharma</p>
-      </article>
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/3_1726754497_909.jpg" alt="Disappearing Textile Traditions of India: Ilkal and Khun" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Disappearing Textile Traditions of India: Ilkal and Khun</a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Charanya Shekar</p>
-      </article>
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/1_2028707068_907.jpg" alt="Building Histories: Visual Syncretism in Swaminarayan Temple Architecture" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Art History</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Building Histories: Visual Syncretism in Swaminarayan Temple Architecture</a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Ankur Desai</p>
-      </article>
-    </section>
+      <a class="cc-tile" href="#recent" style="position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-md); background: var(--color-neutral-900); color: #f4f2ec;">
+        <div class="cc-tile-img" style="position: absolute; inset: 0;">
+          <image-slot id="cc-field02-aesthetics" shape="rect" fit="cover" src="https://criticalcollective.in/Images/Essay/RecentImage/24_1854580128_1462.jpg" placeholder="Drop the Aesthetic Theory image"></image-slot>
+        </div>
+        <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,19,17,0.46) 0%, rgba(20,19,17,0.04) 38%, rgba(20,19,17,0.32) 64%, rgba(20,19,17,0.86) 100%);"></div>
+        <div style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 34px 36px 36px;">
+          <span style="align-self: flex-start; padding: 7px 12px 6px; border-radius: 999px; background: rgba(20,19,17,0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Sub-category 02 · 45 pieces</span>
+          <span class="cc-tile-text" style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 3.6vw, 50px); line-height: 1.0; letter-spacing: -0.022em;">Aesthetic Theory</span>
+            <span style="height: 1px; width: 56px; background: var(--color-accent); transition: width 420ms cubic-bezier(0.2, 0.7, 0.2, 1);" class="cc-tile-rule"></span>
+            <span style="font-size: 14.5px; line-height: 1.6; max-width: 26em; color: rgba(244,242,236,0.82); text-wrap: pretty;">Mid-century scholarship on rasa, dhvani and Indian poetics, republished in full.</span>
+            <span class="cc-tile-cta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the section →</span>
+          </span>
+        </div>
+      </a>
 
-    <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 76px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Museums &amp; theory</h2>
-      <a href="search.html" style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);" style-hover="color: var(--color-accent-700);">All 115 →</a>
-    </div>
+      <a class="cc-tile" href="#recent" style="position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-md); background: var(--color-neutral-900); color: #f4f2ec;">
+        <div class="cc-tile-img" style="position: absolute; inset: 0;">
+          <image-slot id="cc-field02-museums" shape="rect" fit="cover" src="https://criticalcollective.in/Images/Essay/RecentImage/MoCa%20reopen--24_1316888264_2206.jpg" placeholder="Drop the Museums image"></image-slot>
+        </div>
+        <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,19,17,0.46) 0%, rgba(20,19,17,0.04) 38%, rgba(20,19,17,0.32) 64%, rgba(20,19,17,0.86) 100%);"></div>
+        <div style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 34px 36px 36px;">
+          <span style="align-self: flex-start; padding: 7px 12px 6px; border-radius: 999px; background: rgba(20,19,17,0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Sub-category 03 · 52 pieces</span>
+          <span class="cc-tile-text" style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 3.6vw, 50px); line-height: 1.0; letter-spacing: -0.022em;">Museums</span>
+            <span style="height: 1px; width: 56px; background: var(--color-accent); transition: width 420ms cubic-bezier(0.2, 0.7, 0.2, 1);" class="cc-tile-rule"></span>
+            <span style="font-size: 14.5px; line-height: 1.6; max-width: 26em; color: rgba(244,242,236,0.82); text-wrap: pretty;">A critical framework on museology in the subcontinent, the smaller institutions as well as the large.</span>
+            <span class="cc-tile-cta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the section →</span>
+          </span>
+        </div>
+      </a>
 
-    <section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin-top: 30px;">
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/03_NMHC_1391443745_2282.jpg" alt="Questions around the National Maritime Heritage Complex at Lothal" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Museums</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Questions around the National Maritime Heritage Complex at Lothal</a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Tanishka Kachru</p>
-      </article>
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/7_11592044_2260.jpg" alt="Delhi’s Sunken Museum" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Museums</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Delhi’s Sunken Museum</a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Arundhati Bhan</p>
-      </article>
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/MoCa%20reopen--24_1316888264_2206.jpg" alt="Museumizing a Faith: The Museum of Christian Art, Goa" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Museums</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">Museumizing a Faith: The Museum of Christian Art, Goa</a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Mrinalini Vasudevan</p>
-      </article>
-      <article style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-        <a href="#" style="display: block;"><div class="plate" style="aspect-ratio: 4 / 5; overflow: hidden;"><img src="https://criticalcollective.in/Images/Essay/RecentImage/24_1854580128_1462.jpg" alt="An Outline of Indian Aesthetics" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></a>
-        <p style="margin: 0; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Aesthetic Theory</p>
-        <h3 style="margin: 0; font-size: 20px; line-height: 1.18; letter-spacing: -0.015em;"><a href="#" style="color: var(--color-text);" style-hover="color: var(--color-accent-800);">An Outline of Indian Aesthetics</a></h3>
-        <p style="margin: 0; font-size: 13px; font-style: italic; color: color-mix(in srgb, var(--color-text) 62%, transparent);">Nagendra, 1934</p>
-      </article>
+      <a class="cc-tile" href="#recent" style="position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-md); background: var(--color-neutral-900); color: #f4f2ec;">
+        <div class="cc-tile-img" style="position: absolute; inset: 0;">
+          <image-slot id="cc-field02-icons" shape="rect" fit="cover" src="https://criticalcollective.in/Images/ArtHistory/Thumbnail/ambedkar_951387082_746.jpg" placeholder="Drop the CC Icons image"></image-slot>
+        </div>
+        <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,19,17,0.46) 0%, rgba(20,19,17,0.04) 38%, rgba(20,19,17,0.32) 64%, rgba(20,19,17,0.86) 100%);"></div>
+        <div style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 34px 36px 36px;">
+          <span style="align-self: flex-start; padding: 7px 12px 6px; border-radius: 999px; background: rgba(20,19,17,0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Sub-category 04 · 18 pieces</span>
+          <span class="cc-tile-text" style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: var(--font-heading); font-size: clamp(34px, 3.6vw, 50px); line-height: 1.0; letter-spacing: -0.022em;">CC Icons</span>
+            <span style="height: 1px; width: 56px; background: var(--color-accent); transition: width 420ms cubic-bezier(0.2, 0.7, 0.2, 1);" class="cc-tile-rule"></span>
+            <span style="font-size: 14.5px; line-height: 1.6; max-width: 26em; color: rgba(244,242,236,0.82); text-wrap: pretty;">Single figures who changed the field, read closely and at length.</span>
+            <span class="cc-tile-cta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the section →</span>
+          </span>
+        </div>
+      </a>
+
     </section>
 
     
-    <section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin-top: 26px;">
-      
-      
-      
-      
-    </section>
+
+    
+
+    
+
+    
 
   </main>
 

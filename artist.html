@@ -67,7 +67,7 @@
         <div id="cc-article-body">
           <p style="margin: 0; font-size: 19px; line-height: 1.66; max-width: 34em; text-wrap: pretty; color: color-mix(in srgb, var(--color-text) 88%, transparent);">A Delhi-based painter who held numerous solo and group exhibitions across India and internationally. He was awarded the Padma Bhushan by the Government of India in 2005. Alongside his painting, he wrote and illustrated children’s books published in India, Japan, England and the USA, which won international recognition.</p>
         </div>
-        <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" style="margin-top: 22px; display: inline-flex; align-items: center; gap: 11px; padding: 9px 18px 9px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
+        <button type="button" onClick="{{ toggleSpeech }}" aria-pressed="{{ isSpeaking }}" style="margin-top: 22px; display: inline-flex; align-items: center; gap: 11px; padding: 9px 18px 9px 12px; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 74%, transparent); font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, background 180ms ease;" style-hover="border-color: var(--color-accent); color: var(--color-accent-800); background: var(--color-accent-100);">
           <sc-if value="{{ isIdle }}" hint-placeholder-val="{{ true }}">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 10v4"></path><path d="M9 6.5v11"></path><path d="M13 4v16"></path><path d="M17 8v8"></path><path d="M21 10.5v3"></path></svg>
           </sc-if>
@@ -86,7 +86,7 @@
     </header>
 
     <div style="border-top: 1px solid var(--color-text); padding-top: 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;">Works</h2>
+      <h2 style="margin: 0; font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;">Works</h2>
       <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-feature-settings: 'tnum'; color: color-mix(in srgb, var(--color-text) 48%, transparent);">Three plates · click to enlarge · captions to be supplied</span>
     </div>
 
@@ -154,7 +154,7 @@
     </section>
 
     <div style="border-top: 1px solid var(--color-text); padding-top: 14px; margin-top: 70px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;">Essays on this artist</h2>
+      <h2 style="margin: 0; font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;">Essays on this artist</h2>
     </div>
 
     <section style="padding-bottom: 8px;">
@@ -211,7 +211,7 @@
           <button type="button" onClick="{{ zoomIn }}" aria-label="Zoom in" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: #efe8dd; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M11 8v6"></path><path d="M8 11h6"></path><path d="m20 20-3.6-3.6"></path></svg>
           </button>
-          <button type="button" onClick="{{ resetZoom }}" style="margin-left: 6px; padding: 8px 14px; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: rgba(239, 232, 221, 0.82); font-family: var(--font-body); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">Fit</button>
+          <button type="button" onClick="{{ resetZoom }}" style="margin-left: 6px; padding: 8px 14px; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: rgba(239, 232, 221, 0.82); font-family: var(--font-ui); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">Fit</button>
           <button type="button" onClick="{{ closeLightbox }}" aria-label="Close" style="margin-left: 12px; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(239, 232, 221, 0.32); border-radius: 999px; background: transparent; color: #efe8dd; cursor: pointer;" style-hover="border-color: var(--color-accent); color: var(--color-accent-300);">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
           </button>
@@ -223,9 +223,9 @@
       </div>
 
       <div onClick="{{ stop }}" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 120px; gap: 24px; align-items: center; padding: 18px 30px 28px;">
-        <button type="button" onClick="{{ prevWork }}" style="justify-self: start; padding: 0; border: 0; background: transparent; color: rgba(239, 232, 221, 0.7); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="color: var(--color-accent-300);">← Previous</button>
+        <button type="button" onClick="{{ prevWork }}" style="justify-self: start; padding: 0; border: 0; background: transparent; color: rgba(239, 232, 221, 0.7); font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="color: var(--color-accent-300);">← Previous</button>
         <span style="text-align: center; font-family: var(--font-heading); font-size: 17px; font-style: italic; color: rgba(239, 232, 221, 0.86);">{{ activeCaption }}</span>
-        <button type="button" onClick="{{ nextWork }}" style="justify-self: end; padding: 0; border: 0; background: transparent; color: rgba(239, 232, 221, 0.7); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="color: var(--color-accent-300);">Next →</button>
+        <button type="button" onClick="{{ nextWork }}" style="justify-self: end; padding: 0; border: 0; background: transparent; color: rgba(239, 232, 221, 0.7); font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;" style-hover="color: var(--color-accent-300);">Next →</button>
       </div>
 
     </div>
