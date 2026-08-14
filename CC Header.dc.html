@@ -55,8 +55,8 @@
 </style>
 </helmet>
 
-<div style="font-family: var(--font-body); color: var(--color-text);">
-  <header style="position: relative; z-index: 50; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider);">
+<div style="font-family: var(--font-body); color: var(--color-text); {{ overlayVars }}">
+  <header style="position: relative; z-index: 50; transition: background 260ms ease, backdrop-filter 260ms ease, border-color 260ms ease; background: {{ headerBg }}; backdrop-filter: {{ headerBackdrop }}; border-bottom: 1px solid {{ headerBorder }};">
     <div style="max-width: 1180px; margin: 0 auto; padding: 14px 32px; min-height: 86px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 20px;">
       <nav style="display: flex; align-items: center; flex-wrap: nowrap; gap: 18px; justify-self: start; overflow: hidden; min-width: 0;">
         <sc-for list="{{ links }}" as="link" hint-placeholder-count="4">
@@ -69,16 +69,16 @@
         </sc-for>
       </nav>
       <div style="justify-self: center;">
-        <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
-          <a href="index.html" style="display: block;"><img src="assets/cc-logo.png" alt="Critical Collective" style="height: 40px; width: auto; display: block;"></a>
+        <sc-if value="{{ logoNormal }}" hint-placeholder-val="{{ true }}">
+          <a href="Critical%20Collective%20Home.dc.html" style="display: block;"><img src="assets/cc-logo.png" alt="Critical Collective" style="height: 40px; width: auto; display: block;"></a>
         </sc-if>
-        <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
-          <a href="index.html" style="display: block;"><img src="assets/cc-logo-cream.png" alt="Critical Collective" style="height: 40px; width: auto; display: block;"></a>
+        <sc-if value="{{ logoCream }}" hint-placeholder-val="{{ false }}">
+          <a href="Critical%20Collective%20Home.dc.html" style="display: block;"><img src="assets/cc-logo-cream.png" alt="Critical Collective" style="height: 40px; width: auto; display: block;"></a>
         </sc-if>
       </div>
       <div style="justify-self: end; display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 14px; min-width: 0;">
-        <a href="newsletters.html" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">Newsletters</a>
-        <a href="search.html" aria-label="Search the archive" title="Search the archive" style="width: 32px; height: 32px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-divider); border-radius: 999px; color: color-mix(in srgb, var(--color-text) 70%, transparent);" style-hover="color: var(--color-accent-700); border-color: var(--color-accent);">
+        <a href="Critical%20Collective%20Newsletters.dc.html" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent); white-space: nowrap;" style-hover="color: var(--color-text);">Newsletters</a>
+        <a href="Critical%20Collective%20Search.dc.html" aria-label="Search the archive" title="Search the archive" style="width: 32px; height: 32px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-divider); border-radius: 999px; color: color-mix(in srgb, var(--color-text) 70%, transparent);" style-hover="color: var(--color-accent-700); border-color: var(--color-accent);">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
         </a>
         <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeLabel }}" title="{{ themeLabel }}" style="width: 32px; height: 32px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-divider); border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 70%, transparent); cursor: pointer; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: var(--color-accent-700); border-color: var(--color-accent);">
@@ -94,8 +94,8 @@
           <sc-if value="{{ accountOpen }}" hint-placeholder-val="{{ false }}">
             <div style="position: absolute; top: 100%; right: 0; padding-top: 8px; min-width: 226px; z-index: 60; animation: ccMenuIn 0.2s ease both; transform-origin: top right;">
               <div style="background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--color-divider); border-top: 2px solid var(--color-accent); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 8px;">
-                <a href="signin.html" style="display: block; font-size: 13px; color: var(--color-text); padding: 9px 12px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">Sign in to your account</a>
-                <a href="signin.html#plans" style="display: block; font-size: 13px; color: var(--color-text); padding: 9px 12px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">Subscribe</a>
+                <a href="Critical%20Collective%20Sign%20In.dc.html" style="display: block; font-size: 13px; color: var(--color-text); padding: 9px 12px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">Sign in to your account</a>
+                <a href="Critical%20Collective%20Sign%20In.dc.html#plans" style="display: block; font-size: 13px; color: var(--color-text); padding: 9px 12px; border-radius: var(--radius-sm);" style-hover="background: var(--color-surface); color: var(--color-accent-800);">Subscribe</a>
               </div>
             </div>
           </sc-if>
@@ -104,10 +104,10 @@
     </div>
   </header>
 
+  <sc-if value="{{ showCategoryBar }}" hint-placeholder-val="{{ true }}">
   <div style="border-bottom: 1px solid var(--color-divider); background: color-mix(in srgb, var(--color-surface) 42%, transparent); backdrop-filter: blur(8px); position: relative; z-index: 30;">
     <div style="max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; align-items: stretch;">
-      <span style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); display: flex; align-items: center; padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--color-divider); flex: 0 0 auto;">Categories</span>
-      <div style="display: flex; align-items: stretch; flex-wrap: wrap; min-width: 0; flex: 1 1 auto;">
+      <div style="display: flex; align-items: stretch; flex-wrap: wrap; min-width: 0; flex: 1 1 auto; justify-content: center;">
         <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="5">
           <div style="position: relative;" onMouseEnter="{{ cat.open }}" onMouseLeave="{{ closeMenu }}">
             <a href="{{ cat.href }}" style="min-height: 52px; display: inline-flex; align-items: center; gap: 7px; padding: 0 13px; font-size: 12.5px; color: var(--color-text); border-bottom: 2px solid transparent; white-space: nowrap; transition: border-color 200ms ease;" style-hover="border-bottom-color: var(--color-accent);">{{ cat.name }}<span style="font-size: 9px; opacity: 0.5; display: inline-block; transition: transform 220ms ease; transform: {{ cat.arrow }};">▾</span></a>
@@ -123,11 +123,12 @@
       </div>
     </div>
   </div>
+  </sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;artists&quot;,&quot;authors&quot;,&quot;categories&quot;,&quot;newsletters&quot;,&quot;reference&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;artists&quot;,&quot;authors&quot;,&quot;categories&quot;,&quot;newsletters&quot;,&quot;reference&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;overlay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
-  state = { open: null, dark: false, account: false };
+  state = { open: null, dark: false, account: false, scrolled: false };
   componentDidMount() {
     let dark = false;
     try {
@@ -135,6 +136,15 @@ class Component extends DCLogic {
       dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
     } catch (e) {}
     this.applyTheme(dark);
+    this.onScroll = () => {
+      if (this.props.overlay !== true) return;
+      const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const s = y > 400;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    document.addEventListener('scroll', this.onScroll, { passive: true, capture: true });
+    this.onScroll();
     this.onDocClick = (e) => {
       if (!this.state.account) return;
       if (e.target && e.target.closest && e.target.closest('[data-cc-account]')) return;
@@ -147,6 +157,8 @@ class Component extends DCLogic {
   componentWillUnmount() {
     document.removeEventListener('click', this.onDocClick);
     document.removeEventListener('keydown', this.onKey);
+    window.removeEventListener('scroll', this.onScroll);
+    document.removeEventListener('scroll', this.onScroll, true);
   }
   applyTheme(dark) {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
@@ -155,13 +167,21 @@ class Component extends DCLogic {
   }
   renderVals() {
     const active = this.props.active ?? "";
+    const overlay = this.props.overlay === true;
+    const transparent = overlay && !this.state.scrolled;
+    const headerBg = transparent ? "linear-gradient(180deg, rgba(10,9,7,0.46), rgba(10,9,7,0))" : "color-mix(in srgb, var(--color-bg) 92%, transparent)";
+    const headerBackdrop = transparent ? "none" : "blur(8px)";
+    const headerBorder = transparent ? "transparent" : "var(--color-divider)";
+    const overlayVars = transparent ? "--color-text: #f4f2ec; --color-divider: rgba(244,242,236,0.34); --color-accent: #e3c98d; --color-accent-700: #f0e6c8; --color-accent-800: #f6eeda;" : "";
+    const showCategoryBar = !transparent;
+    const logoCream = this.state.dark === true || transparent;
     const links = [
-      { label: "Artists", href: "artists.html", key: "artists" },
-      { label: "Authors", href: "authors.html", key: "authors" },
-      { label: "Reference & Archives", href: "reference.html", key: "reference" }
+      { label: "Artists", href: "Critical%20Collective%20Artists.dc.html", key: "artists" },
+      { label: "Authors", href: "Critical%20Collective%20Authors.dc.html", key: "authors" },
+      { label: "Reference & Archives", href: "Critical%20Collective%20Reference.dc.html", key: "reference" }
     ];
-    const HREF = {"Modern & Contemporary Art":"modern-contemporary-art.html","Art History & Museums":"art-history-museums.html","Cinema & Photography":"cinema-photography.html","Art, Design & Architecture":"art-design-architecture.html","Culture":"culture.html"};
-    const ITEM_HREF = {"Art History":"art-history.html"};
+    const HREF = {"Modern & Contemporary Art":"Critical%20Collective%20Category.dc.html","Art History & Museums":"Critical%20Collective%20Category%20Art%20History.dc.html","Cinema & Photography":"Critical%20Collective%20Category%20Cinema.dc.html","Art, Design & Architecture":"Critical%20Collective%20Category%20Design.dc.html","Culture":"Critical%20Collective%20Category%20Culture.dc.html"};
+    const ITEM_HREF = {"Art History":"Critical%20Collective%20Art%20History.dc.html"};
     const data = [
       { name: "Modern & Contemporary Art", items: ["Exhibitions", "Artist Profiles & Essays", "Artist Conversations", "Groups & Collectives", "Curators", "Curating South Asia"] },
       { name: "Art History & Museums", items: ["Art History", "Aesthetic Theory", "Museums", "CC Icons"] },
@@ -170,6 +190,8 @@ class Component extends DCLogic {
       { name: "Culture", items: ["Gender", "Food Cultures", "Art, Media & Law"] }
     ];
     return {
+      headerBg, headerBackdrop, headerBorder, overlayVars, showCategoryBar,
+      logoCream, logoNormal: !logoCream,
       isDark: this.state.dark === true,
       isLight: this.state.dark !== true,
       themeLabel: this.state.dark ? "Switch to light mode" : "Switch to dark mode",

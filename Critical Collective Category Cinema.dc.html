@@ -32,7 +32,16 @@
   a { color: var(--color-accent-700); text-decoration: none; }
   a:hover { color: var(--color-accent); }
   ::selection { background: var(--color-accent-100); }
+  .cc-tile { transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 600ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .cc-tile:hover { transform: translateY(-6px); box-shadow: 0 18px 36px -20px rgba(20,18,15,0.4); }
   .cc-tile:hover .cc-tile-rule { width: 100%; }
+  .cc-tile-img { transition: transform 1400ms cubic-bezier(0.16, 0.7, 0.2, 1); will-change: transform; }
+  .cc-tile:hover .cc-tile-img { transform: scale(1.07); }
+  .cc-tile-text { transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .cc-tile:hover .cc-tile-text { transform: translateY(-8px); }
+  .cc-tile-cta { transition: letter-spacing 600ms cubic-bezier(0.2, 0.7, 0.2, 1), color 400ms ease; }
+  .cc-tile:hover .cc-tile-cta { letter-spacing: 0.3em; color: var(--color-accent-300); }
+  @media (prefers-reduced-motion: reduce) { .cc-tile, .cc-tile-img, .cc-tile-text, .cc-tile-cta, .cc-tile-rule { transition: none !important; } .cc-tile:hover { transform: none; } .cc-tile:hover .cc-tile-img { transform: none; } }
 </style>
 </helmet>
 
@@ -62,39 +71,39 @@
     </div>
 
     <div style="border-top: 1px solid var(--color-text); margin-top: 30px; padding-top: 14px;">
-      <h2 style="margin: 0; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">The two departments</h2>
+      <h2 style="margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">The two departments</h2>
     </div>
 
     <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 28px;">
 
       <a class="cc-tile" href="Critical%20Collective%20Cinema%20OTT.dc.html" style="position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-md); background: var(--color-neutral-900); color: #f4f2ec;">
-        <div style="position: absolute; inset: 0;">
+        <div class="cc-tile-img" style="position: absolute; inset: 0;">
           <image-slot id="cc-field03-cinema" shape="rect" fit="cover" src="uploads/Satyajit Ray-2.jpg" placeholder="Drop the Cinema &amp; OTT image"></image-slot>
         </div>
         <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,19,17,0.46) 0%, rgba(20,19,17,0.04) 38%, rgba(20,19,17,0.32) 64%, rgba(20,19,17,0.86) 100%);"></div>
         <div style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 34px 36px 36px;">
-          <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Department 01 · 87 pieces</span>
-          <span style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="align-self: flex-start; padding: 7px 12px 6px; border-radius: 999px; background: rgba(20,19,17,0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Department 01 · 87 pieces</span>
+          <span class="cc-tile-text" style="display: flex; flex-direction: column; gap: 14px;">
             <span style="font-family: var(--font-heading); font-size: clamp(34px, 3.6vw, 50px); line-height: 1.0; letter-spacing: -0.022em;">Cinema &amp; OTT</span>
             <span style="height: 1px; width: 56px; background: var(--color-accent); transition: width 420ms cubic-bezier(0.2, 0.7, 0.2, 1);" class="cc-tile-rule"></span>
             <span style="font-size: 14.5px; line-height: 1.6; max-width: 26em; color: rgba(244,242,236,0.82); text-wrap: pretty;">Essays on the film industry, television and streaming, with interviews across the trade.</span>
-            <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the department →</span>
+            <span class="cc-tile-cta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the department →</span>
           </span>
         </div>
       </a>
 
       <a class="cc-tile" href="Critical%20Collective%20Lens-Based%20Practices.dc.html" style="position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-md); background: var(--color-neutral-900); color: #f4f2ec;">
-        <div style="position: absolute; inset: 0;">
+        <div class="cc-tile-img" style="position: absolute; inset: 0;">
           <image-slot id="cc-field03-lens" shape="rect" fit="cover" src="uploads/Henri Cartier-Bresson 1960.jpg" placeholder="Drop the Lens-Based Practices image"></image-slot>
         </div>
         <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,19,17,0.46) 0%, rgba(20,19,17,0.04) 38%, rgba(20,19,17,0.32) 64%, rgba(20,19,17,0.86) 100%);"></div>
         <div style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 34px 36px 36px;">
-          <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Department 02 · 73 pieces</span>
-          <span style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="align-self: flex-start; padding: 7px 12px 6px; border-radius: 999px; background: rgba(20,19,17,0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-300); font-feature-settings: 'tnum';">Department 02 · 73 pieces</span>
+          <span class="cc-tile-text" style="display: flex; flex-direction: column; gap: 14px;">
             <span style="font-family: var(--font-heading); font-size: clamp(34px, 3.6vw, 50px); line-height: 1.0; letter-spacing: -0.022em;">Lens-Based Practices</span>
             <span style="height: 1px; width: 56px; background: var(--color-accent); transition: width 420ms cubic-bezier(0.2, 0.7, 0.2, 1);" class="cc-tile-rule"></span>
             <span style="font-size: 14.5px; line-height: 1.6; max-width: 26em; color: rgba(244,242,236,0.82); text-wrap: pretty;">Writing on photography, its histories, and its overlap with other media.</span>
-            <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the department →</span>
+            <span class="cc-tile-cta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ec;">Enter the department →</span>
           </span>
         </div>
       </a>
